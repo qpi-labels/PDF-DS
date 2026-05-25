@@ -105,7 +105,7 @@ export default function Guide() {
       items: [
         { num: 1, title: 'Philosophy', sub: '철학적 토대와 시스템 미학의 융합' },
         { num: 2, title: 'System Architecture', sub: '통합 소프트웨어 아키텍처 및 토큰 구현' },
-        { num: 3, title: 'Installation', sub: 'PDF-DS 시작하기 및 설치 가이드' },
+        { num: 3, title: 'Installation', sub: 'PDF-DS 시작하기 및 설치 가이드', disabled: true },
       ]
     },
     {
