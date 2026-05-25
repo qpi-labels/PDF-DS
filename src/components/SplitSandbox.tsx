@@ -35,10 +35,10 @@ export default function SplitSandbox({ defaultMode = 'desktop' }: { defaultMode?
     <div className="pdf-panel">
       <div className="pdf-panel-header pdf-flex-row pdf-justify-between pdf-items-center">
         <div>
-          <span className="pdf-text-label-14-mono pdf-text-red pdf-mb-100" style={{ display: 'block', fontWeight: 'bold' }}>
+          <span className="pdf-text-label-14-mono pdf-text-red pdf-mb-100 pdf-font-bold" style={{ display: 'block' }}>
             CH.6 INTERACTIVE SANDBOX
           </span>
-          <h4 className="pdf-text-label-16" style={{ fontWeight: 'bold' }}>
+          <h4 className="pdf-text-label-16 pdf-font-bold">
             비대칭 스플릿 스크린(Asymmetric Split Screen) 가변 조율 시뮬레이터
           </h4>
         </div>
@@ -49,13 +49,13 @@ export default function SplitSandbox({ defaultMode = 'desktop' }: { defaultMode?
         PDF-DS 규격에 따른 황금 비대칭 배치(25:75)를 시뮬레이션할 수 있습니다. <strong>스플리터 제어바</strong>를 사용해 슬라이스 비율을 조율해 보세요. 드래그 조율 범위는 <strong>시스템 제한 수칙(20% ~ 50%)</strong> 내부로 자동 제약됩니다. 더블 클릭하여 사이드바의 완전 축소(Collapse) 상태를 점진 도약시킬 수도 있습니다.
       </p>
 
-      <div className="pdf-flex-row pdf-items-center pdf-justify-between pdf-border-bottom pdf-pb-200 pdf-mb-200" style={{ flexWrap: 'wrap', gap: '16px' }}>
-        <div className="pdf-flex-row pdf-bg-secondary pdf-p-050 pdf-border" style={{ borderRadius: '8px' }}>
+      <div className="pdf-flex-row pdf-items-center pdf-justify-between pdf-border-bottom pdf-pb-200 pdf-mb-200 pdf-flex-wrap pdf-gap-200">
+        <div className="pdf-flex-row pdf-bg-secondary pdf-p-050 pdf-border pdf-radius-md">
           <button
             onClick={() => setViewportMode('desktop')}
-            className="pdf-text-label-14-mono"
+            className="pdf-text-label-14-mono pdf-cursor-pointer pdf-radius-sm"
             style={{
-              padding: '4px 14px', borderRadius: '4px', cursor: 'pointer', border: 'none',
+              padding: '4px 14px', border: 'none',
               backgroundColor: viewportMode === 'desktop' ? 'var(--color-bg-primary)' : 'transparent',
               fontWeight: viewportMode === 'desktop' ? 'bold' : 'normal',
               color: viewportMode === 'desktop' ? 'var(--color-text-primary)' : 'var(--color-text-secondary)'
@@ -65,9 +65,9 @@ export default function SplitSandbox({ defaultMode = 'desktop' }: { defaultMode?
           </button>
           <button
             onClick={() => setViewportMode('tablet')}
-            className="pdf-text-label-14-mono"
+            className="pdf-text-label-14-mono pdf-cursor-pointer pdf-radius-sm"
             style={{
-              padding: '4px 14px', borderRadius: '4px', cursor: 'pointer', border: 'none',
+              padding: '4px 14px', border: 'none',
               backgroundColor: viewportMode === 'tablet' ? 'var(--color-bg-primary)' : 'transparent',
               fontWeight: viewportMode === 'tablet' ? 'bold' : 'normal',
               color: viewportMode === 'tablet' ? 'var(--color-text-primary)' : 'var(--color-text-secondary)'
@@ -77,9 +77,9 @@ export default function SplitSandbox({ defaultMode = 'desktop' }: { defaultMode?
           </button>
           <button
             onClick={() => setViewportMode('mobile')}
-            className="pdf-text-label-14-mono"
+            className="pdf-text-label-14-mono pdf-cursor-pointer pdf-radius-sm"
             style={{
-              padding: '4px 14px', borderRadius: '4px', cursor: 'pointer', border: 'none',
+              padding: '4px 14px', border: 'none',
               backgroundColor: viewportMode === 'mobile' ? 'var(--color-bg-primary)' : 'transparent',
               fontWeight: viewportMode === 'mobile' ? 'bold' : 'normal',
               color: viewportMode === 'mobile' ? 'var(--color-text-primary)' : 'var(--color-text-secondary)'
@@ -97,8 +97,8 @@ export default function SplitSandbox({ defaultMode = 'desktop' }: { defaultMode?
         </button>
       </div>
 
-      <div className="pdf-border pdf-p-150" style={{ backgroundColor: '#09090b', borderRadius: '4px', position: 'relative' }}>
-        <div className="pdf-text-label-14-mono pdf-text-muted" style={{ fontSize: '8px', position: 'absolute', top: '4px', left: '8px' }}>
+      <div className="pdf-border pdf-p-150 pdf-radius-sm pdf-relative" style={{ backgroundColor: '#09090b' }}>
+        <div className="pdf-text-label-14-mono pdf-text-muted pdf-absolute" style={{ fontSize: '8px', top: '4px', left: '8px' }}>
           VIRTUAL DEVICE VIEWPORT — {viewportMode.toUpperCase()} VIEW
         </div>
 
@@ -136,15 +136,16 @@ export default function SplitSandbox({ defaultMode = 'desktop' }: { defaultMode?
 
               <div 
                 onDoubleClick={toggleSidebarCollapse}
-                style={{ width: 6, backgroundColor: 'var(--color-border-default)', cursor: 'col-resize', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                className="pdf-flex-row pdf-items-center pdf-justify-center"
+                style={{ width: 6, backgroundColor: 'var(--color-border-default)', cursor: 'col-resize' }}
                 title="더블클릭시 축소/팽창 토글"
               >
-                <div style={{ width: 2, height: 24, backgroundColor: 'var(--color-border-hover)', borderRadius: 2 }} />
+                <div className="pdf-radius-sm" style={{ width: 2, height: 24, backgroundColor: 'var(--color-border-hover)' }} />
               </div>
 
-              <div style={{ flex: 1, padding: '12px 15% 12px 12px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', backgroundColor: 'var(--color-bg-primary)', overflow: 'hidden' }}>
+              <div className="pdf-flex-col pdf-justify-between pdf-overflow-hidden" style={{ flex: 1, padding: '12px 15% 12px 12px', backgroundColor: 'var(--color-bg-primary)' }}>
                 <div>
-                  <span className="pdf-text-copy-14" style={{ fontWeight: 'bold' }}>코어 캔버스 ({100 - splitRatio}%)</span>
+                  <span className="pdf-text-copy-14 pdf-font-bold">코어 캔버스 ({100 - splitRatio}%)</span>
                   <p className="pdf-text-copy-14 pdf-text-muted" style={{ fontSize: '10px', marginTop: 4 }}>
                     이곳은 주 작업 스페이스 영역으로 스플릿 비율에 따라 유동적인 반응형 리플로우가 적용됩니다. 황금 분할인 25:75 상태에서 가장 이상적인 가독 호흡을 보장합니다.
                   </p>
@@ -176,14 +177,14 @@ export default function SplitSandbox({ defaultMode = 'desktop' }: { defaultMode?
       </div>
 
       {viewportMode !== 'mobile' && (
-        <div className="pdf-bg-secondary pdf-p-200 pdf-border pdf-mt-200" style={{ borderRadius: 8 }}>
+        <div className="pdf-bg-secondary pdf-p-200 pdf-border pdf-mt-200 pdf-radius-md">
           <div className="pdf-flex-row pdf-items-center pdf-justify-between pdf-mb-150">
             <span className="pdf-text-label-14-mono pdf-flex-row pdf-items-center pdf-gap-100">
               <Maximize2 style={{ width: 14, height: 14, color: 'var(--color-functional-red)' }} />
               비대칭 스플릿 수동 분할바 조율 
               <span className="pdf-text-muted" style={{ fontSize: '10px' }}>(상한선 제한: 20% ~ 50%)</span>
             </span>
-            <span className="pdf-text-label-14-mono" style={{ fontWeight: 'bold' }}>{splitRatio}% / {100 - splitRatio}%</span>
+            <span className="pdf-text-label-14-mono pdf-font-bold">{splitRatio}% / {100 - splitRatio}%</span>
           </div>
 
           <div className="pdf-flex-row pdf-items-center pdf-gap-150">
@@ -202,9 +203,9 @@ export default function SplitSandbox({ defaultMode = 'desktop' }: { defaultMode?
           <div className="pdf-flex-row pdf-justify-center pdf-gap-100 pdf-mt-200">
             <button 
               onClick={() => changeRatioDirectly(25)}
-              className="pdf-text-label-14-mono"
+              className="pdf-text-label-14-mono pdf-radius-sm pdf-cursor-pointer"
               style={{
-                padding: '4px 8px', border: '1px solid', borderRadius: 4, cursor: 'pointer', fontSize: '10px',
+                padding: '4px 8px', border: '1px solid', fontSize: '10px',
                 backgroundColor: splitRatio === 25 ? 'var(--color-functional-red)' : 'var(--color-bg-primary)',
                 color: splitRatio === 25 ? 'var(--color-bg-primary)' : 'var(--color-text-secondary)',
                 borderColor: splitRatio === 25 ? 'var(--color-functional-red)' : 'var(--color-border-default)'
@@ -214,9 +215,9 @@ export default function SplitSandbox({ defaultMode = 'desktop' }: { defaultMode?
             </button>
             <button 
               onClick={() => changeRatioDirectly(30)}
-              className="pdf-text-label-14-mono"
+              className="pdf-text-label-14-mono pdf-radius-sm pdf-cursor-pointer"
               style={{
-                padding: '4px 8px', border: '1px solid', borderRadius: 4, cursor: 'pointer', fontSize: '10px',
+                padding: '4px 8px', border: '1px solid', fontSize: '10px',
                 backgroundColor: splitRatio === 30 ? 'var(--color-functional-red)' : 'var(--color-bg-primary)',
                 color: splitRatio === 30 ? 'var(--color-bg-primary)' : 'var(--color-text-secondary)',
                 borderColor: splitRatio === 30 ? 'var(--color-functional-red)' : 'var(--color-border-default)'
@@ -226,9 +227,9 @@ export default function SplitSandbox({ defaultMode = 'desktop' }: { defaultMode?
             </button>
             <button 
               onClick={() => changeRatioDirectly(20)}
-              className="pdf-text-label-14-mono"
+              className="pdf-text-label-14-mono pdf-radius-sm pdf-cursor-pointer"
               style={{
-                padding: '4px 8px', border: '1px solid', borderRadius: 4, cursor: 'pointer', fontSize: '10px',
+                padding: '4px 8px', border: '1px solid', fontSize: '10px',
                 backgroundColor: splitRatio === 20 ? 'var(--color-functional-red)' : 'var(--color-bg-primary)',
                 color: splitRatio === 20 ? 'var(--color-bg-primary)' : 'var(--color-text-secondary)',
                 borderColor: splitRatio === 20 ? 'var(--color-functional-red)' : 'var(--color-border-default)'

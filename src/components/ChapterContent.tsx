@@ -42,6 +42,27 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
             </p>
           </div>
 
+          <div className="pdf-mb-400">
+            <div className="pdf-panel pdf-grid-bg pdf-flex-row pdf-items-center pdf-justify-center pdf-gap-300 pdf-flex-wrap" style={{ padding: 'var(--space-400)' }}>
+              <div className="pdf-content-relative pdf-flex-shrink-0" style={{ width: '240px', height: '240px' }}>
+                <img 
+                  src="/Px7S3.webp" 
+                  alt="Design Motif" 
+                  className="pdf-w-full pdf-h-full pdf-radius-lg pdf-shadow-bevel"
+                  style={{ objectFit: 'cover' }} 
+                />
+              </div>
+              <div className="pdf-content-relative">
+                <p className="pdf-text-label-14-mono pdf-text-muted" style={{ lineHeight: '1.8' }}>
+                  <strong className="pdf-text-red" style={{ fontSize: '12px' }}>DESIGN MOTIF</strong><br/>
+                  서로 다른 물리적 재료들이<br/>
+                  연속성 있게 조화를 이루는<br/>
+                  하드웨어의 미학
+                </p>
+              </div>
+            </div>
+          </div>
+
           <div className="pdf-mb-300">
             <p className="pdf-text-copy-14 pdf-text-muted">
               현대 소프트웨어 공학에서 사용자 인터페이스는 단순히 화면에 요소를 렌더링하는 것을 넘어, 하드웨어가 가진 물리적 인지성과 촉각적 정직성을 디지털 공간으로 확장하는 다리 역할을 수행해야 한다.
@@ -53,7 +74,7 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
             </p>
             <br />
             <p className="pdf-text-copy-14">
-              물리적 감각을 디지털 인터페이스로 전이하는 과정에서는 바우어앤윌킨스의 사운드 엔지니어링 미학과 틴에이지 엔지니어링의 정밀한 촉각적 상호작용 방식이 핵심적인 이정표를 제공한다.
+              물리적 감각을 디지털 인터페이스로 전이하는 과정에서는 Bowers & Wilkins에서 엿볼 수 있는, 물리적 재료 각각의 특성을 유지하면서 조화롭게 만들어낸 고급스러움과 틴에이지 엔지니어링의 정밀한 촉각적 상호작용 방식이 핵심적인 이정표를 제공한다.
             </p>
             <br />
             <p className="pdf-text-copy-14">
@@ -188,8 +209,8 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
             <TypographySandbox />
           </div>
 
-          <details className="pdf-mt-200" style={{ cursor: 'pointer', borderTop: '1px solid var(--color-border-default)', paddingTop: '16px' }}>
-            <summary className="pdf-text-label-14-mono pdf-text-muted" style={{ fontWeight: 'bold' }}>[+] 타이포그래피 구현 코드 보기</summary>
+          <details className="pdf-mt-200 pdf-cursor-pointer pdf-border-top" style={{ paddingTop: '16px' }}>
+            <summary className="pdf-text-label-14-mono pdf-text-muted pdf-font-bold">[+] 타이포그래피 구현 코드 보기</summary>
             <div className="pdf-code-block pdf-mt-100" style={{ whiteSpace: 'pre-wrap' }}>
               {`<!-- 헤딩 타이틀 -->
 <h1 class="pdf-text-heading-32">큰 제목 (32px)</h1>
@@ -264,6 +285,22 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
           <div className="pdf-mb-300">
             <ColorSandbox />
           </div>
+
+          <details className="pdf-mt-200 pdf-cursor-pointer pdf-border-top" style={{ paddingTop: '16px' }}>
+            <summary className="pdf-text-label-14-mono pdf-text-muted pdf-font-bold">[+] 컬러 구현 코드 보기</summary>
+            <div className="pdf-code-block pdf-mt-100" style={{ whiteSpace: 'pre-wrap' }}>
+              {`/* CSS 변수를 활용한 색상 적용 */
+.my-container {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-default);
+  color: var(--color-text-primary);
+}
+
+.my-error-text {
+  color: var(--color-functional-red);
+}`}
+            </div>
+          </details>
         </section>
       )}
 
@@ -278,6 +315,21 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
           <div className="pdf-mb-300">
             <MaterialSandbox />
           </div>
+
+          <details className="pdf-mt-200 pdf-cursor-pointer pdf-border-top" style={{ paddingTop: '16px' }}>
+            <summary className="pdf-text-label-14-mono pdf-text-muted pdf-font-bold">[+] 머티리얼 및 표면 높이 구현 코드 보기</summary>
+            <div className="pdf-code-block pdf-mt-100" style={{ whiteSpace: 'pre-wrap' }}>
+              {`<!-- 기본 하드웨어 패널 (입체감 있는 표면) -->
+<div class="pdf-panel">
+  기본 표면
+</div>
+
+<!-- 반투명 유리 표면 (Frosted Glass) -->
+<div style="background-color: rgba(255, 255, 255, 0.65); backdrop-filter: blur(24px) saturate(180%);">
+  사이드바 등 오버레이 표면
+</div>`}
+            </div>
+          </details>
         </section>
       )}
 
@@ -299,8 +351,8 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
             <ButtonSandbox />
           </div>
 
-          <details className="pdf-mt-200" style={{ cursor: 'pointer', borderTop: '1px solid var(--color-border-default)', paddingTop: '16px' }}>
-            <summary className="pdf-text-label-14-mono pdf-text-muted" style={{ fontWeight: 'bold' }}>[+] 버튼 구현 코드 보기</summary>
+          <details className="pdf-mt-200 pdf-cursor-pointer pdf-border-top" style={{ paddingTop: '16px' }}>
+            <summary className="pdf-text-label-14-mono pdf-text-muted pdf-font-bold">[+] 버튼 구현 코드 보기</summary>
             <div className="pdf-code-block pdf-mt-100" style={{ whiteSpace: 'pre-wrap' }}>
               {`<!-- 1차 액션 (Primary Button) -->
 <!-- 붉은색 배경, 가장 중요한 단일 액션에 사용 -->
@@ -336,8 +388,8 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
             <FormSandbox />
           </div>
 
-          <details className="pdf-mt-200" style={{ cursor: 'pointer', borderTop: '1px solid var(--color-border-default)', paddingTop: '16px' }}>
-            <summary className="pdf-text-label-14-mono pdf-text-muted" style={{ fontWeight: 'bold' }}>[+] 폼 입력 구현 코드 보기</summary>
+          <details className="pdf-mt-200 pdf-cursor-pointer pdf-border-top" style={{ paddingTop: '16px' }}>
+            <summary className="pdf-text-label-14-mono pdf-text-muted pdf-font-bold">[+] 폼 입력 구현 코드 보기</summary>
             <div className="pdf-code-block pdf-mt-100" style={{ whiteSpace: 'pre-wrap' }}>
               {`<!-- 기본 텍스트 입력 폼 -->
 <div class="pdf-flex-col pdf-gap-100">
@@ -370,8 +422,8 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
             <ModalSandbox />
           </div>
 
-          <details className="pdf-mt-200" style={{ cursor: 'pointer', borderTop: '1px solid var(--color-border-default)', paddingTop: '16px' }}>
-            <summary className="pdf-text-label-14-mono pdf-text-muted" style={{ fontWeight: 'bold' }}>[+] 모달 다이얼로그 구현 코드 보기</summary>
+          <details className="pdf-mt-200 pdf-cursor-pointer pdf-border-top" style={{ paddingTop: '16px' }}>
+            <summary className="pdf-text-label-14-mono pdf-text-muted pdf-font-bold">[+] 모달 다이얼로그 구현 코드 보기</summary>
             <div className="pdf-code-block pdf-mt-100" style={{ whiteSpace: 'pre-wrap' }}>
               {`<!-- 화면 전체 배경(오버레이) -->
 <div class="pdf-overlay" style="position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 998;"></div>
@@ -411,6 +463,21 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
           <div className="pdf-mb-300">
             <NavigationSandbox />
           </div>
+
+          <details className="pdf-mt-200 pdf-cursor-pointer pdf-border-top" style={{ paddingTop: '16px' }}>
+            <summary className="pdf-text-label-14-mono pdf-text-muted pdf-font-bold">[+] 네비게이션 구현 코드 보기</summary>
+            <div className="pdf-code-block pdf-mt-100" style={{ whiteSpace: 'pre-wrap' }}>
+              {`<!-- 사이드바 네비게이션 그룹 헤더 -->
+<div class="pdf-nav-group-header">
+  <span>Layout</span>
+</div>
+
+<!-- 사이드바 네비게이션 아이템 -->
+<div class="pdf-nav-item active">
+  <span class="pdf-text-label-16">PC Split Screen</span>
+</div>`}
+            </div>
+          </details>
         </section>
       )}
 
@@ -428,6 +495,24 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
           <div className="pdf-mb-300">
             <SplitSandbox defaultMode="desktop" />
           </div>
+
+          <details className="pdf-mt-200 pdf-cursor-pointer pdf-border-top" style={{ paddingTop: '16px' }}>
+            <summary className="pdf-text-label-14-mono pdf-text-muted pdf-font-bold">[+] 스플릿 스크린 구현 코드 보기</summary>
+            <div className="pdf-code-block pdf-mt-100" style={{ whiteSpace: 'pre-wrap' }}>
+              {`<!-- 25:75 비율의 스플릿 스크린 구조 -->
+<div class="pdf-app">
+  <aside class="pdf-sidebar" style="width: 25%;">
+    <!-- 좌측 25% 사이드바 영역 -->
+  </aside>
+  
+  <div class="pdf-splitter"></div>
+  
+  <main class="pdf-main-view" style="width: 75%;">
+    <!-- 우측 75% 메인 콘텐츠 영역 -->
+  </main>
+</div>`}
+            </div>
+          </details>
         </section>
       )}
 

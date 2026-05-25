@@ -16,13 +16,11 @@ export default function FormSandbox() {
           <input 
             type="text" 
             placeholder="이메일을 입력하세요" 
+            className="pdf-w-full pdf-radius-md pdf-border"
             style={{ 
               padding: '12px 16px', 
-              border: '1px solid var(--color-border-default)', 
-              borderRadius: '8px',
               fontFamily: 'var(--font-sans)',
               fontSize: '14px',
-              width: '100%',
               maxWidth: '400px',
               backgroundColor: 'var(--color-bg-primary)',
               color: 'var(--color-text-primary)'
@@ -37,15 +35,14 @@ export default function FormSandbox() {
           <input 
             type="text" 
             defaultValue="focusing@example.com"
+            className="pdf-w-full pdf-radius-md"
             style={{ 
               padding: '12px 16px', 
               border: '1px solid var(--color-text-primary)', 
               outline: '2px solid var(--color-border-hover)',
               outlineOffset: '2px',
-              borderRadius: '8px',
               fontFamily: 'var(--font-sans)',
               fontSize: '14px',
-              width: '100%',
               maxWidth: '400px',
               backgroundColor: 'var(--color-bg-primary)',
               color: 'var(--color-text-primary)'
@@ -60,14 +57,12 @@ export default function FormSandbox() {
           <input 
             type="text" 
             defaultValue="invalid-email"
+            className="pdf-w-full pdf-radius-md pdf-shadow-glow"
             style={{ 
               padding: '12px 16px', 
               border: '1px solid var(--color-functional-red)', 
-              boxShadow: 'var(--shadow-functional-glow)',
-              borderRadius: '8px',
               fontFamily: 'var(--font-sans)',
               fontSize: '14px',
-              width: '100%',
               maxWidth: '400px',
               backgroundColor: 'var(--color-bg-primary)',
               color: 'var(--color-text-primary)'
@@ -84,13 +79,11 @@ export default function FormSandbox() {
             type="text" 
             disabled
             value="수정할 수 없는 데이터"
+            className="pdf-w-full pdf-radius-md pdf-border"
             style={{ 
               padding: '12px 16px', 
-              border: '1px solid var(--color-border-default)', 
-              borderRadius: '8px',
               fontFamily: 'var(--font-sans)',
               fontSize: '14px',
-              width: '100%',
               maxWidth: '400px',
               backgroundColor: 'var(--color-bg-secondary)',
               color: 'var(--color-text-secondary)',

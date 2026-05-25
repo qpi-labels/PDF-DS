@@ -36,10 +36,10 @@ export default function AlignmentSandbox() {
     <div className="pdf-panel">
       <div className="pdf-panel-header pdf-flex-row pdf-justify-between pdf-items-center">
         <div>
-          <span className="pdf-text-label-14-mono pdf-text-red pdf-mb-100" style={{ display: 'block', fontWeight: 'bold' }}>
+          <span className="pdf-text-label-14-mono pdf-text-red pdf-mb-100 pdf-font-bold" style={{ display: 'block' }}>
             CH.3 INTERACTIVE SANDBOX
           </span>
-          <h4 className="pdf-text-label-16" style={{ fontWeight: 'bold' }}>
+          <h4 className="pdf-text-label-16 pdf-font-bold">
             정밀 광학 보정(Optical Alignment) & 고정폭 가령(Tabular Numerals)
           </h4>
         </div>
@@ -53,7 +53,7 @@ export default function AlignmentSandbox() {
       <div className="pdf-flex-row pdf-gap-300" style={{ flexWrap: 'wrap' }}>
         
         {/* SECTION A: Optical alignment playground */}
-        <div className="pdf-bg-secondary pdf-border pdf-p-200" style={{ flex: '1 1 45%', borderRadius: 4, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+        <div className="pdf-bg-secondary pdf-border pdf-p-200 pdf-flex-col pdf-justify-between pdf-radius-sm" style={{ flex: '1 1 45%' }}>
           <div>
             <span className="pdf-text-label-14-mono pdf-text-muted" style={{ fontSize: '10px', display: 'block', marginBottom: 8 }}>PART A: OPTICAL VS GEOMETRIC NUDGE</span>
             <div className="pdf-flex-row pdf-gap-100 pdf-mb-150">
@@ -63,8 +63,8 @@ export default function AlignmentSandbox() {
               {opticalOffset !== 0 && (
                 <button 
                   onClick={resetOffset} 
-                  className="pdf-text-label-14-mono pdf-text-red pdf-flex-row pdf-items-center pdf-gap-050"
-                  style={{ fontSize: '10px', cursor: 'pointer', border: 'none', background: 'none' }}
+                  className="pdf-text-label-14-mono pdf-text-red pdf-flex-row pdf-items-center pdf-gap-050 pdf-cursor-pointer"
+                  style={{ fontSize: '10px', border: 'none', background: 'none' }}
                 >
                   <RefreshCw style={{ width: 10, height: 10 }} /> 초기화
                 </button>
@@ -72,7 +72,7 @@ export default function AlignmentSandbox() {
             </div>
           </div>
 
-          <div className="pdf-bg-secondary pdf-border pdf-p-300" style={{ borderRadius: 4, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '140px', position: 'relative' }}>
+          <div className="pdf-bg-secondary pdf-border pdf-p-300 pdf-flex-col pdf-items-center pdf-justify-center pdf-radius-sm pdf-relative" style={{ minHeight: '140px' }}>
             <div className="pdf-text-label-14-mono pdf-text-muted" style={{ fontSize: '8px', position: 'absolute', top: 4, left: 8 }}>ALIGNMENT TEST STAGE</div>
             
             <div className="pdf-flex-col pdf-items-center pdf-gap-200">
@@ -80,9 +80,9 @@ export default function AlignmentSandbox() {
                 
                 <div className="pdf-flex-col pdf-items-center">
                   <span className="pdf-text-label-14-mono pdf-text-muted" style={{ fontSize: '9px', marginBottom: 4 }}>수학적 연산 (오차 방치)</span>
-                  <div className="pdf-border" style={{ width: 96, height: 48, backgroundColor: 'var(--color-bg-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: 4 }}>
+                  <div className="pdf-border pdf-flex-row pdf-items-center pdf-justify-center pdf-radius-sm" style={{ width: 96, height: 48, backgroundColor: 'var(--color-bg-primary)' }}>
                     <div className="pdf-flex-row pdf-items-center pdf-gap-050">
-                      <div style={{ width: 20, height: 20, backgroundColor: 'var(--color-functional-red)', color: 'var(--color-bg-primary)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px', fontWeight: 'bold' }}>▶</div>
+                      <div className="pdf-radius-full pdf-flex-row pdf-items-center pdf-justify-center pdf-font-bold" style={{ width: 20, height: 20, backgroundColor: 'var(--color-functional-red)', color: 'var(--color-bg-primary)', fontSize: '10px' }}>▶</div>
                       <span className="pdf-text-label-14-mono" style={{ fontSize: '12px', fontWeight: 'bold' }}>재생</span>
                     </div>
                   </div>
@@ -90,10 +90,11 @@ export default function AlignmentSandbox() {
 
                 <div className="pdf-flex-col pdf-items-center">
                   <span className="pdf-text-label-14-mono pdf-text-muted" style={{ fontSize: '9px', fontWeight: 'bold', marginBottom: 4 }}>사용자 광학 보정 스테이지</span>
-                  <div className="pdf-border" style={{ width: 96, height: 48, backgroundColor: '#09090b', borderColor: 'var(--color-border-hover)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: 4 }}>
+                  <div className="pdf-border pdf-flex-row pdf-items-center pdf-justify-center pdf-radius-sm" style={{ width: 96, height: 48, backgroundColor: '#09090b', borderColor: 'var(--color-border-hover)' }}>
                     <div className="pdf-flex-row pdf-items-center pdf-gap-100">
                       <div 
-                        style={{ width: 20, height: 20, backgroundColor: 'var(--color-functional-red)', color: 'var(--color-bg-primary)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '9px', fontWeight: 'bold', transform: `translateX(${opticalOffset}px)`, transition: 'transform 0.2s' }}
+                        className="pdf-radius-full pdf-flex-row pdf-items-center pdf-justify-center pdf-font-bold"
+                        style={{ width: 20, height: 20, backgroundColor: 'var(--color-functional-red)', color: 'var(--color-bg-primary)', fontSize: '9px', transform: `translateX(${opticalOffset}px)`, transition: 'transform 0.2s' }}
                       >
                         ▶
                       </div>
@@ -104,7 +105,7 @@ export default function AlignmentSandbox() {
 
               </div>
 
-              <div className="pdf-text-copy-14 pdf-text-muted" style={{ fontSize: '10px', textAlign: 'center', maxWidth: '280px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div className="pdf-text-copy-14 pdf-text-muted pdf-text-center pdf-flex-row pdf-items-center pdf-justify-center" style={{ fontSize: '10px', maxWidth: '280px', height: '32px' }}>
                 {opticalOffset === 0 ? (
                   <span>우측 재생기 내부 삼각 화살표 아이콘을 좌우로 미조 조정해보세요. (추천 광학 오프셋: <code style={{ backgroundColor: 'var(--color-bg-primary)', padding: '0 4px', border: '1px solid var(--color-border-default)', borderRadius: 2, fontWeight: 'bold', color: 'var(--color-text-primary)' }}>+1px</code>)</span>
                 ) : opticalOffset === 1 ? (
@@ -135,7 +136,7 @@ export default function AlignmentSandbox() {
         </div>
 
         {/* SECTION B: Tabular Numbers Comparison */}
-        <div className="pdf-bg-secondary pdf-border pdf-p-200" style={{ flex: '1 1 45%', borderRadius: 4, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+        <div className="pdf-bg-secondary pdf-border pdf-p-200 pdf-flex-col pdf-justify-between pdf-radius-sm" style={{ flex: '1 1 45%' }}>
           <div>
             <div className="pdf-flex-row pdf-items-center pdf-justify-between pdf-mb-150">
               <span className="pdf-text-label-14-mono pdf-text-muted" style={{ fontSize: '10px', display: 'block' }}>PART B: TABULAR VS PROPORTIONAL STATIC NUMS</span>
@@ -154,7 +155,7 @@ export default function AlignmentSandbox() {
             </div>
           </div>
 
-          <div className="pdf-bg-secondary pdf-border pdf-p-200" style={{ borderRadius: 4, display: 'flex', flexDirection: 'column', gap: 12, minHeight: '140px', justifyContent: 'center' }}>
+          <div className="pdf-bg-secondary pdf-border pdf-p-200 pdf-radius-sm pdf-flex-col pdf-justify-center" style={{ gap: 12, minHeight: '140px' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8, borderBottom: '1px solid var(--color-border-default)', paddingBottom: 8 }}>
               <span className="pdf-text-label-14-mono pdf-text-muted" style={{ fontSize: '10px', fontWeight: 'bold' }}>지표 부문</span>
               <span className="pdf-text-label-14-mono pdf-text-muted" style={{ fontSize: '10px', fontWeight: 'bold', textAlign: 'right' }}>기본 가변폭 숫자</span>
@@ -196,11 +197,11 @@ export default function AlignmentSandbox() {
 
           <div className="pdf-text-copy-14 pdf-text-muted pdf-mt-200" style={{ fontSize: '10px', lineHeight: 1.6 }}>
             {tabularNumsActive ? (
-              <p className="pdf-text-red pdf-bg-secondary pdf-p-100" style={{ borderRadius: 4, fontWeight: 'bold' }}>
+              <p className="pdf-text-red pdf-bg-secondary pdf-p-100 pdf-radius-sm pdf-font-bold">
                 ✓ <strong>tabular-nums</strong> 속성을 통과시키고 있습니다. 숫자 1과 8의 가로폭이 완벽히 대칭되므로, 실시간 통계가 폭동할 때 레이아웃 열이 미세하게 좌우로 진동하며 눈의 피로를 유발하는 떨림이 일절 관측되지 않습니다.
               </p>
             ) : (
-              <p className="pdf-text-muted pdf-bg-secondary pdf-p-100" style={{ borderRadius: 4 }}>
+              <p className="pdf-text-muted pdf-bg-secondary pdf-p-100 pdf-radius-sm">
                  <strong>proportional-nums</strong> 상태입니다. 숫자가 변경될 때 전체 문자열의 너비가 동적으로 요동쳐 레이아웃을 좌우로 교란합니다.
               </p>
             )}

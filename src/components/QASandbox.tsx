@@ -38,10 +38,10 @@ export default function QASandbox() {
     <div className="pdf-panel">
       <div className="pdf-panel-header pdf-flex-row pdf-justify-between pdf-items-center">
         <div>
-          <span className="pdf-text-label-14-mono pdf-text-red pdf-mb-100" style={{ display: 'block', fontWeight: 'bold' }}>
+          <span className="pdf-text-label-14-mono pdf-text-red pdf-mb-100 pdf-font-bold" style={{ display: 'block' }}>
             CH.8 INTERACTIVE SANDBOX
           </span>
-          <h4 className="pdf-text-label-16" style={{ fontWeight: 'bold' }}>
+          <h4 className="pdf-text-label-16 pdf-font-bold">
             실시간 디자인 검수(QA) 규칙성 자가 채점기
           </h4>
         </div>
@@ -52,21 +52,21 @@ export default function QASandbox() {
         PDF-DS 릴리즈 자격을 획득하기 위한 <strong>5대 물리 검수 강제 수칙</strong>입니다. 항목을 조작하면 감도 지수에 따른 실시간 무결 상태 점수(Compliance Score)가 반영됩니다.
       </p>
 
-      <div className="pdf-flex-row pdf-gap-300 pdf-items-center" style={{ flexWrap: 'wrap' }}>
+      <div className="pdf-flex-row pdf-gap-300 pdf-items-center pdf-flex-wrap">
         {/* CHECKLIST LIST */}
         <div className="pdf-flex-col pdf-gap-100" style={{ flex: '1 1 50%' }}>
           {items.map((item) => (
             <div 
               key={item.id}
               onClick={() => toggleCheck(item.id)}
-              className="pdf-flex-row pdf-gap-150 pdf-border pdf-p-150"
+              className="pdf-flex-row pdf-gap-150 pdf-border pdf-p-150 pdf-items-start pdf-radius-md pdf-cursor-pointer"
               style={{
-                alignItems: 'flex-start', borderRadius: 8, cursor: 'pointer', transition: 'all 0.2s',
+                transition: 'all 0.2s',
                 backgroundColor: item.checked ? 'var(--color-bg-secondary)' : 'transparent',
                 borderColor: item.checked ? 'var(--color-border-hover)' : 'var(--color-border-default)'
               }}
             >
-              <button style={{ color: 'var(--color-functional-red)', background: 'none', border: 'none', padding: 0, marginTop: 2, cursor: 'pointer', flexShrink: 0 }}>
+              <button className="pdf-cursor-pointer pdf-flex-shrink-0" style={{ color: 'var(--color-functional-red)', background: 'none', border: 'none', padding: 0, marginTop: 2 }}>
                 {item.checked ? (
                   <CheckSquare style={{ width: 16, height: 16 }} />
                 ) : (
@@ -74,7 +74,7 @@ export default function QASandbox() {
                 )}
               </button>
               <div>
-                <span className="pdf-text-label-14-mono pdf-text-red" style={{ fontSize: 9, backgroundColor: 'var(--color-bg-secondary)', padding: '0 4px', fontWeight: 'bold', borderRadius: 2 }}>
+                <span className="pdf-text-label-14-mono pdf-text-red pdf-font-bold" style={{ fontSize: 9, backgroundColor: 'var(--color-bg-secondary)', padding: '0 4px', borderRadius: 2 }}>
                   {item.category}
                 </span>
                 <p className="pdf-text-copy-14" style={{ fontSize: 12, fontWeight: 500, marginTop: 4, lineHeight: 1.5 }}>
@@ -86,12 +86,12 @@ export default function QASandbox() {
         </div>
 
         {/* COMPLIANCE RADIAL/LINEAR SCOREGUARD METER */}
-        <div className="pdf-border pdf-p-200 pdf-bg-secondary pdf-flex-col pdf-justify-between pdf-items-center" style={{ flex: '1 1 40%', borderRadius: 4, minHeight: 220 }}>
-          <div style={{ textAlign: 'center', width: '100%' }}>
+        <div className="pdf-border pdf-p-200 pdf-bg-secondary pdf-flex-col pdf-justify-between pdf-items-center pdf-radius-sm" style={{ flex: '1 1 40%', minHeight: 220 }}>
+          <div className="pdf-text-center pdf-w-full">
             <span className="pdf-text-label-14-mono pdf-text-muted" style={{ fontSize: 10, display: 'block', marginBottom: 12 }}>SYSTEM COMPLIANCE SCORE</span>
             
             {/* Elegant physical battery/gauge graphic */}
-            <div className="pdf-flex-row pdf-justify-center pdf-gap-100 pdf-mb-200" style={{ width: '100%', padding: '0 16px' }}>
+            <div className="pdf-flex-row pdf-justify-center pdf-gap-100 pdf-mb-200 pdf-w-full" style={{ padding: '0 16px' }}>
               {[20, 40, 60, 80, 100].map((t) => (
                 <div 
                   key={t}
@@ -112,8 +112,8 @@ export default function QASandbox() {
           </div>
 
           {/* Dynamic feedback notice */}
-          <div className="pdf-border pdf-p-150" style={{ textAlign: 'center', width: '100%', borderRadius: 4, transition: 'all 0.3s', color: slogan.color.text, backgroundColor: slogan.color.bg, borderColor: slogan.color.border }}>
-            <span className="pdf-text-label-14-mono" style={{ fontSize: 10, fontWeight: 'bold', display: 'block', marginBottom: 4, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+          <div className="pdf-border pdf-p-150 pdf-text-center pdf-w-full pdf-radius-sm" style={{ transition: 'all 0.3s', color: slogan.color.text, backgroundColor: slogan.color.bg, borderColor: slogan.color.border }}>
+            <span className="pdf-text-label-14-mono pdf-font-bold" style={{ fontSize: 10, display: 'block', marginBottom: 4, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
               {slogan.title}
             </span>
             <p className="pdf-text-copy-14" style={{ fontSize: 10, lineHeight: 1.5 }}>

@@ -8,10 +8,10 @@ export default function MobileNavSandbox() {
     <div className="pdf-panel">
       <div className="pdf-panel-header pdf-flex-row pdf-justify-between pdf-items-center">
         <div>
-          <span className="pdf-text-label-14-mono pdf-text-red pdf-mb-100" style={{ display: 'block', fontWeight: 'bold' }}>
+          <span className="pdf-text-label-14-mono pdf-text-red pdf-mb-100 pdf-font-bold" style={{ display: 'block' }}>
             CH.13 INTERACTIVE SANDBOX
           </span>
-          <h4 className="pdf-text-label-16" style={{ fontWeight: 'bold' }}>
+          <h4 className="pdf-text-label-16 pdf-font-bold">
             모바일 바텀 시트 네비게이션 시뮬레이터 (Mobile Nav Drawer)
           </h4>
         </div>
@@ -23,22 +23,20 @@ export default function MobileNavSandbox() {
       </p>
 
       {/* 모바일 디바이스 프레임 */}
-      <div className="pdf-border" style={{
+      <div className="pdf-border pdf-relative pdf-overflow-hidden" style={{
         width: '320px',
         height: '568px',
         margin: '0 auto',
-        position: 'relative',
         backgroundColor: 'var(--color-bg-primary)',
         borderRadius: '32px',
         border: '8px solid var(--color-border-hover)',
-        overflow: 'hidden',
         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
       }}>
 
         {/* 상단 상태바 가짜 UI */}
-        <div style={{ height: '24px', backgroundColor: 'var(--color-bg-primary)', display: 'flex', justifyContent: 'space-between', padding: '0 16px', alignItems: 'center', borderBottom: '1px solid var(--color-border-default)', fontSize: '10px', fontWeight: 'bold' }}>
+        <div className="pdf-flex-row pdf-justify-between pdf-items-center pdf-border-bottom pdf-font-bold" style={{ height: '24px', backgroundColor: 'var(--color-bg-primary)', padding: '0 16px', fontSize: '10px' }}>
           <span>9:41</span>
-          <div style={{ display: 'flex', gap: '4px' }}>
+          <div className="pdf-flex-row" style={{ gap: '4px' }}>
             <div style={{ width: 12, height: 10, backgroundColor: 'var(--color-text-primary)' }}></div>
             <div style={{ width: 16, height: 10, backgroundColor: 'var(--color-text-primary)' }}></div>
           </div>
@@ -65,24 +63,19 @@ export default function MobileNavSandbox() {
         </div>
 
         {/* 목차 열기 버튼 (FAB) */}
-        <div style={{
-          position: 'absolute',
+        <div className="pdf-absolute pdf-flex-row pdf-justify-center" style={{
           bottom: '24px',
           left: '0',
           right: '0',
-          display: 'flex',
-          justifyContent: 'center',
           zIndex: 10
         }}>
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="pdf-btn-primary"
+            className="pdf-btn-primary pdf-flex-row pdf-items-center"
             style={{
               borderRadius: '24px',
               boxShadow: '0 4px 12px rgba(0,0,0,0.25)',
               padding: '12px 24px',
-              display: 'flex',
-              alignItems: 'center',
               gap: '8px'
             }}
           >
@@ -95,9 +88,8 @@ export default function MobileNavSandbox() {
         {isOpen && (
           <div
             onClick={() => setIsOpen(false)}
+            className="pdf-absolute pdf-inset-0"
             style={{
-              position: 'absolute',
-              top: 0, left: 0, right: 0, bottom: 0,
               backgroundColor: 'rgba(0,0,0,0.5)',
               zIndex: 20,
               animation: 'pdfFadeIn 0.2s ease forwards'
@@ -106,8 +98,7 @@ export default function MobileNavSandbox() {
         )}
 
         {/* 바텀 시트 (목차 드로어) */}
-        <div style={{
-          position: 'absolute',
+        <div className="pdf-absolute pdf-flex-col" style={{
           bottom: 0, left: 0, right: 0,
           height: '75%',
           backgroundColor: 'var(--bg-sidebar)',
@@ -120,18 +111,16 @@ export default function MobileNavSandbox() {
           zIndex: 30,
           transform: isOpen ? 'translateY(0)' : 'translateY(100%)',
           transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
-          display: 'flex',
-          flexDirection: 'column',
           backgroundImage: 'var(--blueprint-grid-pattern)',
           backgroundSize: '24px 24px'
         }}>
           {/* 드래그 핸들 (가짜) */}
-          <div style={{ padding: '12px 0', display: 'flex', justifyContent: 'center', flexShrink: 0 }} onClick={() => setIsOpen(false)}>
+          <div className="pdf-flex-row pdf-justify-center pdf-flex-shrink-0 pdf-cursor-pointer" style={{ padding: '12px 0' }} onClick={() => setIsOpen(false)}>
             <div style={{ width: '40px', height: '4px', backgroundColor: 'var(--color-border-hover)', borderRadius: '2px' }}></div>
           </div>
 
           <div style={{ padding: '0 24px 24px 24px', overflowY: 'auto', flex: 1 }}>
-            <span className="pdf-text-label-14-mono pdf-text-muted pdf-border-bottom pdf-pb-100 pdf-mb-200" style={{ display: 'block', fontWeight: 'bold' }}>
+            <span className="pdf-text-label-14-mono pdf-text-muted pdf-border-bottom pdf-pb-100 pdf-mb-200 pdf-font-bold" style={{ display: 'block' }}>
               GUIDELINES INDEX
             </span>
 
@@ -143,12 +132,11 @@ export default function MobileNavSandbox() {
             ].map(item => (
               <div key={item.num} className={`pdf-nav-item ${item.active ? 'active' : ''}`} style={{ marginBottom: '8px', padding: '12px 16px' }} onClick={() => setIsOpen(false)}>
                 <div className="pdf-flex-row pdf-items-center pdf-gap-150">
-                  <span className="pdf-text-label-14-mono" style={{
+                  <span className="pdf-text-label-14-mono pdf-font-bold" style={{
                     backgroundColor: item.active ? 'var(--color-functional-red)' : 'var(--color-border-default)',
                     color: item.active ? 'var(--color-bg-primary)' : 'var(--color-text-secondary)',
                     padding: '4px 8px',
-                    borderRadius: '2px',
-                    fontWeight: 'bold'
+                    borderRadius: '2px'
                   }}>
                     0{item.num}
                   </span>
@@ -157,7 +145,7 @@ export default function MobileNavSandbox() {
               </div>
             ))}
 
-            <p className="pdf-text-copy-14 pdf-text-muted pdf-mt-300" style={{ fontSize: '11px', textAlign: 'center' }}>
+            <p className="pdf-text-copy-14 pdf-text-muted pdf-mt-300 pdf-text-center" style={{ fontSize: '11px' }}>
               * 터치스크린 사용자를 위해 버튼 간격을 여유롭게(최소 48dp) 확보하고 수직 계층을 사용합니다.
             </p>
           </div>

@@ -2,52 +2,52 @@ import React from 'react';
 
 export default function GoldenRatioSandbox() {
   return (
-    <div className="pdf-bg-secondary pdf-border pdf-p-200 pdf-flex-col pdf-justify-center" style={{ flexShrink: 0, borderRadius: 8, margin: '32px 0', overflow: 'hidden', position: 'relative', boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)' }}>
+    <div className="pdf-bg-secondary pdf-border pdf-p-200 pdf-flex-col pdf-justify-center pdf-radius-md pdf-relative pdf-overflow-hidden" style={{ flexShrink: 0, margin: '32px 0', boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)' }}>
       <div className="pdf-flex-row pdf-justify-between pdf-items-center pdf-mb-300">
         <div>
-          <span className="pdf-text-label-14-mono pdf-text-red pdf-mb-100" style={{ display: 'block', fontWeight: 'bold' }}>
+          <span className="pdf-text-label-14-mono pdf-text-red pdf-mb-100 pdf-font-bold" style={{ display: 'block' }}>
             CH.5 BLUEPRINT FORMAT
           </span>
-          <h4 className="pdf-text-label-16" style={{ fontWeight: 'bold', marginTop: 4 }}>
+          <h4 className="pdf-text-label-16 pdf-font-bold" style={{ marginTop: 4 }}>
             25:75 비대칭 황금 분할 (Asymmetric Golden Ratio)
           </h4>
         </div>
       </div>
 
       {/* 16:9 윈도우 모니터 프레임 */}
-      <div style={{ margin: '0 auto', width: '100%', maxWidth: '896px', aspectRatio: '16/9', backgroundColor: '#09090b', borderRadius: 6, border: '6px solid var(--color-border-hover)', boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)', overflow: 'hidden', display: 'flex', flexDirection: 'column', position: 'relative', transition: 'all 0.5s' }}>
-        
+      <div className="pdf-w-full pdf-relative pdf-overflow-hidden pdf-flex-col" style={{ margin: '0 auto', maxWidth: '896px', aspectRatio: '16/9', backgroundColor: '#09090b', borderRadius: 6, border: '6px solid var(--color-border-hover)', boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)', transition: 'all 0.5s' }}>
+
         {/* OS Top: Browser Tabs & URL Bar */}
-        <div style={{ backgroundColor: 'var(--color-border-default)', width: '100%', flexShrink: 0, display: 'flex', flexDirection: 'column' }}>
+        <div className="pdf-w-full pdf-flex-shrink-0 pdf-flex-col" style={{ backgroundColor: 'var(--color-border-default)' }}>
           {/* Tabs */}
-          <div style={{ display: 'flex', alignItems: 'flex-end', height: 32, padding: '0 8px', gap: 4, paddingTop: 8, backgroundColor: 'var(--color-border-default)' }}>
-            <div style={{ width: 128, height: '100%', backgroundColor: 'var(--color-bg-primary)', borderTopLeftRadius: 6, borderTopRightRadius: 6, display: 'flex', alignItems: 'center', padding: '0 8px', fontSize: 8, fontFamily: 'var(--font-sans)', color: 'var(--color-text-primary)' }}>
+          <div className="pdf-flex-row pdf-items-end" style={{ height: 32, padding: '0 8px', gap: 4, paddingTop: 8, backgroundColor: 'var(--color-border-default)' }}>
+            <div className="pdf-flex-row pdf-items-center" style={{ width: 128, height: '100%', backgroundColor: 'var(--color-bg-primary)', borderTopLeftRadius: 6, borderTopRightRadius: 6, padding: '0 8px', fontSize: 8, fontFamily: 'var(--font-sans)', color: 'var(--color-text-primary)' }}>
               PDF-DS System
             </div>
-            <div style={{ width: 32, height: 24, backgroundColor: 'var(--color-border-default)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 10, color: 'var(--color-text-secondary)' }}>+</div>
+            <div className="pdf-radius-full pdf-flex-row pdf-items-center pdf-justify-center" style={{ width: 32, height: 24, backgroundColor: 'var(--color-border-default)', fontSize: 10, color: 'var(--color-text-secondary)' }}>+</div>
           </div>
           {/* URL Bar */}
-          <div style={{ height: 40, backgroundColor: 'var(--color-bg-primary)', display: 'flex', alignItems: 'center', padding: '0 8px', gap: 8, borderBottom: '1px solid var(--color-border-hover)' }}>
-            <div style={{ display: 'flex', gap: 4 }}>
-              <div style={{ width: 16, height: 16, borderRadius: '50%', backgroundColor: 'var(--color-border-default)' }}></div>
-              <div style={{ width: 16, height: 16, borderRadius: '50%', backgroundColor: 'var(--color-border-default)' }}></div>
-              <div style={{ width: 16, height: 16, borderRadius: '50%', backgroundColor: 'var(--color-border-default)' }}></div>
+          <div className="pdf-flex-row pdf-items-center pdf-border-bottom" style={{ height: 40, backgroundColor: 'var(--color-bg-primary)', padding: '0 8px', gap: 8, borderBottomColor: 'var(--color-border-hover)' }}>
+            <div className="pdf-flex-row" style={{ gap: 4 }}>
+              <div className="pdf-radius-full" style={{ width: 16, height: 16, backgroundColor: 'var(--color-border-default)' }}></div>
+              <div className="pdf-radius-full" style={{ width: 16, height: 16, backgroundColor: 'var(--color-border-default)' }}></div>
+              <div className="pdf-radius-full" style={{ width: 16, height: 16, backgroundColor: 'var(--color-border-default)' }}></div>
             </div>
-            <div style={{ flex: 1, height: 24, backgroundColor: 'var(--color-bg-primary)', border: '1px solid var(--color-border-hover)', borderRadius: 9999, fontSize: 8, display: 'flex', alignItems: 'center', padding: '0 12px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)' }}>
+            <div className="pdf-border pdf-radius-full pdf-flex-row pdf-items-center" style={{ flex: 1, height: 24, backgroundColor: 'var(--color-bg-primary)', borderColor: 'var(--color-border-hover)', fontSize: 8, padding: '0 12px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)' }}>
               https://pdf-ds.system/
             </div>
           </div>
         </div>
 
         {/* Website Content Area */}
-        <div style={{ flex: 1, backgroundColor: 'var(--color-bg-primary)', position: 'relative', overflow: 'hidden', display: 'flex', transition: 'all 0.5s' }}>
-            
+        <div className="pdf-relative pdf-overflow-hidden pdf-flex-row" style={{ flex: 1, backgroundColor: 'var(--color-bg-primary)', transition: 'all 0.5s' }}>
+
           {/* PDF-DS LAYOUT */}
-          <div style={{ width: '100%', flex: 1, display: 'flex', position: 'relative', animation: 'fadeIn 0.5s' }}>
+          <div className="pdf-w-full pdf-flex-row pdf-relative" style={{ flex: 1, animation: 'fadeIn 0.5s' }}>
             {/* PDF-DS LEFT 25% */}
-            <div style={{ width: '25%', backgroundColor: 'var(--color-bg-primary)', borderRight: '1px solid var(--color-border-hover)', height: '100%', display: 'flex', flexDirection: 'column', position: 'relative' }} className="pdf-golden-ratio-panel">
+            <div className="pdf-golden-ratio-panel pdf-flex-col pdf-relative" style={{ width: '25%', backgroundColor: 'var(--color-bg-primary)', borderRight: '1px solid var(--color-border-hover)', height: '100%' }}>
               {/* Overlay Annotation (Using CSS for hover in a real app, here we simulate with inline style structure if possible or rely on standard CSS. Since inline hover is not possible, we use a global class `.pdf-golden-ratio-panel:hover .pdf-annotation-overlay` which we can define in index.css if needed, but since we can't use tailwind group-hover easily inline, I will use pure CSS for the overlay in index.css or simple static display. Let's make it static but semi-transparent for the sandbox effect.) */}
-              <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(173, 29, 29, 0.05)', border: '2px solid rgba(173, 29, 29, 0.5)', zIndex: 20, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
+              <div className="pdf-absolute pdf-inset-0 pdf-flex-col pdf-items-center pdf-justify-center" style={{ backgroundColor: 'rgba(173, 29, 29, 0.05)', border: '2px solid rgba(173, 29, 29, 0.5)', zIndex: 20, pointerEvents: 'none' }}>
                 <div style={{ backgroundColor: 'var(--color-functional-red)', color: 'var(--color-bg-primary)', fontFamily: 'var(--font-mono)', fontWeight: 'bold', fontSize: 12, padding: '6px 12px', borderRadius: 4, boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)' }}>
                   25% CONTROL PANEL
                 </div>
@@ -57,36 +57,35 @@ export default function GoldenRatioSandbox() {
               </div>
 
               {/* PDF-DS Header Area */}
-              <div style={{ height: 56, borderBottom: '1px solid var(--color-border-default)', display: 'flex', alignItems: 'center', padding: '0 16px', flexShrink: 0 }}>
+              <div className="pdf-flex-row pdf-items-center pdf-border-bottom pdf-flex-shrink-0" style={{ height: 56, padding: '0 16px' }}>
                 <div style={{ width: 16, height: 16, backgroundColor: 'var(--color-functional-red)' }}></div>
                 <span style={{ fontSize: 10, fontFamily: 'var(--font-mono)', color: 'var(--color-text-primary)', fontWeight: 'bold', marginLeft: 8 }}>PDF-DS SYSTEM</span>
               </div>
               {/* PDF-DS Controls */}
-              <div style={{ padding: 16, display: 'flex', flexDirection: 'column', gap: 12, flex: 1, overflowY: 'auto' }}>
-                  <div style={{ width: '100%', height: 24, backgroundColor: 'var(--color-border-default)', borderRadius: 2 }}></div>
-                  <div style={{ display: 'flex', gap: 8 }}>
-                    <div style={{ width: '50%', height: 32, backgroundColor: 'var(--color-bg-primary)', border: '1px solid var(--color-border-default)', borderRadius: 2 }}></div>
-                    <div style={{ width: '50%', height: 32, backgroundColor: 'var(--color-bg-primary)', border: '1px solid var(--color-border-default)', borderRadius: 2 }}></div>
+              <div className="pdf-flex-col" style={{ padding: 16, gap: 12, flex: 1, overflowY: 'auto' }}>
+                <div style={{ width: '100%', height: 24, backgroundColor: 'var(--color-border-default)', borderRadius: 2 }}></div>
+                <div className="pdf-flex-row" style={{ gap: 8 }}>
+                  <div style={{ width: '50%', height: 32, backgroundColor: 'var(--color-bg-primary)', border: '1px solid var(--color-border-default)', borderRadius: 2 }}></div>
+                  <div style={{ width: '50%', height: 32, backgroundColor: 'var(--color-bg-primary)', border: '1px solid var(--color-border-default)', borderRadius: 2 }}></div>
+                </div>
+                <div className="pdf-w-full pdf-border pdf-flex-col" style={{ height: 96, backgroundColor: 'var(--color-bg-primary)', borderRadius: 2, marginTop: 8, gap: 8, padding: 12, fontSize: 8, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)' }}>
+                  [SYSTEM_METADATA_BLOCK]
+                  <div style={{ width: '75%', height: 6, backgroundColor: 'var(--color-border-default)', marginTop: 4 }}></div>
+                  <div style={{ width: '50%', height: 6, backgroundColor: 'var(--color-border-default)', marginTop: 4 }}></div>
+                  <div style={{ width: '66%', height: 6, backgroundColor: 'var(--color-border-default)', marginTop: 4 }}></div>
+                </div>
+                <div style={{ marginTop: 'auto', paddingTop: 16 }}>
+                  <div className="pdf-w-full pdf-radius-full pdf-flex-row pdf-items-center pdf-justify-center pdf-overflow-hidden" style={{ height: 40, backgroundColor: 'var(--color-functional-red)' }}>
+                    <div style={{ width: 16, height: 16, backgroundColor: 'rgba(255,255,255,0.2)', borderRadius: '50%', marginRight: 8 }}></div>
                   </div>
-                  <div style={{ width: '100%', height: 96, backgroundColor: 'var(--color-bg-primary)', border: '1px solid var(--color-border-default)', borderRadius: 2, marginTop: 8, display: 'flex', flexDirection: 'column', gap: 8, padding: 12, fontSize: 8, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)' }}>
-                    [SYSTEM_METADATA_BLOCK]
-                    <div style={{ width: '75%', height: 6, backgroundColor: 'var(--color-border-default)', marginTop: 4 }}></div>
-                    <div style={{ width: '50%', height: 6, backgroundColor: 'var(--color-border-default)', marginTop: 4 }}></div>
-                    <div style={{ width: '66%', height: 6, backgroundColor: 'var(--color-border-default)', marginTop: 4 }}></div>
-                  </div>
-                    <div style={{ marginTop: 'auto', paddingTop: 16 }}>
-                    <div style={{ width: '100%', height: 40, borderRadius: 9999, backgroundColor: 'var(--color-functional-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
-                      <div style={{ width: 16, height: 16, backgroundColor: 'rgba(255,255,255,0.2)', borderRadius: '50%', marginRight: 8 }}></div>
-                      <span style={{ color: 'var(--color-bg-primary)', fontSize: 9, fontWeight: 'bold', letterSpacing: '0.05em' }}>PRIMARY ACTION</span>
-                    </div>
-                  </div>
+                </div>
               </div>
             </div>
 
             {/* PDF-DS RIGHT 75% */}
-            <div style={{ width: '75%', height: '100%', backgroundColor: 'var(--color-bg-primary)', display: 'flex', flexDirection: 'column', borderLeft: '1px solid rgba(226, 232, 240, 0.5)', position: 'relative' }}>
+            <div className="pdf-flex-col pdf-relative" style={{ width: '75%', height: '100%', backgroundColor: 'var(--color-bg-primary)', borderLeft: '1px solid rgba(226, 232, 240, 0.5)' }}>
               {/* Overlay Annotation */}
-              <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(29, 78, 216, 0.05)', border: '2px solid rgba(59, 130, 246, 0.5)', zIndex: 20, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
+              <div className="pdf-absolute pdf-inset-0 pdf-flex-col pdf-items-center pdf-justify-center" style={{ backgroundColor: 'rgba(29, 78, 216, 0.05)', border: '2px solid rgba(59, 130, 246, 0.5)', zIndex: 20, pointerEvents: 'none' }}>
                 <div style={{ backgroundColor: '#1d4ed8', color: 'var(--color-bg-primary)', fontFamily: 'var(--font-mono)', fontWeight: 'bold', fontSize: 12, padding: '6px 12px', borderRadius: 4, boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)' }}>
                   75% CONTENT CANVAS
                 </div>
@@ -95,48 +94,48 @@ export default function GoldenRatioSandbox() {
                 </div>
               </div>
 
-                {/* 75 Canvas Header */}
-                <div style={{ height: 56, display: 'flex', alignItems: 'center', padding: '0 32px', flexShrink: 0, justifyContent: 'flex-end', borderBottom: '1px solid var(--color-border-default)' }}>
-                  <span style={{ fontSize: 9, fontFamily: 'var(--font-mono)', color: 'var(--color-text-secondary)' }}>DATA CANVAS VIEW</span>
+              {/* 75 Canvas Header */}
+              <div className="pdf-flex-row pdf-items-center pdf-flex-shrink-0 pdf-border-bottom" style={{ height: 56, padding: '0 32px', justifyContent: 'flex-end' }}>
+                <span style={{ fontSize: 9, fontFamily: 'var(--font-mono)', color: 'var(--color-text-secondary)' }}>DATA CANVAS VIEW</span>
+              </div>
+              {/* 75 Canvas Body */}
+              <div style={{ flex: 1, padding: '32px 15% 32px 32px', display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 16 }}>
+                <div className="pdf-flex-row pdf-items-center pdf-border-bottom" style={{ gridColumn: 'span 2 / span 2', height: 48 }}>
+                  <div style={{ width: 192, height: 24, backgroundColor: 'var(--color-border-default)', borderRadius: 4 }}></div>
                 </div>
-                {/* 75 Canvas Body */}
-                <div style={{ flex: 1, padding: '32px 15% 32px 32px', display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 16 }}>
-                  <div style={{ gridColumn: 'span 2 / span 2', height: 48, display: 'flex', alignItems: 'center', borderBottom: '1px solid var(--color-border-default)' }}>
-                    <div style={{ width: 192, height: 24, backgroundColor: 'var(--color-border-default)', borderRadius: 4 }}></div>
-                  </div>
-                  <div style={{ backgroundColor: 'var(--color-bg-primary)', border: '1px solid var(--color-border-default)', boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)', height: 128, borderRadius: 8, padding: 16, display: 'flex', flexDirection: 'column', position: 'relative', overflow: 'hidden' }}>
-                    <div style={{ width: '33%', height: 16, backgroundColor: 'var(--color-border-default)', borderRadius: 4, marginBottom: 16 }}></div>
-                    <div style={{ width: '100%', borderBottom: '1px solid var(--color-border-default)', margin: '8px 0' }}></div>
-                    <div style={{ width: '100%', height: 8, backgroundColor: 'var(--color-bg-primary)', borderRadius: 4, marginBottom: 8 }}></div>
-                    <div style={{ width: '100%', height: 8, backgroundColor: 'var(--color-bg-primary)', borderRadius: 4, marginBottom: 8 }}></div>
-                    <div style={{ width: '66%', height: 8, backgroundColor: 'var(--color-bg-primary)', borderRadius: 4 }}></div>
-                  </div>
-                  <div style={{ backgroundColor: 'var(--color-bg-primary)', border: '1px solid var(--color-border-default)', boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)', height: 128, borderRadius: 8, padding: 16, display: 'flex', flexDirection: 'column', position: 'relative', overflow: 'hidden' }}>
-                    <div style={{ width: '33%', height: 16, backgroundColor: 'var(--color-border-default)', borderRadius: 4, marginBottom: 16 }}></div>
-                    <div style={{ width: '100%', borderBottom: '1px solid var(--color-border-default)', margin: '8px 0' }}></div>
-                    <div style={{ width: '100%', height: 8, backgroundColor: 'var(--color-bg-primary)', borderRadius: 4, marginBottom: 8 }}></div>
-                    <div style={{ width: '100%', height: 8, backgroundColor: 'var(--color-bg-primary)', borderRadius: 4, marginBottom: 8 }}></div>
-                    <div style={{ width: '66%', height: 8, backgroundColor: 'var(--color-bg-primary)', borderRadius: 4 }}></div>
-                  </div>
+                <div className="pdf-border pdf-flex-col pdf-relative pdf-overflow-hidden" style={{ backgroundColor: 'var(--color-bg-primary)', boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)', height: 128, borderRadius: 8, padding: 16 }}>
+                  <div style={{ width: '33%', height: 16, backgroundColor: 'var(--color-border-default)', borderRadius: 4, marginBottom: 16 }}></div>
+                  <div style={{ width: '100%', borderBottom: '1px solid var(--color-border-default)', margin: '8px 0' }}></div>
+                  <div style={{ width: '100%', height: 8, backgroundColor: 'var(--color-bg-primary)', borderRadius: 4, marginBottom: 8 }}></div>
+                  <div style={{ width: '100%', height: 8, backgroundColor: 'var(--color-bg-primary)', borderRadius: 4, marginBottom: 8 }}></div>
+                  <div style={{ width: '66%', height: 8, backgroundColor: 'var(--color-bg-primary)', borderRadius: 4 }}></div>
                 </div>
+                <div className="pdf-border pdf-flex-col pdf-relative pdf-overflow-hidden" style={{ backgroundColor: 'var(--color-bg-primary)', boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)', height: 128, borderRadius: 8, padding: 16 }}>
+                  <div style={{ width: '33%', height: 16, backgroundColor: 'var(--color-border-default)', borderRadius: 4, marginBottom: 16 }}></div>
+                  <div style={{ width: '100%', borderBottom: '1px solid var(--color-border-default)', margin: '8px 0' }}></div>
+                  <div style={{ width: '100%', height: 8, backgroundColor: 'var(--color-bg-primary)', borderRadius: 4, marginBottom: 8 }}></div>
+                  <div style={{ width: '100%', height: 8, backgroundColor: 'var(--color-bg-primary)', borderRadius: 4, marginBottom: 8 }}></div>
+                  <div style={{ width: '66%', height: 8, backgroundColor: 'var(--color-bg-primary)', borderRadius: 4 }}></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* OS Bottom: Windows Taskbar */}
-        <div style={{ height: 40, backgroundColor: '#09090b', width: '100%', flexShrink: 0, display: 'flex', alignItems: 'center', padding: '0 8px', justifyContent: 'space-between', zIndex: 30, boxShadow: 'inset 0 0 0 1px rgba(0,0,0,0.5)' }}>
-           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-             <div style={{ width: 24, height: 24, borderRadius: 4, backgroundColor: 'rgba(59, 130, 246, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#60a5fa', fontSize: 10 }}>W</div>
-             <div style={{ width: 24, height: 24, borderRadius: 4, backgroundColor: '#09090b' }}></div>
-             <div style={{ width: 24, height: 24, borderRadius: 4, backgroundColor: '#09090b', borderBottom: '2px solid #60a5fa', boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)' }}></div>
-           </div>
-           <div style={{ display: 'flex', gap: 12, fontSize: 8, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)', alignItems: 'center' }}>
-             <span>ENG</span>
-             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', lineHeight: 1.2 }}>
-               <span>12:00 PM</span>
-               <span>2024-05-23</span>
-             </div>
-           </div>
+        <div className="pdf-w-full pdf-flex-shrink-0 pdf-flex-row pdf-items-center pdf-justify-between" style={{ height: 40, backgroundColor: '#09090b', padding: '0 8px', zIndex: 30, boxShadow: 'inset 0 0 0 1px rgba(0,0,0,0.5)' }}>
+          <div className="pdf-flex-row pdf-items-center" style={{ gap: 8 }}>
+            <div className="pdf-flex-row pdf-items-center pdf-justify-center" style={{ width: 24, height: 24, borderRadius: 4, backgroundColor: 'rgba(59, 130, 246, 0.2)', color: '#60a5fa', fontSize: 10 }}>W</div>
+            <div style={{ width: 24, height: 24, borderRadius: 4, backgroundColor: '#09090b' }}></div>
+            <div style={{ width: 24, height: 24, borderRadius: 4, backgroundColor: '#09090b', borderBottom: '2px solid #60a5fa', boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)' }}></div>
+          </div>
+          <div className="pdf-flex-row pdf-items-center" style={{ gap: 12, fontSize: 8, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)' }}>
+            <span>ENG</span>
+            <div className="pdf-flex-col pdf-items-end" style={{ lineHeight: 1.2 }}>
+              <span>12:00 PM</span>
+              <span>2024-05-23</span>
+            </div>
+          </div>
         </div>
       </div>
       <p className="pdf-text-copy-14 pdf-text-muted pdf-mt-200" style={{ fontSize: '10px', textAlign: 'center' }}>

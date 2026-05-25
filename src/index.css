@@ -266,7 +266,6 @@ button {
 
 .pdf-btn-primary:hover {
   background-color: var(--color-red-hover);
-  border-radius: 12px;
 }
 
 .pdf-btn-primary:active {
@@ -526,6 +525,46 @@ button {
 .pdf-list-disc li {
   margin-bottom: var(--space-100);
 }
+
+
+/* Layout & Position */
+.pdf-relative { position: relative; }
+.pdf-absolute { position: absolute; }
+.pdf-fixed { position: fixed; }
+.pdf-inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+.pdf-inset-center { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.pdf-w-full { width: 100%; }
+.pdf-h-full { height: 100%; }
+.pdf-flex-wrap { flex-wrap: wrap; }
+.pdf-flex-shrink-0 { flex-shrink: 0; }
+.pdf-overflow-hidden { overflow: hidden; }
+
+/* Typography */
+.pdf-font-bold { font-weight: bold; }
+.pdf-text-center { text-align: center; }
+.pdf-text-right { text-align: right; }
+
+/* Visuals & Shapes */
+.pdf-radius-sm { border-radius: 4px; }
+.pdf-radius-md { border-radius: 8px; }
+.pdf-radius-lg { border-radius: 16px; }
+.pdf-radius-full { border-radius: 50%; }
+.pdf-bg-red { background-color: var(--color-functional-red); }
+
+/* Shadows */
+.pdf-shadow-bevel { box-shadow: var(--shadow-hardware-bevel); }
+.pdf-shadow-bevel-active { box-shadow: var(--shadow-hardware-bevel-active); }
+.pdf-shadow-glow { box-shadow: var(--shadow-functional-glow); }
+.pdf-shadow-glow-active { box-shadow: var(--shadow-functional-glow-active); }
+
+/* Interaction */
+.pdf-cursor-pointer { cursor: pointer; }
+.pdf-pointer-events-none { pointer-events: none; }
+
+/* Additional Padding */
+.pdf-p-050 { padding: var(--space-050); }
+.pdf-p-100 { padding: var(--space-100); }
+.pdf-p-150 { padding: var(--space-150); }
 
 
 /* ==========================================================================

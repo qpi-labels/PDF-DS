@@ -28,21 +28,18 @@ export default function ModalSandbox() {
 
       {/* Modal Overlay Simulation */}
       {isOpen && (
-        <div style={{
-          position: 'fixed',
-          top: 0, left: 0, right: 0, bottom: 0,
-          backgroundColor: 'rgba(0,0,0,0.5)',
-          zIndex: 9999,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}>
+        <div 
+          className="pdf-fixed pdf-inset-0 pdf-flex-row pdf-items-center pdf-justify-center"
+          style={{
+            backgroundColor: 'rgba(0,0,0,0.5)',
+            zIndex: 9999
+          }}
+        >
           {/* Modal Container */}
           <div 
-            className="pdf-animate-fade-in"
+            className="pdf-animate-fade-in pdf-radius-lg"
             style={{
               backgroundColor: 'var(--color-bg-primary)',
-              borderRadius: '16px',
               padding: 'var(--space-400)',
               width: '90%',
               maxWidth: '400px',

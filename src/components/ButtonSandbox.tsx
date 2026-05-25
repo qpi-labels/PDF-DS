@@ -24,10 +24,10 @@ export default function ButtonSandbox() {
     <div className="pdf-panel">
       <div className="pdf-panel-header pdf-flex-row pdf-justify-between pdf-items-center">
         <div>
-          <span className="pdf-text-label-14-mono pdf-text-red pdf-mb-100" style={{ display: 'block', fontWeight: 'bold' }}>
+          <span className="pdf-text-label-14-mono pdf-text-red pdf-mb-100 pdf-font-bold" style={{ display: 'block' }}>
             CH.5 INTERACTIVE SANDBOX
           </span>
-          <h4 className="pdf-text-label-16" style={{ fontWeight: 'bold' }}>
+          <h4 className="pdf-text-label-16 pdf-font-bold">
             초정밀 햅틱 버튼 및 형태 모핑(Shape Morphing) 조율기
           </h4>
         </div>
@@ -39,7 +39,7 @@ export default function ButtonSandbox() {
       </p>
 
       {/* Button Controller toolbar */}
-      <div className="pdf-flex-row pdf-items-center pdf-justify-between pdf-gap-150 pdf-bg-secondary pdf-p-150 pdf-border pdf-mb-300" style={{ borderRadius: 8 }}>
+      <div className="pdf-flex-row pdf-items-center pdf-justify-between pdf-gap-150 pdf-bg-secondary pdf-p-150 pdf-border pdf-mb-300 pdf-radius-md">
         <div className="pdf-flex-row pdf-items-center pdf-gap-100">
           <button 
             onClick={() => setShowTargets(!showTargets)}
@@ -66,20 +66,19 @@ export default function ButtonSandbox() {
           return (
             <div 
               key={cfg.size}
-              className="pdf-flex-row pdf-items-center pdf-justify-between pdf-border-bottom pdf-pb-200"
-              style={{ flexWrap: 'wrap', gap: '16px' }}
+              className="pdf-flex-row pdf-items-center pdf-justify-between pdf-border-bottom pdf-pb-200 pdf-flex-wrap pdf-gap-200"
             >
               <div className="pdf-font-mono" style={{ flex: '1 1 20%', minWidth: '120px' }}>
-                <span className="pdf-text-copy-14" style={{ fontWeight: 'bold', display: 'block' }}>{cfg.size}</span>
+                <span className="pdf-text-copy-14 pdf-font-bold" style={{ display: 'block' }}>{cfg.size}</span>
                 <span className="pdf-text-muted" style={{ fontSize: '10px', display: 'block' }}>표준 높이: {cfg.height} | Padding: {cfg.padding}</span>
               </div>
 
               {/* Outer Wrapper for Target testing */}
-              <div className="pdf-flex-row pdf-items-center pdf-justify-center pdf-border" style={{ flex: '1 1 40%', minHeight: '72px', backgroundColor: 'var(--color-bg-secondary)', borderRadius: 8, position: 'relative', overflow: 'hidden' }}>
+              <div className="pdf-flex-row pdf-items-center pdf-justify-center pdf-border pdf-bg-secondary pdf-radius-md pdf-relative pdf-overflow-hidden" style={{ flex: '1 1 40%', minHeight: '72px' }}>
                 {/* 48x48dp Bounding target line overlay */}
                 {showTargets && (cfg.height === '32px' || cfg.height === '40px') && (
-                  <div style={{ position: 'absolute', width: '48px', height: '48px', border: '1px dashed var(--color-functional-red)', opacity: 0.6, display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: 4 }}>
-                    <span style={{ position: 'absolute', top: '-14px', fontSize: '8px', fontFamily: 'var(--font-mono)', color: 'var(--color-functional-red)', backgroundColor: 'var(--color-bg-primary)', padding: '0 4px', fontWeight: 'bold' }}>48&times;48px TARGET</span>
+                  <div className="pdf-absolute pdf-radius-sm" style={{ width: '48px', height: '48px', border: '1px dashed var(--color-functional-red)', opacity: 0.6, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <span className="pdf-absolute pdf-font-bold" style={{ top: '-14px', fontSize: '8px', fontFamily: 'var(--font-mono)', color: 'var(--color-functional-red)', backgroundColor: 'var(--color-bg-primary)', padding: '0 4px' }}>48&times;48px TARGET</span>
                   </div>
                 )}
 
@@ -122,18 +121,18 @@ export default function ButtonSandbox() {
               </div>
 
               {/* Dynamic Formula Specs details */}
-              <div className="pdf-font-mono pdf-bg-secondary pdf-p-100" style={{ flex: '1 1 30%', borderRadius: 4, fontSize: '9px', color: 'var(--color-text-secondary)', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+              <div className="pdf-font-mono pdf-bg-secondary pdf-p-100 pdf-radius-sm pdf-flex-col" style={{ flex: '1 1 30%', fontSize: '9px', color: 'var(--color-text-secondary)', gap: '4px' }}>
                 <div className="pdf-flex-row pdf-justify-between">
                   <span>Rest 코너 반경:</span>
-                  <span style={{ color: 'var(--color-text-primary)', fontWeight: 'bold' }}>{cfg.restRadius === 9999 ? 'Fully Rounded (원형)' : `${cfg.restRadius}px`}</span>
+                  <span className="pdf-font-bold" style={{ color: 'var(--color-text-primary)' }}>{cfg.restRadius === 9999 ? 'Fully Rounded (원형)' : `${cfg.restRadius}px`}</span>
                 </div>
                 <div className="pdf-flex-row pdf-justify-between">
                   <span>Hover 코너 반경:</span>
-                  <span style={{ color: 'var(--color-functional-red)', fontWeight: 'bold' }}>{cfg.hoverRadius}px (Soft Square)</span>
+                  <span className="pdf-font-bold" style={{ color: 'var(--color-functional-red)' }}>{cfg.hoverRadius}px (Soft Square)</span>
                 </div>
                 <div className="pdf-flex-row pdf-justify-between">
                   <span>Pressed 코너 반경:</span>
-                  <span style={{ color: 'var(--color-text-primary)', fontWeight: 'bold' }}>{cfg.pressedRadius}px (Sharp Square)</span>
+                  <span className="pdf-font-bold" style={{ color: 'var(--color-text-primary)' }}>{cfg.pressedRadius}px (Sharp Square)</span>
                 </div>
               </div>
             </div>
