@@ -109,12 +109,11 @@ export default function ButtonSandbox() {
                   }}
                   whileTap={{
                     borderRadius: `${cfg.pressedRadius}px`,
-                    backgroundColor: 'var(--color-red-active)',
-                    scale: 0.97
+                    backgroundColor: 'var(--color-red-active)'
                   }}
                   transition={{
-                    borderRadius: { type: 'spring', damping: 10, stiffness: 220 },
-                    backgroundColor: { duration: 0.15 }
+                    borderRadius: { ease: [0.4, 0, 0.2, 1], duration: 0.28 },
+                    backgroundColor: { ease: "easeOut", duration: 0.2 }
                   }}
                 >
                   <Zap style={{ width: 12, height: 12, color: 'var(--color-functional-red)', filter: 'brightness(1.5)' }} />

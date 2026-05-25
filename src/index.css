@@ -47,7 +47,7 @@
 
   /* 1.6. Typography */
   --font-sans: "Pretendard Variable", Pretendard, "Geist Sans", -apple-system, sans-serif;
-  --font-mono: "JetBrains Mono", "Geist Mono", "Nanum Gothic Coding", SFMono-Regular, monospace;
+  --font-mono: "JetBrains Mono", var(--font-sans);
 
   /* 1.6. Patterns */
   --blueprint-grid-pattern: 
@@ -154,8 +154,34 @@ button {
 
 @media (min-width: 1200px) {
   .pdf-sidebar {
-    width: 38%;
+    width: 25%;
     height: 100%;
+  }
+}
+
+@media (max-width: 1199px) {
+  .pdf-sidebar {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80vh;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    box-shadow: 0 -4px 24px rgba(0,0,0,0.15);
+    z-index: 1001; /* Above the overlay */
+    border-right: none;
+    border-top: 1px solid var(--color-border-default);
+  }
+  .pdf-sidebar.mobile-nav-open {
+    display: flex;
+    animation: slideUpNav 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  @keyframes slideUpNav {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
   }
 }
 
@@ -163,13 +189,37 @@ button {
   flex: 1;
   background-color: var(--color-bg-primary);
   overflow-y: auto;
-  padding: var(--space-300) var(--space-200);
 }
 
 @media (min-width: 1200px) {
   .pdf-main-view {
-    width: 62%;
+    width: 75%;
+    padding: 0;
+    background-color: var(--bg-sidebar);
+    background-image: var(--blueprint-grid-pattern);
+    background-size: 24px 24px;
+    background-position: top left;
+  }
+  .pdf-main-content {
+    width: 85%;
+    max-width: 1000px;
+    border-right: 1px solid var(--color-border-default);
     padding: var(--space-400) var(--space-600);
+    min-height: 100%;
+    background-color: var(--color-bg-primary);
+  }
+}
+
+@media (max-width: 1199px) {
+  .pdf-main-view {
+    width: 100%;
+    padding: 0;
+  }
+  .pdf-main-content {
+    width: 100%;
+    border-right: none;
+    padding: var(--space-400) var(--space-300);
+    background-color: var(--color-bg-primary);
   }
 }
 
@@ -288,9 +338,57 @@ button {
   color: var(--color-text-primary);
 }
 
-.pdf-nav-item:hover:not(.active) {
+.pdf-nav-item:hover:not(.active):not(.disabled) {
   background-color: var(--color-bg-secondary);
   color: var(--color-text-primary);
+}
+
+.pdf-nav-item.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pdf-nav-group-header {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--color-text-primary);
+  padding: var(--space-150) var(--space-150) var(--space-050) var(--space-150);
+  margin-top: var(--space-150);
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+.pdf-nav-group-header:hover {
+  color: var(--color-functional-red);
+}
+
+.pdf-chevron {
+  width: 12px;
+  height: 12px;
+  transition: transform 0.2s ease;
+  fill: currentColor;
+}
+
+.pdf-chevron.collapsed {
+  transform: rotate(-90deg);
+}
+
+.pdf-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  font-size: 10px;
+  font-family: var(--font-mono);
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border-default);
+  border-radius: 4px;
+  margin-left: 8px;
 }
 
 /* Advanced Grid Background */

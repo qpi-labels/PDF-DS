@@ -3,9 +3,9 @@ import { Columns, Maximize2, Monitor, Tablet, Smartphone } from 'lucide-react';
 
 export default function SplitSandbox() {
   const [viewportMode, setViewportMode] = useState<'desktop' | 'tablet' | 'mobile'>('desktop');
-  const [splitRatio, setSplitRatio] = useState<number>(38);
+  const [splitRatio, setSplitRatio] = useState<number>(25);
   const [isSidebarHidden, setIsSidebarHidden] = useState<boolean>(false);
-  const [savedRatio, setSavedRatio] = useState<number>(38);
+  const [savedRatio, setSavedRatio] = useState<number>(25);
 
   const changeRatioDirectly = (val: number) => {
     setSplitRatio(val);
@@ -46,7 +46,7 @@ export default function SplitSandbox() {
       </div>
 
       <p className="pdf-text-copy-14 pdf-text-muted pdf-mb-300">
-        PDF-DS 규격에 따른 황금 비대칭 배치(38:62)를 시뮬레이션할 수 있습니다. <strong>스플리터 제어바</strong>를 사용해 슬라이스 비율을 조율해 보세요. 드래그 조율 범위는 <strong>시스템 제한 수칙(20% ~ 50%)</strong> 내부로 자동 제약됩니다. 더블 클릭하여 사이드바의 완전 축소(Collapse) 상태를 점진 도약시킬 수도 있습니다.
+        PDF-DS 규격에 따른 황금 비대칭 배치(25:75)를 시뮬레이션할 수 있습니다. <strong>스플리터 제어바</strong>를 사용해 슬라이스 비율을 조율해 보세요. 드래그 조율 범위는 <strong>시스템 제한 수칙(20% ~ 50%)</strong> 내부로 자동 제약됩니다. 더블 클릭하여 사이드바의 완전 축소(Collapse) 상태를 점진 도약시킬 수도 있습니다.
       </p>
 
       <div className="pdf-flex-row pdf-items-center pdf-justify-between pdf-border-bottom pdf-pb-200 pdf-mb-200" style={{ flexWrap: 'wrap', gap: '16px' }}>
@@ -142,11 +142,11 @@ export default function SplitSandbox() {
                 <div style={{ width: 2, height: 24, backgroundColor: 'var(--color-border-hover)', borderRadius: 2 }} />
               </div>
 
-              <div style={{ flex: 1, padding: '12px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', backgroundColor: 'var(--color-bg-primary)', overflow: 'hidden' }}>
+              <div style={{ flex: 1, padding: '12px 15% 12px 12px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', backgroundColor: 'var(--color-bg-primary)', overflow: 'hidden' }}>
                 <div>
                   <span className="pdf-text-copy-14" style={{ fontWeight: 'bold' }}>코어 캔버스 ({100 - splitRatio}%)</span>
                   <p className="pdf-text-copy-14 pdf-text-muted" style={{ fontSize: '10px', marginTop: 4 }}>
-                    이곳은 주 작업 스페이스 영역으로 스플릿 비율에 따라 유동적인 반응형 리플로우가 적용됩니다. 황금 분할인 38:62 상태에서 가장 이상적인 가독 호흡을 보장합니다.
+                    이곳은 주 작업 스페이스 영역으로 스플릿 비율에 따라 유동적인 반응형 리플로우가 적용됩니다. 황금 분할인 25:75 상태에서 가장 이상적인 가독 호흡을 보장합니다.
                   </p>
                 </div>
                 <div className="pdf-flex-row pdf-justify-between pdf-border-top pdf-pt-100 pdf-text-label-14-mono pdf-text-muted" style={{ fontSize: '9px' }}>
@@ -201,16 +201,16 @@ export default function SplitSandbox() {
 
           <div className="pdf-flex-row pdf-justify-center pdf-gap-100 pdf-mt-200">
             <button 
-              onClick={() => changeRatioDirectly(38)}
+              onClick={() => changeRatioDirectly(25)}
               className="pdf-text-label-14-mono"
               style={{
                 padding: '4px 8px', border: '1px solid', borderRadius: 4, cursor: 'pointer', fontSize: '10px',
-                backgroundColor: splitRatio === 38 ? 'var(--color-functional-red)' : 'var(--color-bg-primary)',
-                color: splitRatio === 38 ? 'var(--color-bg-primary)' : 'var(--color-text-secondary)',
-                borderColor: splitRatio === 38 ? 'var(--color-functional-red)' : 'var(--color-border-default)'
+                backgroundColor: splitRatio === 25 ? 'var(--color-functional-red)' : 'var(--color-bg-primary)',
+                color: splitRatio === 25 ? 'var(--color-bg-primary)' : 'var(--color-text-secondary)',
+                borderColor: splitRatio === 25 ? 'var(--color-functional-red)' : 'var(--color-border-default)'
               }}
             >
-              황금 가이드 38:62 적용
+              황금 가이드 25:75 적용
             </button>
             <button 
               onClick={() => changeRatioDirectly(30)}

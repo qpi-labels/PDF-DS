@@ -9,7 +9,7 @@ export default function GoldenRatioSandbox() {
             CH.5 BLUEPRINT FORMAT
           </span>
           <h4 className="pdf-text-label-16" style={{ fontWeight: 'bold', marginTop: 4 }}>
-            38:62 비대칭 황금 분할 (Asymmetric Golden Ratio)
+            25:75 비대칭 황금 분할 (Asymmetric Golden Ratio)
           </h4>
         </div>
       </div>
@@ -44,12 +44,12 @@ export default function GoldenRatioSandbox() {
             
           {/* PDF-DS LAYOUT */}
           <div style={{ width: '100%', flex: 1, display: 'flex', position: 'relative', animation: 'fadeIn 0.5s' }}>
-            {/* PDF-DS LEFT 38% */}
-            <div style={{ width: '38%', backgroundColor: 'var(--color-bg-primary)', borderRight: '1px solid var(--color-border-hover)', height: '100%', display: 'flex', flexDirection: 'column', position: 'relative' }} className="pdf-golden-ratio-panel">
+            {/* PDF-DS LEFT 25% */}
+            <div style={{ width: '25%', backgroundColor: 'var(--color-bg-primary)', borderRight: '1px solid var(--color-border-hover)', height: '100%', display: 'flex', flexDirection: 'column', position: 'relative' }} className="pdf-golden-ratio-panel">
               {/* Overlay Annotation (Using CSS for hover in a real app, here we simulate with inline style structure if possible or rely on standard CSS. Since inline hover is not possible, we use a global class `.pdf-golden-ratio-panel:hover .pdf-annotation-overlay` which we can define in index.css if needed, but since we can't use tailwind group-hover easily inline, I will use pure CSS for the overlay in index.css or simple static display. Let's make it static but semi-transparent for the sandbox effect.) */}
               <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(173, 29, 29, 0.05)', border: '2px solid rgba(173, 29, 29, 0.5)', zIndex: 20, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
                 <div style={{ backgroundColor: 'var(--color-functional-red)', color: 'var(--color-bg-primary)', fontFamily: 'var(--font-mono)', fontWeight: 'bold', fontSize: 12, padding: '6px 12px', borderRadius: 4, boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)' }}>
-                  38% CONTROL PANEL
+                  25% CONTROL PANEL
                 </div>
                 <div style={{ fontSize: 10, color: 'var(--color-functional-red)', fontWeight: 'bold', backgroundColor: 'rgba(255,255,255,0.9)', padding: '0 8px', marginTop: 8, borderRadius: 4, border: '1px solid var(--color-functional-red)' }}>
                   Geist Mono / #F4F4F5 / Fixed
@@ -83,24 +83,24 @@ export default function GoldenRatioSandbox() {
               </div>
             </div>
 
-            {/* PDF-DS RIGHT 62% */}
-            <div style={{ width: '62%', height: '100%', backgroundColor: 'var(--color-bg-primary)', display: 'flex', flexDirection: 'column', borderLeft: '1px solid rgba(226, 232, 240, 0.5)', position: 'relative' }}>
+            {/* PDF-DS RIGHT 75% */}
+            <div style={{ width: '75%', height: '100%', backgroundColor: 'var(--color-bg-primary)', display: 'flex', flexDirection: 'column', borderLeft: '1px solid rgba(226, 232, 240, 0.5)', position: 'relative' }}>
               {/* Overlay Annotation */}
               <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(29, 78, 216, 0.05)', border: '2px solid rgba(59, 130, 246, 0.5)', zIndex: 20, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
                 <div style={{ backgroundColor: '#1d4ed8', color: 'var(--color-bg-primary)', fontFamily: 'var(--font-mono)', fontWeight: 'bold', fontSize: 12, padding: '6px 12px', borderRadius: 4, boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)' }}>
-                  62% CONTENT CANVAS
+                  75% CONTENT CANVAS
                 </div>
                 <div style={{ fontSize: 10, color: '#1d4ed8', fontWeight: 'bold', backgroundColor: 'rgba(255,255,255,0.9)', padding: '0 8px', marginTop: 8, borderRadius: 4, border: '1px solid #bfdbfe' }}>
                   Pretendard / #FFFFFF / Scrollable
                 </div>
               </div>
 
-                {/* 62 Canvas Header */}
+                {/* 75 Canvas Header */}
                 <div style={{ height: 56, display: 'flex', alignItems: 'center', padding: '0 32px', flexShrink: 0, justifyContent: 'flex-end', borderBottom: '1px solid var(--color-border-default)' }}>
                   <span style={{ fontSize: 9, fontFamily: 'var(--font-mono)', color: 'var(--color-text-secondary)' }}>DATA CANVAS VIEW</span>
                 </div>
-                {/* 62 Canvas Body */}
-                <div style={{ flex: 1, padding: 32, display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 16 }}>
+                {/* 75 Canvas Body */}
+                <div style={{ flex: 1, padding: '32px 15% 32px 32px', display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 16 }}>
                   <div style={{ gridColumn: 'span 2 / span 2', height: 48, display: 'flex', alignItems: 'center', borderBottom: '1px solid var(--color-border-default)' }}>
                     <div style={{ width: 192, height: 24, backgroundColor: 'var(--color-border-default)', borderRadius: 4 }}></div>
                   </div>
@@ -140,7 +140,7 @@ export default function GoldenRatioSandbox() {
         </div>
       </div>
       <p className="pdf-text-copy-14 pdf-text-muted pdf-mt-200" style={{ fontSize: '10px', textAlign: 'center' }}>
-        * 38:62 정밀 할당 영역을 나타냅니다.
+        * 25:75 정밀 할당 영역을 나타냅니다.
       </p>
     </div>
   );

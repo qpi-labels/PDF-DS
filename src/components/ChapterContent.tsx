@@ -1,6 +1,6 @@
 import React from 'react';
 
-// Import our custom interactive sandboxes (will be refactored next)
+// Import our custom interactive sandboxes
 import GridSandbox from './GridSandbox';
 import AlignmentSandbox from './AlignmentSandbox';
 import TypographySandbox from './TypographySandbox';
@@ -12,6 +12,12 @@ import SplitSandbox from './SplitSandbox';
 import CodeExport from './CodeExport';
 import QASandbox from './QASandbox';
 
+// New Components
+import MaterialSandbox from './MaterialSandbox';
+import FormSandbox from './FormSandbox';
+import ModalSandbox from './ModalSandbox';
+import NavigationSandbox from './NavigationSandbox';
+
 interface ChapterProps {
   activeChapter: number;
 }
@@ -19,17 +25,88 @@ interface ChapterProps {
 export default function ChapterContent({ activeChapter }: ChapterProps) {
   return (
     <div className="pdf-animate-fade-in">
-      
-      {/* CHAPTER 1 */}
+
+      {/* 1. Philosophy */}
       {activeChapter === 1 && (
         <section id="ch-1">
+          <div className="pdf-mb-400" style={{ textAlign: 'center', padding: 'var(--space-600) 0' }}>
+            <span className="pdf-text-label-14-mono pdf-text-red pdf-mb-200" style={{ display: 'inline-block' }}>
+              PHYSICAL-DIGITAL FUSION DESIGN SYSTEM
+            </span>
+            <h1 className="pdf-mb-300" style={{ fontSize: '64px', lineHeight: '1.1', fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--color-text-primary)' }}>
+              물리적 촉각을 지닌<br />디지털 설계 언어
+            </h1>
+            <p className="pdf-text-copy-14 pdf-text-muted" style={{ fontSize: '18px', lineHeight: '1.6', maxWidth: '600px', margin: '0 auto' }}>
+              디터 람스의 철학과 하드웨어적 정밀함을 웹 환경에 완벽히 이식한 통합 디자인 시스템입니다. 복잡한 스타일링 없이, 선언적인 구조와 엄격한 여백만으로 극한의 정밀함을 달성하세요.
+            </p>
+          </div>
+
           <div className="pdf-mb-300">
-            <h2 className="pdf-text-heading-32 pdf-mb-100">1. PDF-DS 시작하기 및 설치 가이드</h2>
+            <p className="pdf-text-copy-14 pdf-text-muted">
+              현대 소프트웨어 공학에서 사용자 인터페이스는 단순히 화면에 요소를 렌더링하는 것을 넘어, 하드웨어가 가진 물리적 인지성과 촉각적 정직성을 디지털 공간으로 확장하는 다리 역할을 수행해야 한다.
+            </p>
+          </div>
+          <div className="pdf-mb-300">
+            <p className="pdf-text-copy-14">
+              본 디자인 시스템(Physical-Digital Fusion Design System, 이하 PDF-DS)은 20세기 산업 디자인의 거장 디터 람스의 설계 철학과 현대 디지털 제품 설계 방법론을 유기적으로 결합하여 탄생하였다. 디터 람스의 10대 디자인 원칙은 제품의 유용성, 심미성, 이해 가능성, 신뢰성, 지속 가능성, 그리고 불필요한 장식을 배제한 '최소한의 디자인'을 극대화하는 것에 초점을 맞춘다.
+            </p>
+            <br />
+            <p className="pdf-text-copy-14">
+              물리적 감각을 디지털 인터페이스로 전이하는 과정에서는 바우어앤윌킨스의 사운드 엔지니어링 미학과 틴에이지 엔지니어링의 정밀한 촉각적 상호작용 방식이 핵심적인 이정표를 제공한다.
+            </p>
+            <br />
+            <p className="pdf-text-copy-14">
+              PDF-DS는 이러한 물리적 엔지니어링 사상을 디지털 디자인 언어로 계승한다. 스크린 내부의 요소들을 단순한 이미지나 가상의 레이어로 취급하지 않고, 명확한 두께를 가진 경계선과 규칙적인 격자 체계 위에 정렬된 독립적인 조작기(Manipulator)로 정의한다.
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* 2. System Architecture */}
+      {activeChapter === 2 && (
+        <section id="ch-2">
+          <h2 className="pdf-text-label-16 pdf-mb-200">기존 웹의 추상화 위기와 렌더링 파편화</h2>
+          <div className="pdf-mb-300">
+            <p className="pdf-text-copy-14 pdf-text-muted">
+              현대의 프론트엔드 생태계는 무수한 유틸리티 클래스와 CSS-in-JS 라이브러리들로 인해 추상화의 늪에 빠져 있습니다. 버튼 하나를 그리기 위해 수십 개의 런타임 연산이 발생하며, 이는 결과적으로 예측하기 힘든 렌더링 파편화 현상으로 이어집니다.
+            </p>
+          </div>
+
+          <h2 className="pdf-text-label-16 pdf-mb-200">PDF-DS의 단일 레이어 아키텍처 (Single-Layer Architecture)</h2>
+          <div className="pdf-mb-300">
+            <p className="pdf-text-copy-14">
+              PDF-DS는 이러한 복잡성을 완전히 제거합니다. 우리는 스타일을 컴포넌트에 종속시키거나 자바스크립트로 계산하지 않습니다. <strong>단 하나의 순수 CSS 파일(`index.css`)</strong> 내부에 모든 토큰, 스케일, 머티리얼, 레이아웃 규칙을 선언적으로 컴파일해 두었습니다.
+            </p>
+            <br />
+            <p className="pdf-text-copy-14">
+              프레임워크(React, Vue, Svelte)에 상관없이, 심지어 프레임워크가 없는 순수 HTML 환경에서도 브라우저의 네이티브 렌더링 엔진과 직접 맞닿아 100% 동일한 시각적 무결성을 보장합니다. 이것이 바로 물리적 장비의 회로 기판을 짜는 것과 같은 <strong>'설계의 정직성'</strong>입니다.
+            </p>
+          </div>
+
+          <h2 className="pdf-text-label-16 pdf-mb-200">CSS Custom Properties를 통한 실시간 동역학 제어</h2>
+          <div className="pdf-mb-300">
+            <p className="pdf-text-copy-14">
+              PDF-DS 아키텍처의 핵심은 최상단 <code>:root</code>에 정의된 수백 개의 CSS 변수(Custom Properties)입니다. 다크 모드 전환, 고대비 모드 등의 테마 변경은 자바스크립트 리렌더링 없이 브라우저의 하드웨어 가속을 받는 CSS 변수 스왑만으로 즉각적으로 처리됩니다.
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* 3. Installation */}
+      {activeChapter === 3 && (
+        <section id="ch-3">
+          <div className="pdf-mb-300">
             <p className="pdf-text-copy-14 pdf-text-muted">
               PDF-DS(Physical-Digital Fusion Design System)는 별도의 프레임워크나 빌드 도구 없이, 오직 CSS 파일 하나만으로도 완벽한 디자인 시스템을 구축할 수 있도록 설계되었습니다.
             </p>
           </div>
-
+          <div className="pdf-mb-300">
+            <h3 className="pdf-text-label-16 pdf-mb-100">디자인 토큰 추출기 (Code Export)</h3>
+            <p className="pdf-text-copy-14 pdf-mb-100">
+              현재 활성화된 테마 및 시스템 토큰을 프로젝트에 적용하기 위해 CSS 변수 코드를 내보냅니다.
+            </p>
+            <CodeExport />
+          </div>
           <div className="pdf-mb-300">
             <h3 className="pdf-text-label-16 pdf-mb-100">설치 및 로드 방법 (CDN)</h3>
             <p className="pdf-text-copy-14 pdf-mb-100">
@@ -49,7 +126,7 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
               CSS를 로드한 후, 아래의 HTML 구조를 사용하여 즉시 PDF-DS 앱 레이아웃을 구성할 수 있습니다.
             </p>
             <div className="pdf-code-block pdf-mb-100" style={{ whiteSpace: 'pre-wrap' }}>
-{`<!-- 전체 앱 컨테이너 -->
+              {`<!-- 전체 앱 컨테이너 -->
 <div class="pdf-app">
   <!-- 좌측 사이드바 -->
   <aside class="pdf-sidebar">
@@ -70,143 +147,108 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
         </section>
       )}
 
-      {/* CHAPTER 2 */}
-      {activeChapter === 2 && (
-        <section id="ch-2">
+      {/* 4. Blueprint Grid & Spacing */}
+      {activeChapter === 4 && (
+        <section id="ch-4">
           <div className="pdf-mb-300">
-            <h2 className="pdf-text-heading-32 pdf-mb-100">2. 철학적 토대와 시스템 미학의 융합</h2>
-            <p className="pdf-text-copy-14 pdf-text-muted">
-              현대 소프트웨어 공학에서 사용자 인터페이스는 단순히 화면에 요소를 렌더링하는 것을 넘어, 하드웨어가 가진 물리적 인지성과 촉각적 정직성을 디지털 공간으로 확장하는 다리 역할을 수행해야 한다.
-            </p>
-          </div>
-
-          <div className="pdf-mb-300">
-            <p className="pdf-text-copy-14">
-              본 디자인 시스템(Physical-Digital Fusion Design System, 이하 PDF-DS)은 20세기 산업 디자인의 거장 디터 람스의 설계 철학과 현대 디지털 제품 설계 방법론을 유기적으로 결합하여 탄생하였다. 디터 람스의 10대 디자인 원칙은 제품의 유용성, 심미성, 이해 가능성, 신뢰성, 지속 가능성, 그리고 불필요한 장식을 배제한 '최소한의 디자인'을 극대화하는 것에 초점을 맞춘다.
-            </p>
-            <br />
-            <p className="pdf-text-copy-14">
-              물리적 감각을 디지털 인터페이스로 전이하는 과정에서는 바우어앤윌킨스의 사운드 엔지니어링 미학과 틴에이지 엔지니어링의 정밀한 촉각적 상호작용 방식이 핵심적인 이정표를 제공한다.
-            </p>
-            <br />
-            <p className="pdf-text-copy-14">
-              PDF-DS는 이러한 물리적 엔지니어링 사상을 디지털 디자인 언어로 계승한다. 스크린 내부의 요소들을 단순한 이미지나 가상의 레이어로 취급하지 않고, 명확한 두께를 가진 경계선과 규칙적인 격자 체계 위에 정렬된 독립적인 조작기(Manipulator)로 정의한다.
-            </p>
-          </div>
-        </section>
-      )}
-
-      {/* CHAPTER 3 */}
-      {activeChapter === 3 && (
-        <section id="ch-3">
-          <div className="pdf-mb-300">
-            <h2 className="pdf-text-heading-32 pdf-mb-100">3. 청사진 그리드(Blueprint Grid)와 멀티 스케일 여백(Spacing) 시스템</h2>
             <p className="pdf-text-copy-14 pdf-text-muted">
               디지털 레이아웃의 구조적 정밀도를 담보하기 위해 PDF-DS는 물리적 설계 도면에서 착안한 청사진 그리드와 수학적으로 정렬된 다중 스케일 여백 시스템을 채택한다.
             </p>
           </div>
-
-          <div className="pdf-mb-300">
-            <h3 className="pdf-text-label-16 pdf-mb-100">청사진 그리드 세부 명세</h3>
-            <ul className="pdf-list-disc pdf-text-copy-14">
-              <li>선 가중치 및 스타일: 그리드 라인은 브라우저 렌더링 엔진의 서브픽셀 깨짐을 방지하기 위해 엄격히 1px 두께의 실선으로 렌더링되어야 한다.</li>
-              <li>색상 및 투명도 명세: 기본 라이트 테마에서는 중성 그레이 계열인 #E5E7EB를 사용하고, 다크 테마에서는 #27272A를 적용하며 투명도를 10%~20%로 제한한다.</li>
-              <li>격자 모듈러스: 한 변은 시스템 기본 스페이싱 토큰인 16px 또는 24px 정방형 구조로 정렬되어야 한다.</li>
-            </ul>
+          <div className="pdf-bg-secondary pdf-border pdf-p-300 pdf-flex-col pdf-gap-200 pdf-mb-300" style={{ backgroundImage: 'var(--blueprint-grid-pattern)', backgroundSize: 'var(--space-300) var(--space-300)' }}>
+            <div className="pdf-flex-row pdf-gap-100">
+              <div style={{ width: 'var(--space-100)', height: 'var(--space-400)', backgroundColor: 'var(--color-functional-red)' }}></div>
+              <span className="pdf-text-label-14-mono pdf-text-red">--space-100 (8px)</span>
+            </div>
+            <div className="pdf-flex-row pdf-gap-200">
+              <div style={{ width: 'var(--space-200)', height: 'var(--space-400)', backgroundColor: 'var(--color-functional-red)' }}></div>
+              <span className="pdf-text-label-14-mono pdf-text-red">--space-200 (16px)</span>
+            </div>
+            <div className="pdf-flex-row pdf-gap-300">
+              <div style={{ width: 'var(--space-300)', height: 'var(--space-400)', backgroundColor: 'var(--color-functional-red)' }}></div>
+              <span className="pdf-text-label-14-mono pdf-text-red">--space-300 (24px)</span>
+            </div>
           </div>
-          
-          <div className="pdf-mb-300">
-            <h3 className="pdf-text-label-16 pdf-mb-100">여백 토큰 및 그리드 확장 체계</h3>
-            <table className="pdf-table pdf-text-copy-14">
-              <thead>
-                <tr>
-                  <th>토큰명</th>
-                  <th>Rem 환산값 (16px 기준)</th>
-                  <th>물리 픽셀 값 (Pixel)</th>
-                  <th>주요 사용처 및 인터페이스 적용 규칙</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className="pdf-font-mono">$space-025</td>
-                  <td>0.125rem</td>
-                  <td>2px</td>
-                  <td>미세 경계선 오프셋, 입력 필드 내 선택 표시기 정렬</td>
-                </tr>
-                <tr>
-                  <td className="pdf-font-mono">$space-100</td>
-                  <td>0.5rem</td>
-                  <td>8px</td>
-                  <td>기본 베이스라인, 콤팩트 리스트 요소 간 수직 간격</td>
-                </tr>
-                <tr>
-                  <td className="pdf-font-mono">$space-300</td>
-                  <td>1.5rem</td>
-                  <td>24px</td>
-                  <td>섹션 간 수직 간격, 표준 대화상자 여백, 마케팅 레이아웃 그리드</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          
           <div className="pdf-mb-300">
             <GridSandbox />
           </div>
         </section>
       )}
 
-      {/* CHAPTER 4 */}
-      {activeChapter === 4 && (
-        <section id="ch-4">
+      {/* 5. Typography */}
+      {activeChapter === 5 && (
+        <section id="ch-5">
           <div className="pdf-mb-300">
-            <h2 className="pdf-text-heading-32 pdf-mb-100">4. 정밀 타이포그래피 및 레이아웃 정렬 명세</h2>
             <p className="pdf-text-copy-14 pdf-text-muted">
-              타이포그래피는 PDF-DS에서 가장 주도적인 구조체이다. 감정적인 서체를 철저히 지양하는 대신, 정교하게 조정된 지오메트릭 산세리프(Geometric Sans-serif) 서체인 Geist Sans 또는 Inter를 본문 및 타이틀용으로 선언한다.
+              타이포그래피는 PDF-DS에서 가장 주도적인 구조체이다. 감정적인 서체를 철저히 지양하는 대신, 정교하게 조정된 네오 그로테스크 산세리프 서체인 Pretendard를 바탕으로 타이틀, 본문, 코드(고정폭)를 선언한다.
             </p>
           </div>
-
           <div className="pdf-mb-300">
             <TypographySandbox />
           </div>
           
+          <details className="pdf-mt-200" style={{ cursor: 'pointer', borderTop: '1px solid var(--color-border-default)', paddingTop: '16px' }}>
+            <summary className="pdf-text-label-14-mono pdf-text-muted" style={{ fontWeight: 'bold' }}>[+] 타이포그래피 구현 코드 보기</summary>
+            <div className="pdf-code-block pdf-mt-100" style={{ whiteSpace: 'pre-wrap' }}>
+{`<!-- 헤딩 타이틀 -->
+<h1 class="pdf-text-heading-32">큰 제목 (32px)</h1>
+<h2 class="pdf-text-heading-24">중간 제목 (24px)</h2>
+
+<!-- 라벨 (강조 및 UI 타이틀) -->
+<span class="pdf-text-label-16">기본 라벨 (16px)</span>
+<span class="pdf-text-label-14-mono">고정폭 라벨 (14px)</span>
+
+<!-- 본문 (일반 텍스트) -->
+<p class="pdf-text-copy-14">본문 텍스트입니다. (14px)</p>
+<p class="pdf-text-copy-13-mono pdf-text-muted">설명 텍스트 (13px, Muted)</p>`}
+            </div>
+          </details>
+
+          <div className="pdf-mb-300 pdf-mt-300">
+            <h3 className="pdf-text-label-16 pdf-mb-100">Primary Typeface: Pretendard</h3>
+            <p className="pdf-text-copy-14 pdf-text-muted pdf-mb-100">
+              시스템 전반의 기본 텍스트는 <strong>Pretendard</strong>를 사용합니다. Pretendard는 본문 렌더링 시 뛰어난 가독성을 제공할 뿐만 아니라, <strong>한국어, 영어, 일본어 등 다국어 환경을 네이티브 수준으로 완벽하게 지원</strong>하여 별도의 언어별 폰트 폴백(Fallback) 지정 없이도 훌륭한 시각적 일관성을 유지합니다.
+            </p>
+          </div>
+          <div className="pdf-mb-300">
+            <h3 className="pdf-text-label-16 pdf-mb-100">Mono Typeface: JetBrains Mono</h3>
+            <p className="pdf-text-copy-14 pdf-text-muted">
+              코드, 숫자, 메타데이터 등 기하학적 정렬이 필요한 특수 영역에는 고정폭(Monospace) 폰트인 <strong>JetBrains Mono</strong>를 제한적으로 적용합니다. 고정폭 폰트 적용 시 영문과 숫자 기호에만 JetBrains Mono가 적용되며, 그 외의 <strong>한국어 등 기타 언어 문자는 자동으로 Pretendard 폰트로 부드럽게 폴백(Fallback)</strong>되어 다국어 혼용 환경에서도 깨짐 없는 출력 품질을 보장합니다.
+            </p>
+          </div>
           <div className="pdf-mb-300">
             <h3 className="pdf-text-label-16 pdf-mb-100">광학적 정렬 및 레이아웃 렌더링 규칙</h3>
             <ul className="pdf-list-disc pdf-text-copy-14">
               <li><strong>광학적 미세 보정 (Optical Alignment):</strong> 텍스트와 이형의 아이콘이 수평으로 결합할 때 기하학적 중앙 정렬 연산 결과가 어색해 보일 수 있다. 이 경우 ±1px 한도 내에서 수동으로 조정해야 한다.</li>
-              <li><strong>데이터 비교용 고정폭 숫자 정렬:</strong> <code>font-variant-numeric: tabular-nums</code> 설정을 의무적으로 활성화한다.</li>
               <li><strong>구두점 및 표기식의 미학:</strong> 인용구는 둥근 따옴표(“ ”)를 사용하고, 줄바꿈으로 인해 숫자와 단위가 찢어지지 않도록 비줄바꿈 공백(Non-breaking Space) 처리를 선행해야 한다 (예: 10 MB).</li>
             </ul>
           </div>
-          
           <div className="pdf-mb-300">
             <AlignmentSandbox />
           </div>
         </section>
       )}
 
-      {/* CHAPTER 5 */}
-      {activeChapter === 5 && (
-        <section id="ch-5">
+      {/* 6. Color */}
+      {activeChapter === 6 && (
+        <section id="ch-6">
           <div className="pdf-mb-300">
-            <h2 className="pdf-text-heading-32 pdf-mb-100">5. 아크로매틱 컬러 체계와 펑셔널 레드의 위계적 운용</h2>
             <p className="pdf-text-copy-14 pdf-text-muted">
               PDF-DS의 색상 전술은 완전한 절제에 기반을 둔다. 형형색색의 컬러 스펙트럼과 과도한 그라디언트는 추방된다. 오직 아크로매틱(Achromatic) 토대 위에 구축된다.
             </p>
           </div>
-
           <div className="pdf-mb-300">
             <h3 className="pdf-text-label-16 pdf-mb-100">아크로매틱 기본 배경 및 경계선 시스템</h3>
             <div className="pdf-code-block pdf-mb-200">
-              배경 1 (Background 1: #FFFFFF)<br/>
-              배경 2 (Background 2: #F4F4F5)<br/>
-              컴포넌트 Rest (Color 1: #FFFFFF)<br/>
+              배경 1 (Background 1: #FFFFFF)<br />
+              배경 2 (Background 2: #F4F4F5)<br />
+              컴포넌트 Rest (Color 1: #FFFFFF)<br />
               경계선 Rest (Color 4: #E4E4E7)
             </div>
             <p className="pdf-text-copy-14">
               페이지 전체를 감싸는 최하단 도화지 영역인 '배경 1'은 순수한 백색인 #FFFFFF를 지정하며, 제한적인 수준에서 '배경 2'인 #F4F4F5를 차용하여 깊이 단계를 제어한다.
             </p>
           </div>
-          
           <div className="pdf-mb-300">
             <h3 className="pdf-text-label-16 pdf-mb-100">펑셔널 레드(Functional Red) 액센트 설계</h3>
             <p className="pdf-text-copy-14 pdf-mb-100">
@@ -218,101 +260,199 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
               <li>시스템 오류나 검증 누락 상태를 실시간으로 환기해야 하는 즉각적 위기 상태 표시기(Immediate Validation State Indicator)</li>
             </ul>
           </div>
-          
           <div className="pdf-mb-300">
             <ColorSandbox />
           </div>
         </section>
       )}
 
-      {/* CHAPTER 6 */}
-      {activeChapter === 6 && (
-        <section id="ch-6">
+      {/* 7. Materials */}
+      {activeChapter === 7 && (
+        <section id="ch-7">
           <div className="pdf-mb-300">
-            <h2 className="pdf-text-heading-32 pdf-mb-100">6. 머티리얼 3 기반 초정밀 버튼 설계 및 형태 모핑(Shape Morphing) 상호작용</h2>
+            <p className="pdf-text-copy-14 pdf-text-muted">
+              하드웨어의 물리적 재질감을 디지털로 모사하는 머티리얼 시스템입니다. 단순 평면을 넘어선 고도화된 깊이(Elevation)와 빛의 투과율 규칙을 준수합니다.
+            </p>
+          </div>
+          <div className="pdf-mb-300">
+            <MaterialSandbox />
+          </div>
+        </section>
+      )}
+
+      {/* 8. Buttons & Morphing */}
+      {activeChapter === 8 && (
+        <section id="ch-8">
+          <div className="pdf-mb-300">
             <p className="pdf-text-copy-14 pdf-text-muted">
               버튼은 물리 하드웨어의 택타일 스위치를 디지털 화면 내부로 완벽하게 복제해 온 PDF-DS의 핵심 제어 컴포넌트이다. 외곽선의 예리함과 기하학적 형태 변화 메커니즘을 추가하여 정교한 피드백을 완성한다.
             </p>
           </div>
-
           <div className="pdf-mb-300">
             <h3 className="pdf-text-label-16 pdf-mb-100">형태 모핑(Shape Morphing) 메커니즘</h3>
             <p className="pdf-text-copy-14">
               평상시 기본 Rest 상태에서는 완전한 원형 스타일(Fully Rounded)을 유지하다가, 마우스가 진입(Hover)하거나 손가락으로 가압(Press)하는 물리적 에너지가 전달되는 순간 코너 반경을 좁히며 엣지 있는 직사각형 형태로 탈바꿈한다.
             </p>
           </div>
-          
           <div className="pdf-mb-300">
             <ButtonSandbox />
+          </div>
+
+          <details className="pdf-mt-200" style={{ cursor: 'pointer', borderTop: '1px solid var(--color-border-default)', paddingTop: '16px' }}>
+            <summary className="pdf-text-label-14-mono pdf-text-muted" style={{ fontWeight: 'bold' }}>[+] 버튼 구현 코드 보기</summary>
+            <div className="pdf-code-block pdf-mt-100" style={{ whiteSpace: 'pre-wrap' }}>
+{`<!-- 1차 액션 (Primary Button) -->
+<!-- 붉은색 배경, 가장 중요한 단일 액션에 사용 -->
+<button class="pdf-btn-primary">
+  SUBMIT DATA
+</button>
+
+<!-- 2차 액션 (Secondary Button) -->
+<!-- 회색 테두리, 보조적인 동작에 사용 -->
+<button class="pdf-secondary-btn">
+  CANCEL
+</button>
+
+<!-- 고스트 버튼 (Ghost Button) -->
+<!-- 테두리 없음, 최소한의 강조가 필요할 때 사용 -->
+<button class="pdf-ghost-btn">
+  Learn More
+</button>`}
+            </div>
+          </details>
+        </section>
+      )}
+
+      {/* 9. Forms */}
+      {activeChapter === 9 && (
+        <section id="ch-9">
+          <div className="pdf-mb-300">
+            <p className="pdf-text-copy-14 pdf-text-muted">
+              사용자의 데이터를 정밀하게 입력받고 제어하는 폼 컴포넌트 명세입니다. 입력 필드의 상태에 따라 명확하고 즉각적인 시각 피드백을 제공해야 합니다.
+            </p>
+          </div>
+          <div className="pdf-mb-300">
+            <FormSandbox />
+          </div>
+
+          <details className="pdf-mt-200" style={{ cursor: 'pointer', borderTop: '1px solid var(--color-border-default)', paddingTop: '16px' }}>
+            <summary className="pdf-text-label-14-mono pdf-text-muted" style={{ fontWeight: 'bold' }}>[+] 폼 입력 구현 코드 보기</summary>
+            <div className="pdf-code-block pdf-mt-100" style={{ whiteSpace: 'pre-wrap' }}>
+{`<!-- 기본 텍스트 입력 폼 -->
+<div class="pdf-flex-col pdf-gap-100">
+  <label class="pdf-text-label-14-mono pdf-text-muted">Username</label>
+  <input type="text" class="pdf-input" placeholder="Enter your name" />
+</div>
+
+<!-- 드롭다운(Select) 폼 -->
+<div class="pdf-flex-col pdf-gap-100">
+  <label class="pdf-text-label-14-mono pdf-text-muted">Role</label>
+  <select class="pdf-input">
+    <option>Admin</option>
+    <option>User</option>
+  </select>
+</div>`}
+            </div>
+          </details>
+        </section>
+      )}
+
+      {/* 10. Modals */}
+      {activeChapter === 10 && (
+        <section id="ch-10">
+          <div className="pdf-mb-300">
+            <p className="pdf-text-copy-14 pdf-text-muted">
+              현재의 흐름을 강제로 멈추고 사용자의 즉각적인 집중과 결정을 요구하는 모달 및 다이얼로그 시스템 명세입니다.
+            </p>
+          </div>
+          <div className="pdf-mb-300">
+            <ModalSandbox />
+          </div>
+
+          <details className="pdf-mt-200" style={{ cursor: 'pointer', borderTop: '1px solid var(--color-border-default)', paddingTop: '16px' }}>
+            <summary className="pdf-text-label-14-mono pdf-text-muted" style={{ fontWeight: 'bold' }}>[+] 모달 다이얼로그 구현 코드 보기</summary>
+            <div className="pdf-code-block pdf-mt-100" style={{ whiteSpace: 'pre-wrap' }}>
+{`<!-- 화면 전체 배경(오버레이) -->
+<div class="pdf-overlay" style="position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 998;"></div>
+
+<!-- 모달 다이얼로그 창 -->
+<div class="pdf-panel pdf-elevation-3" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 999; min-width: 400px;">
+  
+  <div class="pdf-border-bottom pdf-pb-200 pdf-mb-200 pdf-flex-row pdf-justify-between">
+    <h3 class="pdf-text-label-16">Delete Account</h3>
+    <button class="pdf-text-muted" style="background:none; border:none; cursor:pointer;">✕</button>
+  </div>
+  
+  <p class="pdf-text-copy-14 pdf-text-muted pdf-mb-300">
+    이 동작은 되돌릴 수 없습니다. 계속하시겠습니까?
+  </p>
+  
+  <div class="pdf-flex-row pdf-justify-end pdf-gap-100">
+    <button class="pdf-secondary-btn">Cancel</button>
+    <!-- 경고성 조작이므로 배경을 붉게 유지 (인라인 스타일 또는 별도 클래스 활용) -->
+    <button class="pdf-btn-primary" style="background-color: var(--color-functional-red)">Delete</button>
+  </div>
+  
+</div>`}
+            </div>
+          </details>
+        </section>
+      )}
+
+      {/* 11. Navigation */}
+      {activeChapter === 11 && (
+        <section id="ch-11">
+          <div className="pdf-mb-300">
+            <p className="pdf-text-copy-14 pdf-text-muted">
+              탭, 브레드크럼 등 화면 내에서 현재 위치를 파악하고 다른 계층으로 안전하게 이동할 수 있도록 돕는 네비게이션 명세입니다.
+            </p>
+          </div>
+          <div className="pdf-mb-300">
+            <NavigationSandbox />
           </div>
         </section>
       )}
 
-      {/* CHAPTER 7 */}
-      {activeChapter === 7 && (
-        <section id="ch-7">
+      {/* 12. Split Screen */}
+      {activeChapter === 12 && (
+        <section id="ch-12">
           <div className="pdf-mb-300">
-            <h2 className="pdf-text-heading-32 pdf-mb-100">7. 비대칭 스플릿 스크린 레이아웃 및 디바이스 반응형 통합 가이드라인</h2>
             <p className="pdf-text-copy-14 pdf-text-muted">
-              화면 분할 철학은 대칭 분리를 타파하고 황금 비율에 준하는 38:62 비율의 비대칭 스플릿 스크린을 기본 표준으로 채택한다.
+              화면 분할 철학은 대칭 분리를 타파하고 비대칭 황금비에 준하는 25:75 비율의 스플릿 스크린을 기본 표준으로 채택한다.
             </p>
           </div>
-
           <div className="pdf-mb-300">
             <GoldenRatioSandbox />
           </div>
-          
           <div className="pdf-mb-300">
             <h3 className="pdf-text-label-16 pdf-mb-100">모바일 스택 및 반응형 레이아웃 복원 가이드라인</h3>
             <ul className="pdf-list-disc pdf-text-copy-14">
               <li><strong>수직 위계적 스택킹(Vertical Stacking):</strong> 뷰포트 크기가 수축함에 따라 두 면은 즉각적으로 수직 방향으로 정렬되어 위에서 아래로 스택킹된다.</li>
               <li><strong>콘텐츠 최소 크기 타겟:</strong> 스택 카드는 어떠한 경우에도 너비 또는 높이 기준 220dp 미만으로 축소되지 않도록 최소 공간 제한치를 확보한다.</li>
-              <li><strong>레이아웃 시프트(Layout Shift) 방지를 위한 스켈레톤:</strong> 데이터 로딩 전의 임시 로딩 스켈레톤(Skeleton UI)은 실제 컴포넌트의 패딩 높이와 모서리 둥글기 스펙을 1px 오차도 없이 100% 동일하게 복제한다.</li>
             </ul>
           </div>
-          
           <div className="pdf-mb-300">
             <SplitSandbox />
           </div>
         </section>
       )}
 
-      {/* CHAPTER 8 */}
-      {activeChapter === 8 && (
-        <section id="ch-8">
+      {/* 13. QA & Checklist */}
+      {activeChapter === 13 && (
+        <section id="ch-13">
           <div className="pdf-mb-300">
-            <h2 className="pdf-text-heading-32 pdf-mb-100">8. 통합 소프트웨어 아키텍처 및 토큰 구현 가이드라인</h2>
-            <p className="pdf-text-copy-14 pdf-text-muted">
-              디자인 시스템 PDF-DS의 궁극적인 존재 가치는 여러 이종 플랫폼 위에서 단일한 명도의 통제력을 유지하는 코드 기반 무결성에 있다.
-            </p>
-          </div>
-
-          <div className="pdf-mb-300">
-            <CodeExport />
-          </div>
-        </section>
-      )}
-
-      {/* CHAPTER 9 */}
-      {activeChapter === 9 && (
-        <section id="ch-9">
-          <div className="pdf-mb-300">
-            <h2 className="pdf-text-heading-32 pdf-mb-100">9. 최종 통합 실무 체크리스트 및 검수 수칙</h2>
             <p className="pdf-text-copy-14 pdf-text-muted">
               이 디자인 가이드라인이 프로젝트 소스코드에서 정상적으로 완수되고 있는지 판단하기 위한 전방위 디자인 검수(QA) 기준 목록이다.
             </p>
           </div>
-
           <div className="pdf-mb-300">
             <ul className="pdf-list-disc pdf-text-copy-14">
-              <li><strong>하드코딩 배제 검수:</strong> 모든 여백 및 내부 패딩 코드가 기하학적인 정수형 픽셀 단위로 선언되어 있지 않고, 반드시 $space- 계열의 토큰으로 올바르게 대체되었는지 정적 분석 툴을 통해 확인한다.</li>
-              <li><strong>청사진 그리드 대비 수준 확보:</strong> 배경 격자선의 명도 투명도 수치가 10% - 20% 임계를 넘어 사용자의 시선을 방해하지 않는지 검측한다.</li>
-              <li><strong>버튼 터치 영역의 최소 사양 준수:</strong> 48x48dp 이상을 정상 확보하여 손가락 터치 누락을 방지하고 있는지 추적 확인한다.</li>
-              <li><strong>펑셔널 레드의 위계적 제한 수칙:</strong> 펑셔널 레드 액센트 색상이 적용된 컴포넌트 및 레이블 표지기의 개수가 최대 3개 이하로 통제되고 있는지 체크한다.</li>
-              <li><strong>텍스트 200% 확장 시의 레이아웃 무결성:</strong> 서체의 크기를 200%까지 강제 격상시켰을 때 레이아웃 컨테이너가 다른 요소를 덮어씌우지 않는지 검증한다.</li>
+              <li><strong>하드코딩 배제 검수:</strong> 모든 여백 및 내부 패딩 코드가 기하학적인 정수형 픽셀 단위로 선언되어 있지 않고, 반드시 $space- 계열의 토큰으로 대체되었는지 확인한다.</li>
+              <li><strong>청사진 그리드 대비:</strong> 배경 격자선의 명도 투명도 수치가 10% - 20% 임계를 넘지 않는지 검측한다.</li>
+              <li><strong>터치 영역 확보:</strong> 48x48dp 이상을 확보하여 모바일 터치 누락을 방지한다.</li>
+              <li><strong>펑셔널 레드 위계 통제:</strong> 펑셔널 레드 색상이 적용된 컴포넌트가 과도하게 남발되지 않고 화면당 최대 3개 이하로 통제되고 있는지 체크한다.</li>
             </ul>
           </div>
-          
           <div className="pdf-mb-300">
             <QASandbox />
           </div>
