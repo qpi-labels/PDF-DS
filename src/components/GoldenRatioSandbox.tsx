@@ -24,16 +24,16 @@ export default function GoldenRatioSandbox() {
             <div className="pdf-flex-row pdf-items-center" style={{ width: 128, height: '100%', backgroundColor: 'var(--color-bg-primary)', borderTopLeftRadius: 6, borderTopRightRadius: 6, padding: '0 8px', fontSize: 8, fontFamily: 'var(--font-sans)', color: 'var(--color-text-primary)' }}>
               PDF-DS System
             </div>
-            <div className="pdf-radius-full pdf-flex-row pdf-items-center pdf-justify-center" style={{ width: 32, height: 24, backgroundColor: 'var(--color-border-default)', fontSize: 10, color: 'var(--color-text-secondary)' }}>+</div>
+            <div className="pdf-radius-sm pdf-flex-row pdf-items-center pdf-justify-center" style={{ width: 32, height: 24, backgroundColor: 'var(--color-border-default)', fontSize: 10, color: 'var(--color-text-secondary)', borderRadius: '4px 4px 0 0' }}>+</div>
           </div>
           {/* URL Bar */}
           <div className="pdf-flex-row pdf-items-center pdf-border-bottom" style={{ height: 40, backgroundColor: 'var(--color-bg-primary)', padding: '0 8px', gap: 8, borderBottomColor: 'var(--color-border-hover)' }}>
             <div className="pdf-flex-row" style={{ gap: 4 }}>
-              <div className="pdf-radius-full" style={{ width: 16, height: 16, backgroundColor: 'var(--color-border-default)' }}></div>
-              <div className="pdf-radius-full" style={{ width: 16, height: 16, backgroundColor: 'var(--color-border-default)' }}></div>
-              <div className="pdf-radius-full" style={{ width: 16, height: 16, backgroundColor: 'var(--color-border-default)' }}></div>
+              <div className="pdf-radius-sm" style={{ width: 16, height: 16, backgroundColor: 'var(--color-border-default)', borderRadius: '4px' }}></div>
+              <div className="pdf-radius-sm" style={{ width: 16, height: 16, backgroundColor: 'var(--color-border-default)', borderRadius: '4px' }}></div>
+              <div className="pdf-radius-sm" style={{ width: 16, height: 16, backgroundColor: 'var(--color-border-default)', borderRadius: '4px' }}></div>
             </div>
-            <div className="pdf-border pdf-radius-full pdf-flex-row pdf-items-center" style={{ flex: 1, height: 24, backgroundColor: 'var(--color-bg-primary)', borderColor: 'var(--color-border-hover)', fontSize: 8, padding: '0 12px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)' }}>
+            <div className="pdf-border pdf-radius-sm pdf-flex-row pdf-items-center" style={{ flex: 1, height: 24, backgroundColor: 'var(--color-bg-primary)', borderColor: 'var(--color-border-hover)', fontSize: 8, padding: '0 12px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)' }}>
               https://pdf-ds.system/
             </div>
           </div>
@@ -46,12 +46,12 @@ export default function GoldenRatioSandbox() {
           <div className="pdf-w-full pdf-flex-row pdf-relative" style={{ flex: 1, animation: 'fadeIn 0.5s' }}>
             {/* PDF-DS LEFT 25% */}
             <div className="pdf-golden-ratio-panel pdf-flex-col pdf-relative" style={{ width: '25%', backgroundColor: 'var(--color-bg-primary)', borderRight: '1px solid var(--color-border-hover)', height: '100%' }}>
-              {/* Overlay Annotation (Using CSS for hover in a real app, here we simulate with inline style structure if possible or rely on standard CSS. Since inline hover is not possible, we use a global class `.pdf-golden-ratio-panel:hover .pdf-annotation-overlay` which we can define in index.css if needed, but since we can't use tailwind group-hover easily inline, I will use pure CSS for the overlay in index.css or simple static display. Let's make it static but semi-transparent for the sandbox effect.) */}
+              {/* Overlay Annotation */}
               <div className="pdf-absolute pdf-inset-0 pdf-flex-col pdf-items-center pdf-justify-center" style={{ backgroundColor: 'rgba(173, 29, 29, 0.05)', border: '2px solid rgba(173, 29, 29, 0.5)', zIndex: 20, pointerEvents: 'none' }}>
                 <div style={{ backgroundColor: 'var(--color-functional-red)', color: 'var(--color-bg-primary)', fontFamily: 'var(--font-mono)', fontWeight: 'bold', fontSize: 12, padding: '6px 12px', borderRadius: 4, boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)' }}>
                   25% CONTROL PANEL
                 </div>
-                <div style={{ fontSize: 10, color: 'var(--color-functional-red)', fontWeight: 'bold', backgroundColor: 'rgba(255,255,255,0.9)', padding: '0 8px', marginTop: 8, borderRadius: 4, border: '1px solid var(--color-functional-red)' }}>
+                <div className="pdf-radius-sm" style={{ fontSize: 10, color: 'var(--color-functional-red)', fontWeight: 'bold', backgroundColor: 'rgba(255,255,255,0.9)', padding: '4px 8px', marginTop: 8, border: '1px solid var(--color-functional-red)', borderRadius: '4px' }}>
                   Geist Mono / #F4F4F5 / Fixed
                 </div>
               </div>
@@ -75,8 +75,8 @@ export default function GoldenRatioSandbox() {
                   <div style={{ width: '66%', height: 6, backgroundColor: 'var(--color-border-default)', marginTop: 4 }}></div>
                 </div>
                 <div style={{ marginTop: 'auto', paddingTop: 16 }}>
-                  <div className="pdf-w-full pdf-radius-full pdf-flex-row pdf-items-center pdf-justify-center pdf-overflow-hidden" style={{ height: 40, backgroundColor: 'var(--color-functional-red)' }}>
-                    <div style={{ width: 16, height: 16, backgroundColor: 'rgba(255,255,255,0.2)', borderRadius: '50%', marginRight: 8 }}></div>
+                  <div className="pdf-w-full pdf-radius-sm pdf-flex-row pdf-items-center pdf-justify-center pdf-overflow-hidden" style={{ height: 40, backgroundColor: 'var(--color-functional-red)', borderRadius: '4px' }}>
+                    <div style={{ width: 16, height: 16, backgroundColor: 'rgba(255,255,255,0.2)', borderRadius: '4px', marginRight: 8 }}></div>
                   </div>
                 </div>
               </div>
@@ -89,7 +89,7 @@ export default function GoldenRatioSandbox() {
                 <div style={{ backgroundColor: '#1d4ed8', color: 'var(--color-bg-primary)', fontFamily: 'var(--font-mono)', fontWeight: 'bold', fontSize: 12, padding: '6px 12px', borderRadius: 4, boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)' }}>
                   75% CONTENT CANVAS
                 </div>
-                <div style={{ fontSize: 10, color: '#1d4ed8', fontWeight: 'bold', backgroundColor: 'rgba(255,255,255,0.9)', padding: '0 8px', marginTop: 8, borderRadius: 4, border: '1px solid #bfdbfe' }}>
+                <div className="pdf-radius-sm" style={{ fontSize: 10, color: '#1d4ed8', fontWeight: 'bold', backgroundColor: 'rgba(255,255,255,0.9)', padding: '4px 8px', marginTop: 8, border: '1px solid #bfdbfe', borderRadius: '4px' }}>
                   Pretendard / #FFFFFF / Scrollable
                 </div>
               </div>

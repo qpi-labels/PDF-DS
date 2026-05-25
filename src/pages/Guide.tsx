@@ -94,7 +94,8 @@ export default function Guide() {
     { num: 11, title: 'Navigation', sub: '네비게이션 및 계층 이동 구조' },
     { num: 12, title: 'Split Screen', sub: '비대칭 황금 분할 25:75 스크린' },
     { num: 13, title: 'Mobile Screen', sub: '모바일 스택 및 반응형 레이아웃 복원' },
-    { num: 14, title: 'QA & Checklist', sub: '최종 통합 실무 체크리스트 및 검수 수칙' }
+    { num: 14, title: 'QA & Checklist', sub: '최종 통합 실무 체크리스트 및 검수 수칙' },
+    { num: 15, title: 'Credits', sub: 'PDF-DS 디자인 시스템 제작 공로자 및 기여자' }
   ];
 
   // Categorized chapter mapping for HIG style sidebar
@@ -133,9 +134,10 @@ export default function Guide() {
       ]
     },
     {
-      category: 'QA',
+      category: 'QA & Credits',
       items: [
         { num: 14, title: 'QA & Checklist', sub: '최종 통합 실무 체크리스트 및 검수 수칙' },
+        { num: 15, title: 'Credits', sub: 'PDF-DS 디자인 시스템 제작 공로자 및 기여자' },
       ]
     }
   ];
@@ -281,7 +283,7 @@ export default function Guide() {
                   {chapters[activeChapter - 1].title}
                 </h2>
                 <div className="pdf-text-label-14-mono pdf-text-muted">
-                  {Math.round((activeChapter / 14) * 100)}% PROGRESS
+                  {Math.round((activeChapter / 15) * 100)}% PROGRESS
                 </div>
               </div>
             </div>
@@ -298,10 +300,10 @@ export default function Guide() {
               ← PREV
             </button>
             <span className="pdf-text-label-14-mono pdf-text-muted">
-              STAGE {activeChapter < 10 ? `0${activeChapter}` : activeChapter} / 14
+              STAGE {activeChapter < 10 ? `0${activeChapter}` : activeChapter} / 15
             </span>
             <button
-              disabled={activeChapter === 14}
+              disabled={activeChapter === 15}
               onClick={() => handleChapterSwitch(activeChapter + 1)}
               className="pdf-secondary-btn"
             >

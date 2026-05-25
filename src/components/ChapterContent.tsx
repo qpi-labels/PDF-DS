@@ -45,18 +45,18 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
           <div className="pdf-mb-400">
             <div className="pdf-panel pdf-grid-bg pdf-flex-row pdf-items-center pdf-justify-center pdf-gap-300 pdf-flex-wrap" style={{ padding: 'var(--space-400)' }}>
               <div className="pdf-content-relative pdf-flex-shrink-0" style={{ width: '240px', height: '240px' }}>
-                <img 
-                  src="/Px7S3.webp" 
-                  alt="Design Motif" 
+                <img
+                  src="/Px7S3.webp"
+                  alt="Design Motif"
                   className="pdf-w-full pdf-h-full pdf-radius-lg pdf-shadow-bevel"
-                  style={{ objectFit: 'cover' }} 
+                  style={{ objectFit: 'cover' }}
                 />
               </div>
               <div className="pdf-content-relative">
                 <p className="pdf-text-label-14-mono pdf-text-muted" style={{ lineHeight: '1.8' }}>
-                  <strong className="pdf-text-red" style={{ fontSize: '12px' }}>DESIGN MOTIF</strong><br/>
-                  서로 다른 물리적 재료들이<br/>
-                  연속성 있게 조화를 이루는<br/>
+                  <strong className="pdf-text-red" style={{ fontSize: '12px' }}>DESIGN MOTIF</strong><br />
+                  서로 다른 물리적 재료들이<br />
+                  연속성 있게 조화를 이루는<br />
                   하드웨어의 미학
                 </p>
               </div>
@@ -558,6 +558,42 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
           </div>
           <div className="pdf-mb-300">
             <QASandbox />
+          </div>
+        </section>
+      )}
+
+      {/* 15. Credits */}
+      {activeChapter === 15 && (
+        <section id="ch-15">
+          <div className="pdf-mb-400" style={{ textAlign: 'center', padding: 'var(--space-400) 0' }}>
+            <span className="pdf-text-label-14-mono pdf-text-red pdf-mb-150" style={{ display: 'inline-block' }}>
+              PDF-DS CO-CREATION LABS
+            </span>
+            <h2 className="pdf-text-heading-32 pdf-mb-200">
+              System Creators & Inspirations
+            </h2>
+            <p className="pdf-text-copy-14 pdf-text-muted" style={{ maxWidth: '600px', margin: '0 auto' }}>
+              물리 하드웨어의 감각을 디지털 스크린으로 확장하는 여정을 함께한 기여자와 설계에 깊은 영감을 준 철학적 거장들입니다.
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginBottom: '40px' }}>
+
+            {/* User Card */}
+            <div className="pdf-panel pdf-grid-bg pdf-relative" style={{ minHeight: '200px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: 'var(--space-300)' }}>
+              <div className="pdf-content-relative">
+                <div className="pdf-flex-row pdf-justify-between pdf-items-start pdf-mb-200">
+                  <span className="pdf-text-label-14-mono pdf-text-red" style={{ backgroundColor: 'var(--color-red-light)', padding: '4px 8px', borderRadius: '4px' }}>LEAD ARCHITECT</span>
+                  <span className="pdf-text-label-14-mono pdf-text-muted">01</span>
+                </div>
+                <h3 className="pdf-text-heading-32 pdf-font-bold pdf-mb-100" style={{ fontSize: '24px' }}>Jaewon Lee</h3>
+                <p className="pdf-text-copy-14 pdf-text-muted">
+                  시스템 기획 및 검증 총괄.
+                </p>
+              </div>
+              <div className="pdf-content-relative pdf-border-top pdf-pt-150 pdf-mt-200 pdf-flex-row pdf-justify-between pdf-items-center">
+              </div>
+            </div>
           </div>
         </section>
       )}
