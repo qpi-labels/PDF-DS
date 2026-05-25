@@ -24,7 +24,57 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
       {activeChapter === 1 && (
         <section id="ch-1">
           <div className="pdf-mb-300">
-            <h2 className="pdf-text-heading-32 pdf-mb-100">1. 철학적 토대와 시스템 미학의 융합</h2>
+            <h2 className="pdf-text-heading-32 pdf-mb-100">1. PDF-DS 시작하기 및 설치 가이드</h2>
+            <p className="pdf-text-copy-14 pdf-text-muted">
+              PDF-DS(Physical-Digital Fusion Design System)는 별도의 프레임워크나 빌드 도구 없이, 오직 CSS 파일 하나만으로도 완벽한 디자인 시스템을 구축할 수 있도록 설계되었습니다.
+            </p>
+          </div>
+
+          <div className="pdf-mb-300">
+            <h3 className="pdf-text-label-16 pdf-mb-100">설치 및 로드 방법 (CDN)</h3>
+            <p className="pdf-text-copy-14 pdf-mb-100">
+              HTML 문서의 <code>&lt;head&gt;</code> 태그 내에 아래의 jsDelivr CDN 링크를 복사하여 붙여넣으세요. 이 링크는 GitHub 저장소의 원본 CSS를 실시간으로 가져와 적용합니다.
+            </p>
+            <div className="pdf-code-block pdf-mb-100">
+              {`<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/antigravity/PDF-DS@main/src/index.css" />`}
+            </div>
+            <p className="pdf-text-copy-14 pdf-text-muted">
+              * 위 코드는 <code>antigravity/PDF-DS</code> 리포지토리의 main 브랜치에 있는 index.css를 불러옵니다. 포크(Fork)하여 사용하실 경우 사용자명(Username) 부분을 변경하세요.
+            </p>
+          </div>
+
+          <div className="pdf-mb-300">
+            <h3 className="pdf-text-label-16 pdf-mb-100">기본 마크업 보일러플레이트 (Boilerplate)</h3>
+            <p className="pdf-text-copy-14 pdf-mb-100">
+              CSS를 로드한 후, 아래의 HTML 구조를 사용하여 즉시 PDF-DS 앱 레이아웃을 구성할 수 있습니다.
+            </p>
+            <div className="pdf-code-block pdf-mb-100" style={{ whiteSpace: 'pre-wrap' }}>
+{`<!-- 전체 앱 컨테이너 -->
+<div class="pdf-app">
+  <!-- 좌측 사이드바 -->
+  <aside class="pdf-sidebar">
+    <div class="pdf-content-relative pdf-p-300">
+      <h1 class="pdf-text-heading-32">PDF-DS System</h1>
+    </div>
+  </aside>
+  <!-- 우측 메인 콘텐츠 뷰 -->
+  <main class="pdf-main-view">
+    <div class="pdf-panel">
+      <h2 class="pdf-text-heading-32">메인 콘텐츠</h2>
+      <button class="pdf-btn-primary">시작하기</button>
+    </div>
+  </main>
+</div>`}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* CHAPTER 2 */}
+      {activeChapter === 2 && (
+        <section id="ch-2">
+          <div className="pdf-mb-300">
+            <h2 className="pdf-text-heading-32 pdf-mb-100">2. 철학적 토대와 시스템 미학의 융합</h2>
             <p className="pdf-text-copy-14 pdf-text-muted">
               현대 소프트웨어 공학에서 사용자 인터페이스는 단순히 화면에 요소를 렌더링하는 것을 넘어, 하드웨어가 가진 물리적 인지성과 촉각적 정직성을 디지털 공간으로 확장하는 다리 역할을 수행해야 한다.
             </p>
@@ -46,11 +96,11 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
         </section>
       )}
 
-      {/* CHAPTER 2 */}
-      {activeChapter === 2 && (
-        <section id="ch-2">
+      {/* CHAPTER 3 */}
+      {activeChapter === 3 && (
+        <section id="ch-3">
           <div className="pdf-mb-300">
-            <h2 className="pdf-text-heading-32 pdf-mb-100">2. 청사진 그리드(Blueprint Grid)와 멀티 스케일 여백(Spacing) 시스템</h2>
+            <h2 className="pdf-text-heading-32 pdf-mb-100">3. 청사진 그리드(Blueprint Grid)와 멀티 스케일 여백(Spacing) 시스템</h2>
             <p className="pdf-text-copy-14 pdf-text-muted">
               디지털 레이아웃의 구조적 정밀도를 담보하기 위해 PDF-DS는 물리적 설계 도면에서 착안한 청사진 그리드와 수학적으로 정렬된 다중 스케일 여백 시스템을 채택한다.
             </p>
@@ -105,11 +155,11 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
         </section>
       )}
 
-      {/* CHAPTER 3 */}
-      {activeChapter === 3 && (
-        <section id="ch-3">
+      {/* CHAPTER 4 */}
+      {activeChapter === 4 && (
+        <section id="ch-4">
           <div className="pdf-mb-300">
-            <h2 className="pdf-text-heading-32 pdf-mb-100">3. 정밀 타이포그래피 및 레이아웃 정렬 명세</h2>
+            <h2 className="pdf-text-heading-32 pdf-mb-100">4. 정밀 타이포그래피 및 레이아웃 정렬 명세</h2>
             <p className="pdf-text-copy-14 pdf-text-muted">
               타이포그래피는 PDF-DS에서 가장 주도적인 구조체이다. 감정적인 서체를 철저히 지양하는 대신, 정교하게 조정된 지오메트릭 산세리프(Geometric Sans-serif) 서체인 Geist Sans 또는 Inter를 본문 및 타이틀용으로 선언한다.
             </p>
@@ -134,11 +184,11 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
         </section>
       )}
 
-      {/* CHAPTER 4 */}
-      {activeChapter === 4 && (
-        <section id="ch-4">
+      {/* CHAPTER 5 */}
+      {activeChapter === 5 && (
+        <section id="ch-5">
           <div className="pdf-mb-300">
-            <h2 className="pdf-text-heading-32 pdf-mb-100">4. 아크로매틱 컬러 체계와 펑셔널 레드의 위계적 운용</h2>
+            <h2 className="pdf-text-heading-32 pdf-mb-100">5. 아크로매틱 컬러 체계와 펑셔널 레드의 위계적 운용</h2>
             <p className="pdf-text-copy-14 pdf-text-muted">
               PDF-DS의 색상 전술은 완전한 절제에 기반을 둔다. 형형색색의 컬러 스펙트럼과 과도한 그라디언트는 추방된다. 오직 아크로매틱(Achromatic) 토대 위에 구축된다.
             </p>
@@ -175,11 +225,11 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
         </section>
       )}
 
-      {/* CHAPTER 5 */}
-      {activeChapter === 5 && (
-        <section id="ch-5">
+      {/* CHAPTER 6 */}
+      {activeChapter === 6 && (
+        <section id="ch-6">
           <div className="pdf-mb-300">
-            <h2 className="pdf-text-heading-32 pdf-mb-100">5. 머티리얼 3 기반 초정밀 버튼 설계 및 형태 모핑(Shape Morphing) 상호작용</h2>
+            <h2 className="pdf-text-heading-32 pdf-mb-100">6. 머티리얼 3 기반 초정밀 버튼 설계 및 형태 모핑(Shape Morphing) 상호작용</h2>
             <p className="pdf-text-copy-14 pdf-text-muted">
               버튼은 물리 하드웨어의 택타일 스위치를 디지털 화면 내부로 완벽하게 복제해 온 PDF-DS의 핵심 제어 컴포넌트이다. 외곽선의 예리함과 기하학적 형태 변화 메커니즘을 추가하여 정교한 피드백을 완성한다.
             </p>
@@ -198,11 +248,11 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
         </section>
       )}
 
-      {/* CHAPTER 6 */}
-      {activeChapter === 6 && (
-        <section id="ch-6">
+      {/* CHAPTER 7 */}
+      {activeChapter === 7 && (
+        <section id="ch-7">
           <div className="pdf-mb-300">
-            <h2 className="pdf-text-heading-32 pdf-mb-100">6. 비대칭 스플릿 스크린 레이아웃 및 디바이스 반응형 통합 가이드라인</h2>
+            <h2 className="pdf-text-heading-32 pdf-mb-100">7. 비대칭 스플릿 스크린 레이아웃 및 디바이스 반응형 통합 가이드라인</h2>
             <p className="pdf-text-copy-14 pdf-text-muted">
               화면 분할 철학은 대칭 분리를 타파하고 황금 비율에 준하는 38:62 비율의 비대칭 스플릿 스크린을 기본 표준으로 채택한다.
             </p>
@@ -227,11 +277,11 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
         </section>
       )}
 
-      {/* CHAPTER 7 */}
-      {activeChapter === 7 && (
-        <section id="ch-7">
+      {/* CHAPTER 8 */}
+      {activeChapter === 8 && (
+        <section id="ch-8">
           <div className="pdf-mb-300">
-            <h2 className="pdf-text-heading-32 pdf-mb-100">7. 통합 소프트웨어 아키텍처 및 토큰 구현 가이드라인</h2>
+            <h2 className="pdf-text-heading-32 pdf-mb-100">8. 통합 소프트웨어 아키텍처 및 토큰 구현 가이드라인</h2>
             <p className="pdf-text-copy-14 pdf-text-muted">
               디자인 시스템 PDF-DS의 궁극적인 존재 가치는 여러 이종 플랫폼 위에서 단일한 명도의 통제력을 유지하는 코드 기반 무결성에 있다.
             </p>
@@ -243,11 +293,11 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
         </section>
       )}
 
-      {/* CHAPTER 8 */}
-      {activeChapter === 8 && (
-        <section id="ch-8">
+      {/* CHAPTER 9 */}
+      {activeChapter === 9 && (
+        <section id="ch-9">
           <div className="pdf-mb-300">
-            <h2 className="pdf-text-heading-32 pdf-mb-100">8. 최종 통합 실무 체크리스트 및 검수 수칙</h2>
+            <h2 className="pdf-text-heading-32 pdf-mb-100">9. 최종 통합 실무 체크리스트 및 검수 수칙</h2>
             <p className="pdf-text-copy-14 pdf-text-muted">
               이 디자인 가이드라인이 프로젝트 소스코드에서 정상적으로 완수되고 있는지 판단하기 위한 전방위 디자인 검수(QA) 기준 목록이다.
             </p>
