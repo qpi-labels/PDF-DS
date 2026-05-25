@@ -181,44 +181,44 @@ public struct PdfMorphingButtonStyle: ButtonStyle {
   };
 
   return (
-    <div className="border border-zinc-200 bg-white p-6 rounded-lg font-sans my-4 shadow-sm">
-      <div className="flex items-center justify-between mb-4 pb-3 border-b border-zinc-100">
+    <div className="border border-pdf-seam bg-pdf-aluminum p-6 rounded-lg font-sans my-4 shadow-sm">
+      <div className="flex items-center justify-between mb-4 pb-3 border-b border-pdf-seam">
         <div>
-          <span className="font-mono text-xs tracking-wider text-red-700 font-bold uppercase block">
+          <span className="font-mono text-xs tracking-wider text-pdf-red font-bold uppercase block">
             CH.7 INTERACTIVE SANBOX
           </span>
-          <h4 className="font-sans text-base font-semibold text-zinc-900">
+          <h4 className="font-sans text-base font-semibold text-pdf-leather">
             크로스플랫폼 통합 토큰 및 코드 명세 보드 (JSON & Code Exporter)
           </h4>
         </div>
-        <Terminal className="text-zinc-400 w-4 h-4" />
+        <Terminal className="text-pdf-focus w-4 h-4" />
       </div>
 
-      <p className="text-xs text-zinc-500 mb-6 leading-relaxed">
+      <p className="text-xs text-pdf-focus mb-6 leading-relaxed">
         이종 플랫폼(Web, Jetpack Compose, SwiftUI)에서 단 하나의 물리 디자인 규칙을 준수하여 가동되도록 작성된 <strong>피지컬 통합 컴파일 서식</strong>입니다. 탭을 변경하면 각각의 프레임워크 명세에 일체가 맞춰집니다.
       </p>
 
       {/* Code exporter platform selector tabs */}
       <div className="flex items-center justify-between gap-2 flex-wrap mb-4">
-        <div className="flex bg-zinc-150 p-1 rounded-lg border border-zinc-200">
+        <div className="flex bg-pdf-aluminum p-1 rounded-lg border border-pdf-seam">
           <button
             id="tab-export-web"
             onClick={() => handleTabChange('web')}
-            className={`text-xs font-mono py-1.5 px-4 rounded transition-all ${platform === 'web' ? 'bg-white text-zinc-900 font-extrabold shadow-xs' : 'text-zinc-500 hover:text-zinc-900'}`}
+            className={`text-xs font-mono py-1.5 px-4 rounded transition-all ${platform === 'web' ? 'bg-pdf-aluminum text-pdf-leather font-extrabold shadow-xs' : 'text-pdf-focus hover:text-pdf-leather'}`}
           >
             Web (CSS Token)
           </button>
           <button
             id="tab-export-android"
             onClick={() => handleTabChange('android')}
-            className={`text-xs font-mono py-1.5 px-4 rounded transition-all ${platform === 'android' ? 'bg-white text-zinc-900 font-extrabold shadow-xs' : 'text-zinc-500 hover:text-zinc-900'}`}
+            className={`text-xs font-mono py-1.5 px-4 rounded transition-all ${platform === 'android' ? 'bg-pdf-aluminum text-pdf-leather font-extrabold shadow-xs' : 'text-pdf-focus hover:text-pdf-leather'}`}
           >
             Android (Kotlin Compose)
           </button>
           <button
             id="tab-export-ios"
             onClick={() => handleTabChange('ios')}
-            className={`text-xs font-mono py-1.5 px-4 rounded transition-all ${platform === 'ios' ? 'bg-white text-zinc-900 font-extrabold shadow-xs' : 'text-zinc-500 hover:text-zinc-900'}`}
+            className={`text-xs font-mono py-1.5 px-4 rounded transition-all ${platform === 'ios' ? 'bg-pdf-aluminum text-pdf-leather font-extrabold shadow-xs' : 'text-pdf-focus hover:text-pdf-leather'}`}
           >
             iOS (SwiftUI Swift)
           </button>
@@ -228,7 +228,7 @@ public struct PdfMorphingButtonStyle: ButtonStyle {
         <button
           id="btn-copy-export"
           onClick={handleCopy}
-          className="flex items-center gap-1.5 py-1.5 px-3.5 bg-zinc-900 hover:bg-zinc-800 text-white rounded text-xs font-mono active:scale-95 transition-all"
+          className="flex items-center gap-1.5 py-1.5 px-3.5 bg-pdf-leather hover:bg-pdf-leather text-pdf-aluminum rounded text-xs font-mono active:scale-95 transition-all"
         >
           {copied ? (
             <>
@@ -245,8 +245,8 @@ public struct PdfMorphingButtonStyle: ButtonStyle {
       </div>
 
       {/* Editor view screen pane */}
-      <div className="bg-zinc-950 text-zinc-200 p-4 rounded-lg font-mono text-[11px] leading-relaxed relative overflow-x-auto border border-zinc-900 shadow-inner max-h-[340px]">
-        <div className="text-[9px] text-zinc-500 uppercase sticky top-0 right-0 text-right bg-zinc-950/80 backdrop-blur-xs py-1 px-2 border border-zinc-900 rounded inline-block float-right">
+      <div className="bg-pdf-leather text-pdf-focus p-4 rounded-lg font-mono text-[11px] leading-relaxed relative overflow-x-auto border border-pdf-focus shadow-inner max-h-[340px]">
+        <div className="text-[9px] text-pdf-focus uppercase sticky top-0 right-0 text-right bg-pdf-leather/80 backdrop-blur-xs py-1 px-2 border border-pdf-focus rounded inline-block float-right">
           {platform === 'web' ? 'CSS / Variables' : platform === 'android' ? 'KOTLIN / COMPOSE' : 'SWIFT / SWIFTUI'}
         </div>
         <pre className="whitespace-pre">{codeBlocks[platform]}</pre>

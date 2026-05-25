@@ -3,8 +3,19 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  --font-mono: "JetBrains Mono", SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+ /* 다국어 호환 산세리프 및 공학용 모노스페이스 폰트 스택 고정 */
+ --font-sans: "Pretendard Variable", Pretendard, -apple-system, sans-serif;
+ --font-mono: "JetBrains Mono", SFMono-Regular, Consolas, monospace;
+
+ /* PDF-DS 공식 아크로매틱 3색 및 하드웨어 피지컬 토큰 */
+ --color-pdf-aluminum: #ffffff; /* Base Tone: 알루미늄 샤시 고유 명도 */
+ --color-pdf-leather: #09090b; /* Structure Tone: 파인 레더 블랙 */
+ --color-pdf-seam: #e4e4e7; /* Interaction Tone: 1px 미세 결합선 */
+ --color-pdf-focus: #a1a1aa; /* Hover Focus Tone: 포커싱 인디케이터 */
+ --color-pdf-red: #ad1d1d; /* Highlight Tone: 펑셔널 아노다이징 레드 */
+
+ /* 24px 단위(space-300) 기술적 스페이싱 모듈러스 고정 */
+ --spacing-pdf-grid: 24px;
 }
 
 /* Custom modern range slider styles that match achromatic spec beautifully */

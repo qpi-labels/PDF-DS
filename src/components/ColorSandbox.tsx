@@ -7,7 +7,7 @@ export default function ColorSandbox() {
   const [copiedToken, setCopiedToken] = useState<string | null>(null);
 
   const colors: (ColorToken & { darkHex: string })[] = [
-    { token: '$color-bg-primary', hex: '#FFFFFF', darkHex: '#09090B', layer: '메인 화폭', rule: '디폴트 상태의 메인 캔버스 극단 대비' },
+    { token: '$color-bg-primary', hex: '#ffffff', darkHex: '#09090B', layer: '메인 화폭', rule: '디폴트 상태의 메인 캔버스 극단 대비' },
     { token: '$color-bg-secondary', hex: '#F4F4F5', darkHex: '#18181B', layer: '구획 분할면', rule: '인접한 패널 간 시각적 명도 격리' },
     { token: '$color-border-default', hex: '#E4E4E7', darkHex: '#27272A', layer: '모서리 선', rule: '일반 상태 1px 경계선, 정직한 구획 분할' },
     { token: '$color-border-hover', hex: '#A1A1AA', darkHex: '#52525B', layer: '포커스 선', rule: '호버 구역 1차 시각 피드백 명도' },
@@ -28,44 +28,44 @@ export default function ColorSandbox() {
     return theme === 'light' ? color.hex : color.darkHex;
   };
   
-  const getSimulatedBg = () => theme === 'light' ? '#FFFFFF' : '#09090B';
+  const getSimulatedBg = () => theme === 'light' ? '#ffffff' : '#09090B';
   const getSimulatedText = () => theme === 'light' ? '#09090B' : '#FAFAFA';
 
   return (
-    <div className="border border-zinc-200 bg-white p-6 rounded-lg font-sans my-4 shadow-sm">
-      <div className="flex items-center justify-between mb-4 pb-3 border-b border-zinc-100">
+    <div className="border border-pdf-seam bg-pdf-aluminum p-6 rounded-lg font-sans my-4 shadow-sm">
+      <div className="flex items-center justify-between mb-4 pb-3 border-b border-pdf-seam">
         <div>
-          <span className="font-mono text-xs tracking-wider text-red-700 font-bold uppercase block">
+          <span className="font-mono text-xs tracking-wider text-pdf-red font-bold uppercase block">
             CH.4 INTERACTIVE SANBOX
           </span>
-          <h4 className="font-sans text-base font-semibold text-zinc-900">
+          <h4 className="font-sans text-base font-semibold text-pdf-leather">
             아크로매틱 컬러 & 테마 시뮬레이터 (Light & Dark Mode)
           </h4>
         </div>
-        <Palette className="text-zinc-400 w-4 h-4" />
+        <Palette className="text-pdf-focus w-4 h-4" />
       </div>
 
-      <p className="text-xs text-zinc-500 mb-6 leading-relaxed">
+      <p className="text-xs text-pdf-focus mb-6 leading-relaxed">
         PDF-DS는 복잡한 그라디언트를 배제하고 <strong>완벽한 모노크롬 대비(Achromatic Scale)</strong>와 오직 하나의 펑셔널 레드로만 구성됩니다. 우측 상단의 테마를 전환하여, 두 극단(White & Black)의 완벽한 반전 균형을 검측하십시오.
       </p>
 
       {/* Simulator mode controller buttons */}
-      <div className="flex gap-2 mb-4 bg-zinc-100 p-1.5 rounded-lg border border-zinc-200 w-full sm:max-w-xs">
+      <div className="flex gap-2 mb-4 bg-pdf-aluminum p-1.5 rounded-lg border border-pdf-seam w-full sm:max-w-xs">
         <button
           onClick={() => { setTheme('light'); }}
-          className={`flex items-center justify-center gap-1.5 text-[11px] font-semibold py-1.5 px-3 rounded font-mono transition-all flex-1 ${theme === 'light' ? 'bg-white text-zinc-900 shadow-xs ring-1 ring-zinc-200' : 'text-zinc-500 hover:text-zinc-900'}`}
+          className={`flex items-center justify-center gap-1.5 text-[11px] font-semibold py-1.5 px-3 rounded font-mono transition-all flex-1 ${theme === 'light' ? 'bg-pdf-aluminum text-pdf-leather shadow-xs ring-1 ring-pdf-seam' : 'text-pdf-focus hover:text-pdf-leather'}`}
         >
           <Sun className="w-3.5 h-3.5" /> Light Theme
         </button>
         <button
           onClick={() => { setTheme('dark'); }}
-          className={`flex items-center justify-center gap-1.5 text-[11px] font-semibold py-1.5 px-3 rounded font-mono transition-all flex-1 ${theme === 'dark' ? 'bg-[#09090B] text-[#FAFAFA] shadow-xs' : 'text-zinc-500 hover:text-zinc-900'}`}
+          className={`flex items-center justify-center gap-1.5 text-[11px] font-semibold py-1.5 px-3 rounded font-mono transition-all flex-1 ${theme === 'dark' ? 'bg-[#09090B] text-[#FAFAFA] shadow-xs' : 'text-pdf-focus hover:text-pdf-leather'}`}
         >
           <Moon className="w-3.5 h-3.5" /> Dark Theme
         </button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 relative p-4 rounded-xl border border-zinc-200 shadow-inner" style={{ backgroundColor: getSimulatedBg(), transition: 'background-color 0.3s' }}>
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 relative p-4 rounded-xl border border-pdf-seam shadow-inner" style={{ backgroundColor: getSimulatedBg(), transition: 'background-color 0.3s' }}>
         
         {/* SWATCH PANEL LIST */}
         <div className="md:col-span-7 flex flex-col gap-2">
@@ -75,7 +75,7 @@ export default function ColorSandbox() {
               <div 
                 key={color.token}
                 className="flex items-center justify-between p-2.5 rounded-lg transition-colors border"
-                style={{ borderColor: getDisplayColor(colors[2]), backgroundColor: theme === 'light' ? '#FFFFFF' : '#18181B' }}
+                style={{ borderColor: getDisplayColor(colors[2]), backgroundColor: theme === 'light' ? '#ffffff' : '#18181B' }}
               >
                 <div className="flex items-center gap-3">
                   <div 
@@ -125,7 +125,7 @@ export default function ColorSandbox() {
               >
                 <div className="flex gap-2 items-start">
                   <div 
-                    className="w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0"
+                    className="w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-pdf-aluminum shrink-0"
                     style={{ backgroundColor: getDisplayColor(colors[6]) }}
                   >
                     !

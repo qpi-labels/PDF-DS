@@ -28,27 +28,27 @@ export default function QASandbox() {
 
   const getSlogan = (s: number) => {
     if (s === 100) return { title: 'PERFECTION (시스템 승인 결함 제로)', desc: '피지컬 하드웨어와 아크로매틱 디지털이 완벽하게 융합된 무결점 명세 상태입니다.', color: 'text-emerald-700 bg-emerald-50 border-emerald-200' };
-    if (s >= 60) return { title: 'APPROVED (표준 가이드 준수)', desc: '모바일 및 저시력 접근성을 충분히 대비한 양질의 릴리즈 승인 규격입니다.', color: 'text-zinc-800 bg-zinc-50 border-zinc-200' };
-    return { title: 'CRITICAL WARNING (실격 및 보류)', desc: '사용자 포인팅 유실 우려 및 접근성 규격 누락이 관측됩니다. 신속히 보정하세요.', color: 'text-red-700 bg-red-50 border-red-200' };
+    if (s >= 60) return { title: 'APPROVED (표준 가이드 준수)', desc: '모바일 및 저시력 접근성을 충분히 대비한 양질의 릴리즈 승인 규격입니다.', color: 'text-pdf-leather bg-pdf-aluminum border-pdf-seam' };
+    return { title: 'CRITICAL WARNING (실격 및 보류)', desc: '사용자 포인팅 유실 우려 및 접근성 규격 누락이 관측됩니다. 신속히 보정하세요.', color: 'text-pdf-red bg-pdf-aluminum border-pdf-red' };
   };
 
   const slogan = getSlogan(score);
 
   return (
-    <div className="border border-zinc-200 bg-white p-6 rounded-lg font-sans my-4 shadow-sm">
-      <div className="flex items-center justify-between mb-4 pb-3 border-b border-zinc-100">
+    <div className="border border-pdf-seam bg-pdf-aluminum p-6 rounded-lg font-sans my-4 shadow-sm">
+      <div className="flex items-center justify-between mb-4 pb-3 border-b border-pdf-seam">
         <div>
-          <span className="font-mono text-xs tracking-wider text-red-700 font-bold uppercase block">
+          <span className="font-mono text-xs tracking-wider text-pdf-red font-bold uppercase block">
             CH.8 INTERACTIVE SANBOX
           </span>
-          <h4 className="font-sans text-base font-semibold text-zinc-900">
+          <h4 className="font-sans text-base font-semibold text-pdf-leather">
             실시간 디자인 검수(QA) 규칙성 자가 채점기
           </h4>
         </div>
-        <ClipboardCheck className="text-zinc-400 w-4 h-4" />
+        <ClipboardCheck className="text-pdf-focus w-4 h-4" />
       </div>
 
-      <p className="text-xs text-zinc-500 mb-6 leading-relaxed">
+      <p className="text-xs text-pdf-focus mb-6 leading-relaxed">
         PDF-DS 릴리즈 자격을 획득하기 위한 <strong>5대 물리 검수 강제 수칙</strong>입니다. 항목을 조작하면 감도 지수에 따른 실시간 무결 상태 점수(Compliance Score)가 반영됩니다.
       </p>
 
@@ -59,20 +59,20 @@ export default function QASandbox() {
             <div 
               key={item.id}
               onClick={() => toggleCheck(item.id)}
-              className={`flex items-start gap-3 p-3 border rounded-lg cursor-pointer transition-all ${item.checked ? 'border-zinc-300 bg-zinc-50/50' : 'border-zinc-200 hover:bg-zinc-50/30'}`}
+              className={`flex items-start gap-3 p-3 border rounded-lg cursor-pointer transition-all ${item.checked ? 'border-pdf-focus bg-pdf-aluminum/50' : 'border-pdf-seam hover:bg-pdf-aluminum/30'}`}
             >
-              <button className="text-red-700 mt-0.5 shrink-0 focus:outline-none">
+              <button className="text-pdf-red mt-0.5 shrink-0 focus:outline-none">
                 {item.checked ? (
                   <CheckSquare className="w-4 h-4" />
                 ) : (
-                  <Square className="w-4 h-4 text-zinc-300" />
+                  <Square className="w-4 h-4 text-pdf-focus" />
                 )}
               </button>
               <div>
-                <span className="text-[9px] font-mono text-red-600 bg-red-50 px-1 font-bold rounded">
+                <span className="text-[9px] font-mono text-pdf-red bg-pdf-aluminum px-1 font-bold rounded">
                   {item.category}
                 </span>
-                <p className="text-xs text-zinc-800 font-medium mt-1 leading-normal">
+                <p className="text-xs text-pdf-leather font-medium mt-1 leading-normal">
                   {item.label}
                 </p>
               </div>
@@ -81,23 +81,23 @@ export default function QASandbox() {
         </div>
 
         {/* COMPLIANCE RADIAL/LINEAR SCOREGUARD METER */}
-        <div className="lg:col-span-5 border border-zinc-200 rounded p-4 flex flex-col items-center justify-between bg-zinc-50 min-h-[220px]">
+        <div className="lg:col-span-5 border border-pdf-seam rounded p-4 flex flex-col items-center justify-between bg-pdf-aluminum min-h-[220px]">
           <div className="text-center w-full">
-            <span className="text-[10px] font-mono text-zinc-400 block mb-3">SYSTEM COMPLIANCE SCORE</span>
+            <span className="text-[10px] font-mono text-pdf-focus block mb-3">SYSTEM COMPLIANCE SCORE</span>
             
             {/* Elegant physical battery/gauge graphic */}
             <div className="flex items-center justify-center gap-1.5 w-full px-4 mb-4">
               {[20, 40, 60, 80, 100].map((t) => (
                 <div 
                   key={t}
-                  className={`h-8 flex-1 rounded-sm border transition-all duration-300 ${score >= t ? 'bg-red-700 border-red-800' : 'bg-zinc-200 border-zinc-300'}`}
+                  className={`h-8 flex-1 rounded-sm border transition-all duration-300 ${score >= t ? 'bg-pdf-red border-pdf-red' : 'bg-pdf-seam border-pdf-focus'}`}
                 />
               ))}
             </div>
 
-            <div className="font-mono text-3xl font-extrabold text-zinc-950 flex items-center justify-center gap-1">
+            <div className="font-mono text-3xl font-extrabold text-pdf-leather flex items-center justify-center gap-1">
               {score}
-              <span className="text-sm font-normal text-zinc-400">/ 100%</span>
+              <span className="text-sm font-normal text-pdf-focus">/ 100%</span>
             </div>
           </div>
 
