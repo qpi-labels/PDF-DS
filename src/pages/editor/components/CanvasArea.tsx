@@ -142,7 +142,18 @@ export default function CanvasArea() {
   if (!rootNode) return null;
 
   return (
-    <main className="pdf-main-view pdf-grid-bg pdf-relative" style={{ flex: 1, overflowY: 'auto', padding: 'var(--space-400)' }} onClick={() => setSelectedNodeId(null)}>
+    <main 
+      className="pdf-grid-bg pdf-relative" 
+      style={{ 
+        flex: 1, 
+        width: '100%', 
+        height: '100%', 
+        overflowY: 'auto', 
+        padding: 'var(--space-400)',
+        backgroundColor: 'var(--color-bg-primary)'
+      }} 
+      onClick={() => setSelectedNodeId(null)}
+    >
       <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
         <div style={{ maxWidth: '1440px', margin: '0 auto', minHeight: '100%' }}>
           <SortableContext items={rootNode.children.map(c => c.id)} strategy={verticalListSortingStrategy}>
