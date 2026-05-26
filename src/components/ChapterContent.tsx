@@ -40,6 +40,13 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
             <p className="pdf-text-copy-14 pdf-text-muted" style={{ fontSize: '18px', lineHeight: '1.6', maxWidth: '600px', margin: '0 auto' }}>
               디터 람스의 철학과 하드웨어적 정밀함을 웹 환경에 완벽히 이식한 통합 디자인 시스템입니다. 복잡한 스타일링 없이, 선언적인 구조와 엄격한 여백만으로 극한의 정밀함을 달성하세요.
             </p>
+            <div className="pdf-mt-400 pdf-flex-row pdf-justify-center">
+              <a href="https://github.com/qpi-labels/PDF-DS" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                <button className="pdf-btn-primary pdf-btn-md">
+                  깃허브 리포지토리 보기
+                </button>
+              </a>
+            </div>
           </div>
 
           <div className="pdf-mb-400">
