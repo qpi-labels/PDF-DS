@@ -39,7 +39,12 @@ const SortableNode = ({ node }: { node: EditorNode }) => {
   const combinedClasses = node.classes.join(' ');
   const elAttributes = { ...node.attributes, className: combinedClasses, style, onClick: handleClick, onDoubleClick: handleDoubleClick, ref: setNodeRef, ...attributes, ...listeners };
 
-  let inner: React.ReactNode = node.content || '';
+  let inner: React.ReactNode = node.content ? node.content.split('\\n').map((line, i, arr) => (
+    <React.Fragment key={i}>
+      {line}
+      {i < arr.length - 1 && <br />}
+    </React.Fragment>
+  )) : '';
   
   if (isEditing) {
     inner = (
@@ -52,8 +57,8 @@ const SortableNode = ({ node }: { node: EditorNode }) => {
           updateNode(node.id, { content: editValue });
         }}
         onKeyDown={(e) => {
-          if (e.key === 'Enter' && !e.shiftKey) {
-            e.preventDefault();
+          // ESC 키로 취소/저장
+          if (e.key === 'Escape') {
             setIsEditing(false);
             updateNode(node.id, { content: editValue });
           }

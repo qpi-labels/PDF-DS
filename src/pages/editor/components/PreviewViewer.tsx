@@ -10,7 +10,14 @@ export default function PreviewViewer({ onExit }: { onExit: () => void }) {
 
   const renderNode = (node: EditorNode) => {
     const elAttributes = { ...node.attributes, className: node.classes.join(' '), style: node.styles };
-    let inner: any = node.content || '';
+    
+    let inner: any = node.content ? node.content.split('\\n').map((line, i, arr) => (
+      <React.Fragment key={i}>
+        {line}
+        {i < arr.length - 1 && <br />}
+      </React.Fragment>
+    )) : '';
+    
     if (node.children.length > 0) {
       inner = node.children.map(renderNode);
     }

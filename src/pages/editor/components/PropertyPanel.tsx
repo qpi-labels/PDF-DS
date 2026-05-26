@@ -55,12 +55,17 @@ export default function PropertyPanel() {
   const mbClasses = ['pdf-mb-050', 'pdf-mb-100', 'pdf-mb-150', 'pdf-mb-200', 'pdf-mb-300', 'pdf-mb-400'];
   const mtClasses = ['pdf-mt-100', 'pdf-mt-200', 'pdf-mt-300', 'pdf-mt-400'];
   const pClasses = ['pdf-p-050', 'pdf-p-100', 'pdf-p-150', 'pdf-p-200', 'pdf-p-300', 'pdf-p-400'];
+  const typoClasses = [
+    'pdf-text-heading-72', 'pdf-text-heading-32', 'pdf-text-heading-24', 
+    'pdf-text-label-16', 'pdf-text-label-14-mono', 'pdf-text-copy-14', 'pdf-text-copy-13-mono'
+  ];
   
   const currentMb = node.classes.find(c => mbClasses.includes(c)) || '';
   const currentMt = node.classes.find(c => mtClasses.includes(c)) || '';
   const currentP = node.classes.find(c => pClasses.includes(c)) || '';
+  const currentTypo = node.classes.find(c => typoClasses.includes(c)) || '';
 
-  const handleSpacingChange = (group: string[], newValue: string) => {
+  const handleGroupChange = (group: string[], newValue: string) => {
     const newClasses = node.classes.filter(c => !group.includes(c));
     if (newValue) newClasses.push(newValue);
     updateNode(node.id, { classes: newClasses });
@@ -108,9 +113,24 @@ export default function PropertyPanel() {
               </div>
             </div>
             
-            <div className="pdf-mb-100">
+            <div className="pdf-flex-row pdf-gap-100 pdf-mb-100">
               <select 
-                className="pdf-input pdf-input-sm pdf-w-full"
+                className="pdf-input pdf-input-sm" style={{ flex: 1 }}
+                value={currentTypo}
+                onChange={(e) => handleGroupChange(typoClasses, e.target.value)}
+              >
+                <option value="">글씨 크기 (기본)</option>
+                <option value="pdf-text-heading-72">초대형 제목 (72px)</option>
+                <option value="pdf-text-heading-32">대형 제목 (32px)</option>
+                <option value="pdf-text-heading-24">중형 제목 (24px)</option>
+                <option value="pdf-text-label-16">라벨 (16px)</option>
+                <option value="pdf-text-copy-14">본문 (14px)</option>
+                <option value="pdf-text-label-14-mono">라벨 모노 (14px)</option>
+                <option value="pdf-text-copy-13-mono">본문 모노 (13px)</option>
+              </select>
+
+              <select 
+                className="pdf-input pdf-input-sm" style={{ flex: 1 }}
                 value={node.styles?.fontFamily || ''}
                 onChange={(e) => {
                   const newFont = e.target.value;
@@ -123,8 +143,8 @@ export default function PropertyPanel() {
                   }
                 }}
               >
-                <option value="">기본 (Pretendard)</option>
-                <option value="'JetBrains Mono', monospace">Monospace (고정폭)</option>
+                <option value="">글꼴 (Pretendard)</option>
+                <option value="'JetBrains Mono', monospace">글꼴 (Monospace)</option>
               </select>
             </div>
 
@@ -142,7 +162,7 @@ export default function PropertyPanel() {
           <div className="pdf-flex-col pdf-gap-100">
             <div className="pdf-flex-row pdf-items-center pdf-justify-between">
               <span className="pdf-text-label-13-mono pdf-text-muted">하단 여백:</span>
-              <select className="pdf-input pdf-input-sm" style={{ width: '180px' }} value={currentMb} onChange={(e) => handleSpacingChange(mbClasses, e.target.value)}>
+              <select className="pdf-input pdf-input-sm" style={{ width: '180px' }} value={currentMb} onChange={(e) => handleGroupChange(mbClasses, e.target.value)}>
                 <option value="">없음</option>
                 <option value="pdf-mb-050">4px (최소)</option>
                 <option value="pdf-mb-100">8px (소)</option>
@@ -154,7 +174,7 @@ export default function PropertyPanel() {
             </div>
             <div className="pdf-flex-row pdf-items-center pdf-justify-between">
               <span className="pdf-text-label-13-mono pdf-text-muted">상단 여백:</span>
-              <select className="pdf-input pdf-input-sm" style={{ width: '180px' }} value={currentMt} onChange={(e) => handleSpacingChange(mtClasses, e.target.value)}>
+              <select className="pdf-input pdf-input-sm" style={{ width: '180px' }} value={currentMt} onChange={(e) => handleGroupChange(mtClasses, e.target.value)}>
                 <option value="">없음</option>
                 <option value="pdf-mt-100">8px (소)</option>
                 <option value="pdf-mt-200">16px (중)</option>
@@ -164,7 +184,7 @@ export default function PropertyPanel() {
             </div>
             <div className="pdf-flex-row pdf-items-center pdf-justify-between">
               <span className="pdf-text-label-13-mono pdf-text-muted">내부 여백:</span>
-              <select className="pdf-input pdf-input-sm" style={{ width: '180px' }} value={currentP} onChange={(e) => handleSpacingChange(pClasses, e.target.value)}>
+              <select className="pdf-input pdf-input-sm" style={{ width: '180px' }} value={currentP} onChange={(e) => handleGroupChange(pClasses, e.target.value)}>
                 <option value="">없음</option>
                 <option value="pdf-p-050">4px (최소)</option>
                 <option value="pdf-p-100">8px (소)</option>
@@ -211,13 +231,7 @@ export default function PropertyPanel() {
               <option value="pdf-mb-200">pdf-mb-200 (하단 여백 16px)</option>
               <option value="pdf-mb-100">pdf-mb-100 (하단 여백 8px)</option>
             </optgroup>
-            <optgroup label="Typography & Colors">
-              <option value="pdf-text-heading-72">pdf-text-heading-72</option>
-              <option value="pdf-text-heading-32">pdf-text-heading-32</option>
-              <option value="pdf-text-heading-24">pdf-text-heading-24</option>
-              <option value="pdf-text-label-16">pdf-text-label-16</option>
-              <option value="pdf-text-label-14-mono">pdf-text-label-14-mono</option>
-              <option value="pdf-text-copy-14">pdf-text-copy-14</option>
+            <optgroup label="Colors & Styling">
               <option value="pdf-text-red">pdf-text-red (레드 텍스트)</option>
               <option value="pdf-text-muted">pdf-text-muted (회색 텍스트)</option>
             </optgroup>

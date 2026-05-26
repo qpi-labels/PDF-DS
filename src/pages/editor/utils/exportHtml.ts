@@ -3,17 +3,19 @@ import { saveAs } from 'file-saver';
 import { EditorPageItem, EditorNode } from '../types';
 
 const generateNodeHtml = (node: EditorNode): string => {
-  let innerHtml = node.content || '';
+  let contentHtml = node.content ? node.content.replace(/\n/g, '<br/>') : '';
+
   if (node.children && node.children.length > 0) {
-    innerHtml = node.children.map(generateNodeHtml).join('\n');
+    contentHtml = node.children.map(generateNodeHtml).join('\n');
   }
 
   const className = node.classes.join(' ');
   const classAttr = className ? ` class="${className}"` : '';
 
-  const styleAttr = Object.keys(node.styles).length > 0
-    ? ` style="${Object.entries(node.styles).map(([k, v]) => `${k.replace(/([A-Z])/g, '-$1').toLowerCase()}: ${v}`).join('; ')}"`
-    : '';
+  const stylesStr = Object.entries(node.styles || {})
+    .map(([k, v]) => `${k.replace(/([A-Z])/g, '-$1').toLowerCase()}:${v}`)
+    .join(';');
+  const styleAttr = stylesStr ? ` style="${stylesStr}"` : '';
 
   const attributesStr = Object.entries(node.attributes)
     .map(([key, value]) => ` ${key}="${value}"`)
@@ -28,15 +30,15 @@ const generateNodeHtml = (node: EditorNode): string => {
     case 'h3':
     case 'button':
     case 'a':
-      return `<${node.type}${classAttr}${styleAttr}${attributesStr}>${innerHtml}</${node.type}>`;
+      return `<${node.type}${classAttr}${styleAttr}${attributesStr}>${contentHtml}</${node.type}>`;
     case 'img':
       return `<img${classAttr}${styleAttr}${attributesStr} />`;
     case 'input':
       return `<input type="text"${classAttr}${styleAttr}${attributesStr} />`;
     case 'svg':
-      return `<svg${classAttr}${styleAttr}${attributesStr}>${innerHtml}</svg>`;
+      return `<svg${classAttr}${styleAttr}${attributesStr}>${contentHtml}</svg>`;
     default:
-      return `<div${classAttr}${styleAttr}${attributesStr}>${innerHtml}</div>`;
+      return `<div${classAttr}${styleAttr}${attributesStr}>${contentHtml}</div>`;
   }
 };
 
