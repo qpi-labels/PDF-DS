@@ -11,25 +11,25 @@ export default function NavigationSandbox() {
       </p>
 
       <div className="pdf-flex-col pdf-gap-400">
-        
+
         {/* 1. Sidebar Item */}
         <div className="pdf-flex-col pdf-gap-100">
           <label className="pdf-text-label-14-mono pdf-text-muted">1. Sidebar Navigation (사이드바 메뉴)</label>
-          <div 
-            className="pdf-p-200 pdf-border pdf-radius-md" 
-            style={{ 
+          <div
+            className="pdf-p-200 pdf-border pdf-radius-md"
+            style={{
               backgroundColor: 'var(--bg-sidebar)',
               backdropFilter: 'blur(24px) saturate(180%)',
               WebkitBackdropFilter: 'blur(24px) saturate(180%)',
               backgroundImage: 'var(--blueprint-grid-pattern)',
               backgroundSize: '24px 24px',
-              maxWidth: '300px' 
+              maxWidth: '300px'
             }}
           >
             <div className="pdf-flex-col" style={{ padding: '8px 0' }}>
               <div className="pdf-flex-row pdf-items-center pdf-justify-between pdf-cursor-pointer" style={{ padding: '4px 16px', marginBottom: '8px' }}>
-                 <span className="pdf-text-label-16 pdf-font-bold">Components</span>
-                 <svg width="12" height="12" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z" fill="currentColor"/></svg>
+                <span className="pdf-text-label-16 pdf-font-bold">Components</span>
+                <svg width="12" height="12" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z" fill="currentColor" /></svg>
               </div>
 
               <div className="pdf-nav-item">
@@ -66,14 +66,14 @@ export default function NavigationSandbox() {
         {/* 2. Top Tabs (Contextual Segmented Control) */}
         <div className="pdf-flex-col pdf-gap-100">
           <label className="pdf-text-label-14-mono pdf-text-muted">2. Contextual Tabs (수평 탭 / 세그멘티드 컨트롤)</label>
-          <div 
-            className="pdf-p-200 pdf-border pdf-radius-md" 
-            style={{ 
+          <div
+            className="pdf-p-200 pdf-border pdf-radius-md"
+            style={{
               backgroundColor: 'var(--color-bg-primary)'
             }}
           >
             <div className="pdf-flex-row" style={{ display: 'inline-flex', backgroundColor: 'var(--color-bg-secondary)', border: '1px solid var(--color-border-default)', borderRadius: '10px', padding: '4px', gap: '4px', width: '100%', overflowX: 'auto' }}>
-              <button 
+              <button
                 onClick={() => setActiveTab('web')}
                 style={{
                   flex: 1,
@@ -91,7 +91,7 @@ export default function NavigationSandbox() {
               >
                 <span className="pdf-text-label-14-mono" style={{ fontWeight: activeTab === 'web' ? '700' : '400' }}>Web (CSS Token)</span>
               </button>
-              <button 
+              <button
                 onClick={() => setActiveTab('android')}
                 style={{
                   flex: 1,
@@ -109,7 +109,7 @@ export default function NavigationSandbox() {
               >
                 <span className="pdf-text-label-14-mono" style={{ fontWeight: activeTab === 'android' ? '700' : '400' }}>Android (Kotlin Compose)</span>
               </button>
-              <button 
+              <button
                 onClick={() => setActiveTab('ios')}
                 style={{
                   flex: 1,
@@ -128,13 +128,13 @@ export default function NavigationSandbox() {
                 <span className="pdf-text-label-14-mono" style={{ fontWeight: activeTab === 'ios' ? '700' : '400' }}>iOS (SwiftUI Swift)</span>
               </button>
             </div>
-            
+
             <div className="pdf-p-200 pdf-mt-200" style={{ borderTop: '1px solid var(--color-border-default)' }}>
               {activeTab === 'web' && (
                 <div className="pdf-flex-col pdf-gap-100 pdf-animate-fade-in">
                   <span className="pdf-text-label-14-mono pdf-text-red">Web Implementation</span>
                   <p className="pdf-text-copy-14 pdf-text-muted">
-                    CSS Variables 또는 Tailwind Config를 사용하여 웹 환경에 적합한 디자인 토큰을 유연하게 주입합니다.
+                    CSS Variables를 사용하여 웹 환경에 적합한 디자인 토큰을 유연하게 주입합니다.
                   </p>
                 </div>
               )}
