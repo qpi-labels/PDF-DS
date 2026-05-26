@@ -55,18 +55,28 @@ PDF-DS/
 
 ## 🚀 시작하기 (Getting Started)
 
-### 1. 패키지 설치
+### 📦 CDN을 통한 CSS 설치 (Installation)
+프로젝트에 CSS만 빠르게 적용하고 싶다면, jsDelivr CDN을 통해 다운로드 없이 바로 사용할 수 있습니다.
+HTML 파일의 `<head>` 태그 안에 아래 코드를 추가하세요.
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qpi-labels/PDF-DS@main/src/index.css">
+```
+
+### 💻 로컬 개발 환경 설정 (Local Development)
+
+#### 1. 패키지 설치
 ```bash
 npm install
 ```
 
-### 2. 개발 서버 실행
+#### 2. 개발 서버 실행
 ```bash
 npm run dev
 ```
 > 서버가 실행되면 브라우저에서 `http://localhost:3000` (기본값)으로 접속하여 가이드라인을 확인할 수 있습니다.
 
-### 3. 프로덕션 빌드
+#### 3. 프로덕션 빌드
 ```bash
 npm run build
 ```

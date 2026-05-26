@@ -117,16 +117,37 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
       {/* 3. Installation */}
       {activeChapter === 3 && (
         <section id="ch-3">
-          <div className="pdf-panel pdf-grid-bg pdf-p-400 pdf-flex-col pdf-items-center pdf-justify-center" style={{ minHeight: '320px', border: '1px dashed var(--color-border-hover)', borderRadius: '8px', textAlign: 'center' }}>
-            <div className="pdf-animate-pulse pdf-flex-row pdf-items-center pdf-justify-center pdf-mb-200" style={{ width: '56px', height: '56px', backgroundColor: 'var(--color-red-light)', border: '1px solid var(--color-functional-red)', borderRadius: '50%', display: 'inline-flex' }}>
-              <span style={{ fontSize: '24px' }}>⚙️</span>
-            </div>
-            <h3 className="pdf-text-label-16 pdf-font-bold pdf-mb-150" style={{ fontSize: '18px' }}>
-              설치 및 구성 가이드 준비 중 (Under Construction)
-            </h3>
-            <p className="pdf-text-copy-14 pdf-text-muted" style={{ maxWidth: '440px', lineHeight: '1.6' }}>
-              더욱 안정적이고 예리한 패키지 배포와 npm 모듈 컴파일 작업을 정교화하는 과정에 있습니다. 빠른 시일 내에 완전한 설치 및 로드 가이드가 활성화됩니다.
+          <div className="pdf-mb-300">
+            <p className="pdf-text-copy-14 pdf-text-muted">
+              PDF-DS의 단일 레이어 아키텍처 덕분에, 복잡한 빌드 도구 없이 단 한 줄의 CSS 링크만으로 모든 스타일과 애니메이션 규칙을 프로젝트에 즉시 주입할 수 있습니다.
             </p>
+          </div>
+          
+          <h2 className="pdf-text-label-16 pdf-mb-200">📦 CDN을 통한 CSS 퀵 스타트 (권장)</h2>
+          <div className="pdf-mb-300">
+            <p className="pdf-text-copy-14 pdf-mb-100">
+              HTML 파일의 <code>&lt;head&gt;</code> 태그 내부에 아래 jsDelivr CDN 링크를 추가하면 별도의 다운로드나 설치 과정 없이 바로 PDF-DS 컴포넌트 클래스를 사용할 수 있습니다.
+            </p>
+            <div className="pdf-code-block pdf-selectable" style={{ whiteSpace: 'pre-wrap' }}>
+              {`<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qpi-labels/PDF-DS@main/src/index.css">`}
+            </div>
+          </div>
+
+          <h2 className="pdf-text-label-16 pdf-mb-200">💻 로컬 개발 환경 구성 (선택)</h2>
+          <div className="pdf-mb-300">
+            <p className="pdf-text-copy-14 pdf-mb-100">
+              만약 이 저장소를 직접 클론하여 컴포넌트 샌드박스를 실행하거나 수정하고 싶다면 아래 과정을 따르십시오.
+            </p>
+            <div className="pdf-code-block pdf-selectable" style={{ whiteSpace: 'pre-wrap' }}>
+              {`# 패키지 의존성 설치
+npm install
+
+# 샌드박스 개발 서버 실행 (localhost:3000)
+npm run dev
+
+# 프로덕션 빌드 출력
+npm run build`}
+            </div>
           </div>
         </section>
       )}
