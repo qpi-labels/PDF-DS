@@ -194,18 +194,26 @@ npm run build`}
 
           <details className="pdf-mt-200 pdf-cursor-pointer pdf-border-top" style={{ paddingTop: '16px' }}>
             <summary className="pdf-text-label-14-mono pdf-text-muted pdf-font-bold">[+] 타이포그래피 구현 코드 보기</summary>
-            <div className="pdf-code-block pdf-mt-100" style={{ whiteSpace: 'pre-wrap' }}>
-              {`<!-- 헤딩 타이틀 -->
-<h1 class="pdf-text-heading-32">큰 제목 (32px)</h1>
-<h2 class="pdf-text-heading-24">중간 제목 (24px)</h2>
+            <div className="pdf-code-block pdf-selectable pdf-mt-100" style={{ whiteSpace: 'pre-wrap' }}>
+              {`<!-- 1. 헤딩 타이틀 (Heading Typography) -->
+<!-- 가장 눈에 띄는 제목 요소에 사용합니다. -->
+<h1 class="pdf-text-heading-72">거대한 메인 타이틀 (72px)</h1>
+<h1 class="pdf-text-heading-32">최상위 타이틀 (32px)</h1>
+<h2 class="pdf-text-heading-24">중간 타이틀 (24px)</h2>
 
-<!-- 라벨 (강조 및 UI 타이틀) -->
-<span class="pdf-text-label-16">기본 라벨 (16px)</span>
-<span class="pdf-text-label-14-mono">고정폭 라벨 (14px)</span>
+<!-- 2. 라벨 (UI Labels & Emphasized Text) -->
+<!-- 버튼, 네비게이션, 짧은 강조 텍스트에 사용합니다. -->
+<span class="pdf-text-label-16">중요 라벨 텍스트 (16px, Bold)</span>
+<span class="pdf-text-label-14-mono">고정폭 메타데이터 라벨 (14px)</span>
 
-<!-- 본문 (일반 텍스트) -->
-<p class="pdf-text-copy-14">본문 텍스트입니다. (14px)</p>
-<p class="pdf-text-copy-13-mono pdf-text-muted">설명 텍스트 (13px, Muted)</p>`}
+<!-- 3. 본문 텍스트 (Copy/Body Text) -->
+<!-- 긴 단락이나 일반 설명 문구에 사용합니다. -->
+<p class="pdf-text-copy-14">기본 본문 텍스트입니다. (14px)</p>
+<p class="pdf-text-copy-13-mono pdf-text-muted">부가적인 설명이나 작은 캡션 (13px, Muted)</p>
+
+<!-- 4. 다국어/숫자 복합 사용 예시 -->
+<!-- JetBrains Mono와 Pretendard가 자동 폴백으로 섞여 렌더링됩니다. -->
+<span class="pdf-text-label-14-mono">API_KEY_12345 (생성일: 2026-05-26)</span>`}
             </div>
           </details>
 
@@ -271,17 +279,29 @@ npm run build`}
 
           <details className="pdf-mt-200 pdf-cursor-pointer pdf-border-top" style={{ paddingTop: '16px' }}>
             <summary className="pdf-text-label-14-mono pdf-text-muted pdf-font-bold">[+] 컬러 구현 코드 보기</summary>
-            <div className="pdf-code-block pdf-mt-100" style={{ whiteSpace: 'pre-wrap' }}>
-              {`/* CSS 변수를 활용한 색상 적용 */
-.my-container {
+            <div className="pdf-code-block pdf-selectable pdf-mt-100" style={{ whiteSpace: 'pre-wrap' }}>
+              {`/* 1. 디자인 시스템 토큰을 활용한 CSS 예시 (CSS Variables) */
+.my-custom-panel {
+  /* 배경과 텍스트 대비 */
   background-color: var(--color-bg-secondary);
-  border: 1px solid var(--color-border-default);
   color: var(--color-text-primary);
+  
+  /* 경계선 토큰 적용 */
+  border: 1px solid var(--color-border-default);
+}
+.my-custom-panel:hover {
+  border-color: var(--color-border-hover);
 }
 
-.my-error-text {
-  color: var(--color-functional-red);
-}`}
+/* 2. 유틸리티 클래스를 이용한 HTML 적용 예시 */
+<!-- 붉은색 액센트 텍스트 -->
+<div class="pdf-text-red pdf-font-bold">Error: Connection Lost</div>
+
+<!-- 보조 텍스트 색상 (Muted) -->
+<div class="pdf-text-muted pdf-text-copy-14">마지막 업데이트: 1시간 전</div>
+
+<!-- 붉은색 배경 (주로 알림 뱃지 등에 사용) -->
+<div class="pdf-bg-red" style="color: var(--color-bg-primary);">알림</div>`}
             </div>
           </details>
         </section>
@@ -301,15 +321,25 @@ npm run build`}
 
           <details className="pdf-mt-200 pdf-cursor-pointer pdf-border-top" style={{ paddingTop: '16px' }}>
             <summary className="pdf-text-label-14-mono pdf-text-muted pdf-font-bold">[+] 머티리얼 및 표면 높이 구현 코드 보기</summary>
-            <div className="pdf-code-block pdf-mt-100" style={{ whiteSpace: 'pre-wrap' }}>
-              {`<!-- 기본 하드웨어 패널 (입체감 있는 표면) -->
+            <div className="pdf-code-block pdf-selectable pdf-mt-100" style={{ whiteSpace: 'pre-wrap' }}>
+              {`<!-- 1. 기본 하드웨어 패널 (Standard Panel) -->
+<!-- 미세한 볼륨감(Bevel)과 그림자가 포함된 기본 표면입니다. -->
 <div class="pdf-panel">
-  기본 표면
+  <div class="pdf-panel-header">
+    <h3 class="pdf-text-label-16">패널 타이틀</h3>
+  </div>
+  <p class="pdf-text-copy-14 pdf-text-muted">안정적인 하드웨어 재질감</p>
 </div>
 
-<!-- 반투명 유리 표면 (Frosted Glass) -->
-<div style="background-color: rgba(255, 255, 255, 0.65); backdrop-filter: blur(24px) saturate(180%);">
-  사이드바 등 오버레이 표면
+<!-- 2. 프로스트 글래스 / 반투명 표면 (Frosted Glass) -->
+<!-- 스크롤 오버레이나 사이드바, 네비게이션 영역에 주로 사용합니다. -->
+<div style="background-color: var(--bg-sidebar); backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%); padding: var(--space-200);">
+  <span class="pdf-text-label-14-mono">투과되는 유리 재질</span>
+</div>
+
+<!-- 3. 상태 표시용 글로우 이펙트 (Glow Effect) -->
+<div class="pdf-shadow-glow" style="border: 1px solid var(--color-functional-red); border-radius: 8px; padding: 16px;">
+  강조되어야 하는 치명적 알림 박스
 </div>`}
             </div>
           </details>
@@ -336,36 +366,34 @@ npm run build`}
 
           <details className="pdf-mt-200 pdf-cursor-pointer pdf-border-top" style={{ paddingTop: '16px' }}>
             <summary className="pdf-text-label-14-mono pdf-text-muted pdf-font-bold">[+] 버튼 구현 코드 보기</summary>
-            <div className="pdf-code-block pdf-mt-100 pdf-selectable" style={{ whiteSpace: 'pre-wrap' }}>
-              {`<!-- 1차 액션 (Primary Button) -->
-<!-- 붉은색 배경, 가장 중요한 단일 액션에 사용 -->
+            <div className="pdf-code-block pdf-selectable pdf-mt-100" style={{ whiteSpace: 'pre-wrap' }}>
+              {`<!-- 1. 1차 액션 (Primary Button) -->
+<!-- 화면당 1개 제한 권장, 가장 중요한 단일 액션 -->
+<!-- Hover/Active 시 둥근 알약(Capsule) 형태에서 직사각형으로 모핑(Morphing)됩니다. -->
 <button class="pdf-btn-primary">
   SUBMIT DATA
 </button>
 
-<!-- 2차 액션 (Secondary Button) -->
-<!-- 회색 테두리, 보조적인 동작에 사용 -->
+<!-- 2. 2차 액션 (Secondary Button) -->
+<!-- 폼 취소, 뒤로가기 등 보조적인 동작 -->
 <button class="pdf-secondary-btn">
   CANCEL
 </button>
 
-<!-- 고스트 버튼 (Ghost Button) -->
-<!-- 테두리 없음, 최소한의 강조가 필요할 때 사용 -->
-<button class="pdf-ghost-btn">
+<!-- 3. 고스트 액션 (Ghost Button / Text Button) -->
+<!-- 테두리 없이 텍스트만 존재, 중요도가 낮은 부가 기능 -->
+<!-- pdf-secondary-btn 구조에서 border를 빼고 여백을 줄여 사용 가능 -->
+<button class="pdf-secondary-btn" style="border: none; background: transparent;">
   Learn More
 </button>
 
-<!-- 버튼 크기 속성 (Button Sizing Modifiers) -->
-<!-- 버튼 크기 접미사를 추가하여 형태와 타이포그래피 스케일을 통합 제어합니다: -->
-<!-- XS (32px) / S (40px) / M (44px, 기본) / L (48px) / XL (56px) -->
-<button class="pdf-btn-primary pdf-btn-xs">XS BUTTON</button>
-<button class="pdf-btn-primary pdf-btn-sm">S BUTTON</button>
-<button class="pdf-btn-primary">M BUTTON (Default)</button>
-<button class="pdf-btn-primary pdf-btn-lg">L BUTTON</button>
-<button class="pdf-btn-primary pdf-btn-xl">XL BUTTON</button>
-
-<!-- 보조 버튼 크기 확장 예시 -->
-<button class="pdf-secondary-btn pdf-btn-xl">XL SECONDARY BUTTON</button>`}
+<!-- 4. 버튼 사이즈 토큰 (Button Sizing Modifiers) -->
+<!-- XS (32px) | SM (40px) | MD (44px, 기본) | LG (48px) | XL (56px) -->
+<div class="pdf-flex-row pdf-gap-100">
+  <button class="pdf-btn-primary pdf-btn-xs">XS BTN</button>
+  <button class="pdf-btn-primary pdf-btn-sm">SM BTN</button>
+  <button class="pdf-btn-primary pdf-btn-md">MD BTN</button>
+</div>`}
             </div>
           </details>
         </section>
@@ -385,29 +413,29 @@ npm run build`}
 
           <details className="pdf-mt-200 pdf-cursor-pointer pdf-border-top" style={{ paddingTop: '16px' }}>
             <summary className="pdf-text-label-14-mono pdf-text-muted pdf-font-bold">[+] 폼 입력 구현 코드 보기</summary>
-            <div className="pdf-code-block pdf-mt-100 pdf-selectable" style={{ whiteSpace: 'pre-wrap' }}>
-              {`<!-- 기본 텍스트 입력 폼 -->
+            <div className="pdf-code-block pdf-selectable pdf-mt-100" style={{ whiteSpace: 'pre-wrap' }}>
+              {`<!-- 1. 기본 텍스트 입력 폼 세트 -->
 <div class="pdf-flex-col pdf-gap-100">
-  <label class="pdf-text-label-14-mono pdf-text-muted">Username</label>
+  <label class="pdf-text-label-14-mono pdf-text-muted">USERNAME</label>
   <input type="text" class="pdf-input" placeholder="Enter your name" />
 </div>
 
-<!-- 드롭다운(Select) 폼 -->
+<!-- 2. 드롭다운(Select) 폼 세트 -->
 <div class="pdf-flex-col pdf-gap-100">
-  <label class="pdf-text-label-14-mono pdf-text-muted">Role</label>
+  <label class="pdf-text-label-14-mono pdf-text-muted">USER ROLE</label>
   <select class="pdf-input">
-    <option>Admin</option>
-    <option>User</option>
+    <option value="admin">Administrator</option>
+    <option value="editor">Editor</option>
+    <option value="viewer">Viewer</option>
   </select>
 </div>
 
-<!-- 입력 폼 크기 속성 (Form Input Sizing Modifiers) -->
-<!-- 높이와 패딩 스케일을 조절하는 크기 접미사입니다: -->
-<!-- XS (32px) / S (40px) / M (44px, 기본) / L (48px) / XL (56px) -->
+<!-- 3. 입력 폼 사이즈 토큰 (Form Sizing Modifiers) -->
+<!-- 버튼 사이즈와 1:1로 대응하여 수평 정렬을 완벽하게 맞출 수 있습니다. -->
 <input type="text" class="pdf-input pdf-input-xs" placeholder="XS Input (32px)" />
-<input type="text" class="pdf-input pdf-input-sm" placeholder="S Input (40px)" />
-<input type="text" class="pdf-input" placeholder="M Input (44px, Default)" />
-<input type="text" class="pdf-input pdf-input-lg" placeholder="L Input (48px)" />
+<input type="text" class="pdf-input pdf-input-sm" placeholder="SM Input (40px)" />
+<input type="text" class="pdf-input pdf-input-md" placeholder="MD Input (44px, Default)" />
+<input type="text" class="pdf-input pdf-input-lg" placeholder="LG Input (48px)" />
 <input type="text" class="pdf-input pdf-input-xl" placeholder="XL Input (56px)" />`}
             </div>
           </details>
@@ -428,26 +456,30 @@ npm run build`}
 
           <details className="pdf-mt-200 pdf-cursor-pointer pdf-border-top" style={{ paddingTop: '16px' }}>
             <summary className="pdf-text-label-14-mono pdf-text-muted pdf-font-bold">[+] 모달 다이얼로그 구현 코드 보기</summary>
-            <div className="pdf-code-block pdf-mt-100" style={{ whiteSpace: 'pre-wrap' }}>
-              {`<!-- 화면 전체 배경(오버레이) -->
-<div class="pdf-overlay" style="position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 998;"></div>
+            <div className="pdf-code-block pdf-selectable pdf-mt-100" style={{ whiteSpace: 'pre-wrap' }}>
+              {`<!-- 1. 전체 화면 오버레이 (Dimmed Background) -->
+<!-- z-index를 높게 설정하고 화면 전체를 덮습니다. -->
+<div class="pdf-overlay" style="position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); z-index: 998;"></div>
 
-<!-- 모달 다이얼로그 창 -->
-<div class="pdf-panel pdf-elevation-3" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 999; min-width: 400px;">
+<!-- 2. 모달 다이얼로그 본체 -->
+<!-- 화면 중앙에 고정시키며 입체감을 강하게 부여합니다. -->
+<div class="pdf-panel" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 999; min-width: 420px; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
   
-  <div class="pdf-border-bottom pdf-pb-200 pdf-mb-200 pdf-flex-row pdf-justify-between">
-    <h3 class="pdf-text-label-16">Delete Account</h3>
-    <button class="pdf-text-muted" style="background:none; border:none; cursor:pointer;">✕</button>
+  <!-- 모달 헤더 -->
+  <div class="pdf-border-bottom pdf-pb-150 pdf-mb-200 pdf-flex-row pdf-justify-between pdf-items-center">
+    <h3 class="pdf-text-label-16">DELETE SYSTEM DATA</h3>
+    <button class="pdf-text-muted pdf-cursor-pointer" style="font-size: 18px;">✕</button>
   </div>
   
+  <!-- 모달 콘텐츠 -->
   <p class="pdf-text-copy-14 pdf-text-muted pdf-mb-300">
-    이 동작은 되돌릴 수 없습니다. 계속하시겠습니까?
+    이 동작은 되돌릴 수 없습니다.<br/>서버에서 영구적으로 삭제하시겠습니까?
   </p>
   
+  <!-- 모달 푸터 (액션 버튼) -->
   <div class="pdf-flex-row pdf-justify-end pdf-gap-100">
     <button class="pdf-secondary-btn">Cancel</button>
-    <!-- 경고성 조작이므로 배경을 붉게 유지 (인라인 스타일 또는 별도 클래스 활용) -->
-    <button class="pdf-btn-primary" style="background-color: var(--color-functional-red)">Delete</button>
+    <button class="pdf-btn-primary">Confirm Delete</button>
   </div>
   
 </div>`}
@@ -470,15 +502,27 @@ npm run build`}
 
           <details className="pdf-mt-200 pdf-cursor-pointer pdf-border-top" style={{ paddingTop: '16px' }}>
             <summary className="pdf-text-label-14-mono pdf-text-muted pdf-font-bold">[+] 네비게이션 구현 코드 보기</summary>
-            <div className="pdf-code-block pdf-mt-100" style={{ whiteSpace: 'pre-wrap' }}>
-              {`<!-- 사이드바 네비게이션 그룹 헤더 -->
+            <div className="pdf-code-block pdf-selectable pdf-mt-100" style={{ whiteSpace: 'pre-wrap' }}>
+              {`<!-- 1. 사이드바 네비게이션 그룹 헤더 -->
+<!-- 클릭하여 하위 메뉴를 접고 펼칠 수 있는 인터페이스용 -->
 <div class="pdf-nav-group-header">
-  <span>Layout</span>
+  <span>LAYOUT & GRID</span>
+  <!-- 화살표 아이콘 (상태에 따라 .collapsed 클래스 토글) -->
+  <svg class="pdf-chevron collapsed" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z" /></svg>
 </div>
 
-<!-- 사이드바 네비게이션 아이템 -->
+<!-- 2. 네비게이션 메뉴 아이템 -->
+<!-- .active 클래스 부여 시 좌측에 붉은 인디케이터가 활성화됨 -->
 <div class="pdf-nav-item active">
-  <span class="pdf-text-label-16">PC Split Screen</span>
+  <div class="pdf-flex-row pdf-items-center pdf-gap-100">
+    <span class="pdf-text-label-14-mono pdf-bg-secondary pdf-p-050" style="border-radius:2px;">01</span>
+    <span class="pdf-text-label-16">PC Split Screen</span>
+  </div>
+</div>
+
+<!-- 3. 비활성(Disabled) 아이템 -->
+<div class="pdf-nav-item disabled">
+  <span class="pdf-text-label-16">Mobile Screen (준비중)</span>
 </div>`}
             </div>
           </details>
@@ -502,18 +546,28 @@ npm run build`}
 
           <details className="pdf-mt-200 pdf-cursor-pointer pdf-border-top" style={{ paddingTop: '16px' }}>
             <summary className="pdf-text-label-14-mono pdf-text-muted pdf-font-bold">[+] 스플릿 스크린 구현 코드 보기</summary>
-            <div className="pdf-code-block pdf-mt-100" style={{ whiteSpace: 'pre-wrap' }}>
-              {`<!-- 25:75 비율의 스플릿 스크린 구조 -->
+            <div className="pdf-code-block pdf-selectable pdf-mt-100" style={{ whiteSpace: 'pre-wrap' }}>
+              {`<!-- 25:75 비율의 황금비 스플릿 스크린 전체 구조 -->
 <div class="pdf-app">
+  
+  <!-- 좌측 25% 사이드바 영역 -->
+  <!-- 블러 효과와 그리드 패턴이 포함된 PDF-DS 특유의 사이드바 클래스 -->
   <aside class="pdf-sidebar" style="width: 25%;">
-    <!-- 좌측 25% 사이드바 영역 -->
+    <nav>네비게이션 메뉴</nav>
   </aside>
   
+  <!-- 드래그 가능한 중앙 스플리터 막대 -->
   <div class="pdf-splitter"></div>
   
+  <!-- 우측 75% 메인 콘텐츠 영역 -->
   <main class="pdf-main-view" style="width: 75%;">
-    <!-- 우측 75% 메인 콘텐츠 영역 -->
+    <!-- 실제 콘텐츠가 담기는 중앙 정렬된 컨테이너 -->
+    <div class="pdf-main-content">
+      <h1 class="pdf-text-heading-32">Main Title</h1>
+      <p class="pdf-text-copy-14">Main content goes here.</p>
+    </div>
   </main>
+
 </div>`}
             </div>
           </details>
