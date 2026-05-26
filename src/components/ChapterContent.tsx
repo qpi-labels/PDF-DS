@@ -315,7 +315,7 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
 
           <details className="pdf-mt-200 pdf-cursor-pointer pdf-border-top" style={{ paddingTop: '16px' }}>
             <summary className="pdf-text-label-14-mono pdf-text-muted pdf-font-bold">[+] 버튼 구현 코드 보기</summary>
-            <div className="pdf-code-block pdf-mt-100" style={{ whiteSpace: 'pre-wrap' }}>
+            <div className="pdf-code-block pdf-mt-100 pdf-selectable" style={{ whiteSpace: 'pre-wrap' }}>
               {`<!-- 1차 액션 (Primary Button) -->
 <!-- 붉은색 배경, 가장 중요한 단일 액션에 사용 -->
 <button class="pdf-btn-primary">
@@ -332,7 +332,19 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
 <!-- 테두리 없음, 최소한의 강조가 필요할 때 사용 -->
 <button class="pdf-ghost-btn">
   Learn More
-</button>`}
+</button>
+
+<!-- 버튼 크기 속성 (Button Sizing Modifiers) -->
+<!-- 버튼 크기 접미사를 추가하여 형태와 타이포그래피 스케일을 통합 제어합니다: -->
+<!-- XS (32px) / S (40px) / M (44px, 기본) / L (48px) / XL (56px) -->
+<button class="pdf-btn-primary pdf-btn-xs">XS BUTTON</button>
+<button class="pdf-btn-primary pdf-btn-sm">S BUTTON</button>
+<button class="pdf-btn-primary">M BUTTON (Default)</button>
+<button class="pdf-btn-primary pdf-btn-lg">L BUTTON</button>
+<button class="pdf-btn-primary pdf-btn-xl">XL BUTTON</button>
+
+<!-- 보조 버튼 크기 확장 예시 -->
+<button class="pdf-secondary-btn pdf-btn-xl">XL SECONDARY BUTTON</button>`}
             </div>
           </details>
         </section>
@@ -352,7 +364,7 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
 
           <details className="pdf-mt-200 pdf-cursor-pointer pdf-border-top" style={{ paddingTop: '16px' }}>
             <summary className="pdf-text-label-14-mono pdf-text-muted pdf-font-bold">[+] 폼 입력 구현 코드 보기</summary>
-            <div className="pdf-code-block pdf-mt-100" style={{ whiteSpace: 'pre-wrap' }}>
+            <div className="pdf-code-block pdf-mt-100 pdf-selectable" style={{ whiteSpace: 'pre-wrap' }}>
               {`<!-- 기본 텍스트 입력 폼 -->
 <div class="pdf-flex-col pdf-gap-100">
   <label class="pdf-text-label-14-mono pdf-text-muted">Username</label>
@@ -366,7 +378,16 @@ export default function ChapterContent({ activeChapter }: ChapterProps) {
     <option>Admin</option>
     <option>User</option>
   </select>
-</div>`}
+</div>
+
+<!-- 입력 폼 크기 속성 (Form Input Sizing Modifiers) -->
+<!-- 높이와 패딩 스케일을 조절하는 크기 접미사입니다: -->
+<!-- XS (32px) / S (40px) / M (44px, 기본) / L (48px) / XL (56px) -->
+<input type="text" class="pdf-input pdf-input-xs" placeholder="XS Input (32px)" />
+<input type="text" class="pdf-input pdf-input-sm" placeholder="S Input (40px)" />
+<input type="text" class="pdf-input" placeholder="M Input (44px, Default)" />
+<input type="text" class="pdf-input pdf-input-lg" placeholder="L Input (48px)" />
+<input type="text" class="pdf-input pdf-input-xl" placeholder="XL Input (56px)" />`}
             </div>
           </details>
         </section>

@@ -8,6 +8,7 @@ export interface EditorStyles {
   margin?: string;
   padding?: string;
   align?: string;
+  size?: string;
 }
 
 export interface EditorElement {
@@ -147,6 +148,7 @@ export default function Editor() {
     if (s.margin) classes.push(s.margin);
     if (s.padding) classes.push(s.padding);
     if (s.align) classes.push(s.align);
+    if (s.size) classes.push(s.size);
     if (node.className) classes.push(node.className);
     return classes.filter(Boolean).join(' ');
   };
@@ -336,7 +338,7 @@ export default function Editor() {
           {isCodeMode ? (
             <div className="pdf-panel">
               <span className="pdf-text-label-14-mono pdf-text-muted pdf-mb-100" style={{ display: 'block' }}>GENERATED HTML</span>
-              <pre className="pdf-text-copy-13-mono" style={{ whiteSpace: 'pre-wrap', color: 'var(--color-text-primary)' }}>
+              <pre className="pdf-text-copy-13-mono pdf-selectable" style={{ whiteSpace: 'pre-wrap', color: 'var(--color-text-primary)' }}>
                 {generateHTMLString(elements)}
               </pre>
             </div>
@@ -377,6 +379,26 @@ export default function Editor() {
             )}
 
             <hr style={{ border: 'none', borderTop: '1px solid var(--color-border-default)', margin: '16px 0' }} />
+
+            {/* Button Size Dropdown (Only for buttons) */}
+            {(selectedNode.type === 'primary-btn' || selectedNode.type === 'secondary-btn') && (
+              <div className="pdf-mb-200">
+                <label className="pdf-text-label-14-mono pdf-mb-050" style={{ display: 'block' }}>버튼 크기 (Button Size)</label>
+                <select 
+                  className="pdf-text-copy-14"
+                  style={{ width: '100%', padding: '8px', backgroundColor: 'var(--color-bg-secondary)', border: '1px solid var(--color-border-default)', color: 'var(--color-text-primary)', borderRadius: '4px' }}
+                  value={selectedNode.styles?.size || ''}
+                  onChange={(e) => updateElementStyle(selectedNode.id, 'size', e.target.value)}
+                >
+                  <option value="">(기본값 - MD 44px)</option>
+                  <option value="pdf-btn-xs">XS (초소형 - 32px)</option>
+                  <option value="pdf-btn-sm">S (소형 - 40px)</option>
+                  <option value="pdf-btn-md">M (중형 - 44px)</option>
+                  <option value="pdf-btn-lg">L (대형 - 48px)</option>
+                  <option value="pdf-btn-xl">XL (초대형 - 56px)</option>
+                </select>
+              </div>
+            )}
 
             {/* Typography Dropdown */}
             <div className="pdf-mb-200">

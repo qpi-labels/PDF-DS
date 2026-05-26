@@ -270,7 +270,7 @@ public struct PdfMorphingButtonStyle: ButtonStyle {
         <div className="pdf-border" style={{ position: 'sticky', top: 0, right: 0, textAlign: 'right', backgroundColor: 'rgba(9, 9, 11, 0.8)', padding: '4px 8px', borderRadius: 4, display: 'inline-block', float: 'right', fontSize: 9, color: 'var(--color-text-secondary)', textTransform: 'uppercase' }}>
           {platform === 'web' ? 'CSS / Variables' : platform === 'android' ? 'KOTLIN / COMPOSE' : 'SWIFT / SWIFTUI'}
         </div>
-        <pre style={{ whiteSpace: 'pre', margin: 0, paddingBottom: 16 }}>{codeBlocks[platform]}</pre>
+        <pre className="pdf-selectable" style={{ whiteSpace: 'pre', margin: 0, paddingBottom: 16 }}>{codeBlocks[platform]}</pre>
       </div>
 
       <div className="pdf-flex-row pdf-items-center pdf-gap-100 pdf-mt-200" style={{ backgroundColor: '#ecfdf5', borderColor: '#a7f3d0', borderStyle: 'solid', borderWidth: 1, padding: 12, borderRadius: 8, color: '#065f46' }}>

@@ -53,14 +53,14 @@ export default function TypographySandbox() {
           <div className="pdf-flex-col pdf-gap-200">
             <div>
               <span className="pdf-text-label-14-mono" style={{ color: 'var(--color-text-primary)', display: 'block', marginBottom: '8px' }}>Option A: HTML Tag (&lt;head&gt; in index.html)</span>
-              <pre className="pdf-code-block" style={{ margin: 0, padding: '16px', overflowX: 'auto', whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}>
+              <pre className="pdf-code-block pdf-selectable" style={{ margin: 0, padding: '16px', overflowX: 'auto', whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}>
 {`<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css" />
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700;800&display=swap" rel="stylesheet" />`}
               </pre>
             </div>
             <div>
               <span className="pdf-text-label-14-mono" style={{ color: 'var(--color-text-primary)', display: 'block', marginBottom: '8px' }}>Option B: CSS @import (style.css)</span>
-              <pre className="pdf-code-block" style={{ margin: 0, padding: '16px', overflowX: 'auto', whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}>
+              <pre className="pdf-code-block pdf-selectable" style={{ margin: 0, padding: '16px', overflowX: 'auto', whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}>
 {`@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700;800&display=swap');`}
               </pre>

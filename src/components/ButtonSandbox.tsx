@@ -8,9 +8,9 @@ export default function ButtonSandbox() {
   const [lastSizeClicked, setLastSizeClicked] = useState<string>('');
 
   const buttonConfigs = [
-    { size: 'XS (초소형)', height: '32px', padding: '0 8px', icon: 16, restRadius: 9999, hoverRadius: 8, pressedRadius: 4, label: 'Secondary Action' },
-    { size: 'S (소형-표준)', height: '40px', padding: '0 12px', icon: 20, restRadius: 9999, hoverRadius: 12, pressedRadius: 8, label: 'Default Tactile' },
-    { size: 'M (중형)', height: '44px', padding: '0 16px', icon: 20, restRadius: 9999, hoverRadius: 16, pressedRadius: 12, label: 'Control Switch' },
+    { size: 'XS (초소형)', height: '32px', padding: '0 8px', icon: 16, restRadius: 9999, hoverRadius: 9999, pressedRadius: 4, label: 'Secondary Action' },
+    { size: 'S (소형-표준)', height: '40px', padding: '0 12px', icon: 20, restRadius: 9999, hoverRadius: 9999, pressedRadius: 8, label: 'Default Tactile' },
+    { size: 'M (중형)', height: '44px', padding: '0 16px', icon: 20, restRadius: 9999, hoverRadius: 9999, pressedRadius: 12, label: 'Control Switch' },
     { size: 'L (대형)', height: '48px', padding: '0 24px', icon: 24, restRadius: 9999, hoverRadius: 28, pressedRadius: 16, label: 'Primary System' },
     { size: 'XL (초대형)', height: '56px', padding: '0 32px', icon: 24, restRadius: 9999, hoverRadius: 28, pressedRadius: 16, label: 'Launch Module' },
   ];
@@ -128,7 +128,9 @@ export default function ButtonSandbox() {
                 </div>
                 <div className="pdf-flex-row pdf-justify-between">
                   <span>Hover 코너 반경:</span>
-                  <span className="pdf-font-bold" style={{ color: 'var(--color-functional-red)' }}>{cfg.hoverRadius}px (Soft Square)</span>
+                  <span className="pdf-font-bold" style={{ color: 'var(--color-functional-red)' }}>
+                    {cfg.hoverRadius === 9999 ? 'Fully Rounded (원형 유지)' : `${cfg.hoverRadius}px (Soft Square)`}
+                  </span>
                 </div>
                 <div className="pdf-flex-row pdf-justify-between">
                   <span>Pressed 코너 반경:</span>
