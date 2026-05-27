@@ -387,6 +387,21 @@ export default function PageSidebar({ onPreview }: { onPreview: () => void }) {
             ))}
           </datalist>
         </nav>
+
+        {/* 출처 표시 (Optional Attribution) */}
+        <div className="pdf-mt-400 pdf-pt-200 pdf-border-top" style={{ marginTop: '32px', paddingTop: '16px' }}>
+          <div className="pdf-text-label-14-mono pdf-text-muted pdf-mb-050">
+            <a href="https://github.com/qpi-labels/PDF-DS" target="_blank" rel="noreferrer"
+              style={{ color: 'var(--color-text-secondary)', textDecoration: 'none', transition: 'color 0.2s' }}
+              onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-text-primary)'}
+              onMouseLeave={(e) => e.currentTarget.style.color = 'var(--color-text-secondary)'}>
+              View on GitHub ↗
+            </a>
+          </div>
+          <div className="pdf-text-label-14-mono pdf-text-muted">
+            Made with PDF-DS
+          </div>
+        </div>
       </div>
 
       <div className="pdf-p-200 pdf-border-top pdf-flex-col pdf-gap-100" style={{ backgroundColor: 'var(--color-bg-secondary)' }}>

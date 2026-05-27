@@ -155,6 +155,18 @@ export const exportToZip = async (pages: EditorPageItem[], appTitle: string, app
             ${navItems}
           </div>
         </nav>
+        <!-- 출처 표시 (Optional Attribution) -->
+        <div class="pdf-mt-400 pdf-pt-200 pdf-border-top" style="margin-top: 32px; padding-top: 16px;">
+          <div class="pdf-text-label-14-mono pdf-text-muted pdf-mb-050">
+            <a href="https://github.com/qpi-labels/PDF-DS" target="_blank" rel="noreferrer"
+              style="color: var(--color-text-secondary); text-decoration: none; transition: color 0.2s;"
+              onmouseover="this.style.color='var(--color-text-primary)'"
+              onmouseout="this.style.color='var(--color-text-secondary)'">View on GitHub ↗</a>
+          </div>
+          <div class="pdf-text-label-14-mono pdf-text-muted">
+            Made with PDF-DS
+          </div>
+        </div>
       </div>
     </aside>
     <main class="pdf-main-view">

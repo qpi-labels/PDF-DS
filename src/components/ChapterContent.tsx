@@ -177,6 +177,26 @@ npm run dev
 npm run build`}
             </div>
           </div>
+
+          <h2 className="pdf-text-label-16 pdf-mb-200">🏷️ 선택적 출처 표시 (Optional Attribution)</h2>
+          <div className="pdf-mb-300">
+            <p className="pdf-text-copy-14 pdf-mb-100">
+              PDF-DS를 사용하여 제작된 사이트임을 명시하고 싶다면, 아래의 출처 표시 코드를 사이드바 하단이나 푸터에 자유롭게 추가할 수 있습니다.
+            </p>
+            <div className="pdf-code-block pdf-selectable" style={{ whiteSpace: 'pre-wrap' }}>
+              {`<div class="pdf-mt-400 pdf-pt-200 pdf-border-top" style="margin-top: 32px; padding-top: 16px;">
+  <div class="pdf-text-label-14-mono pdf-text-muted pdf-mb-050">
+    <a href="https://github.com/qpi-labels/PDF-DS" target="_blank"
+      style="color: var(--color-text-secondary); text-decoration: none; transition: color 0.2s;"
+      onmouseover="this.style.color='var(--color-text-primary)'"
+      onmouseout="this.style.color='var(--color-text-secondary)'">View on GitHub ↗</a>
+  </div>
+  <div class="pdf-text-label-14-mono pdf-text-muted">
+    Made with PDF-DS
+  </div>
+</div>`}
+            </div>
+          </div>
         </section>
       )}
 
