@@ -180,9 +180,59 @@ npm run build`}
 
           <h2 className="pdf-text-label-16 pdf-mb-200">🏷️ 선택적 출처 표시 (Optional Attribution)</h2>
           <div className="pdf-mb-300">
-            <p className="pdf-text-copy-14 pdf-mb-100">
+            <p className="pdf-text-copy-14 pdf-mb-200">
               PDF-DS를 사용하여 제작된 사이트임을 명시하고 싶다면, 아래의 출처 표시 코드를 사이드바 하단이나 푸터에 자유롭게 추가할 수 있습니다.
             </p>
+            
+            <div className="pdf-mt-100 pdf-mb-300">
+              <p className="pdf-text-label-14-mono pdf-text-muted pdf-mb-100">디자인 미리보기 (실제 사이드바 적용 예시)</p>
+              <div style={{ width: '100%', maxWidth: '320px', border: '1px solid var(--color-border-default)', backgroundColor: 'var(--color-bg-primary)', position: 'relative', overflow: 'hidden' }}>
+                <aside className="pdf-sidebar" style={{ width: '100%', borderRight: 'none', minHeight: '100%' }}>
+                  <div className="pdf-content-relative pdf-p-300">
+                    <nav>
+                      <span className="pdf-text-label-14-mono pdf-text-muted pdf-border-bottom pdf-pb-100 pdf-mb-100 pdf-font-bold" style={{ display: 'block' }}>
+                        GUIDELINES INDEX
+                      </span>
+                      <div className="pdf-mb-200">
+                        <div className="pdf-nav-group-header">
+                          <span>Intro & Architecture</span>
+                          <svg className="pdf-chevron" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z" /></svg>
+                        </div>
+                        <div className="pdf-nav-item">
+                          <div className="pdf-flex-row pdf-items-center pdf-gap-150 pdf-overflow-hidden pdf-w-full">
+                            <span className="pdf-text-label-14-mono pdf-text-center pdf-font-bold" style={{ backgroundColor: 'var(--color-border-default)', color: 'var(--color-text-secondary)', padding: '4px 8px', borderRadius: '2px', minWidth: '32px' }}>01</span>
+                            <span className="pdf-text-label-16">Philosophy</span>
+                          </div>
+                        </div>
+                        <div className="pdf-nav-item active">
+                          <div className="pdf-flex-row pdf-items-center pdf-gap-150 pdf-overflow-hidden pdf-w-full">
+                            <span className="pdf-text-label-14-mono pdf-text-center pdf-font-bold" style={{ backgroundColor: 'var(--color-functional-red)', color: 'var(--color-bg-primary)', padding: '4px 8px', borderRadius: '2px', minWidth: '32px' }}>02</span>
+                            <span className="pdf-text-label-16">System Architecture</span>
+                          </div>
+                        </div>
+                      </div>
+                    </nav>
+                    
+                    {/* 출처 표시 미리보기 */}
+                    <div className="pdf-mt-400 pdf-pt-200 pdf-border-top" style={{ marginTop: '32px', paddingTop: '16px' }}>
+                      <div className="pdf-text-label-14-mono pdf-text-muted pdf-mb-050">
+                        <a href="https://github.com/qpi-labels/PDF-DS" target="_blank" rel="noreferrer"
+                          style={{ color: 'var(--color-text-secondary)', textDecoration: 'none', transition: 'color 0.2s' }}
+                          onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-text-primary)'}
+                          onMouseLeave={(e) => e.currentTarget.style.color = 'var(--color-text-secondary)'}>
+                          View on GitHub ↗
+                        </a>
+                      </div>
+                      <div className="pdf-text-label-14-mono pdf-text-muted">
+                        Made with PDF-DS
+                      </div>
+                    </div>
+                  </div>
+                </aside>
+              </div>
+            </div>
+
+            <p className="pdf-text-label-14-mono pdf-text-muted pdf-mb-100">적용 코드</p>
             <div className="pdf-code-block pdf-selectable" style={{ whiteSpace: 'pre-wrap' }}>
               {`<div class="pdf-mt-400 pdf-pt-200 pdf-border-top" style="margin-top: 32px; padding-top: 16px;">
   <div class="pdf-text-label-14-mono pdf-text-muted pdf-mb-050">
@@ -195,40 +245,6 @@ npm run build`}
     Made with PDF-DS
   </div>
 </div>`}
-            </div>
-            
-            <div className="pdf-mt-300">
-              <p className="pdf-text-label-14-mono pdf-text-muted pdf-mb-100">디자인 미리보기 (사이드바 하단 예시)</p>
-              <div className="pdf-panel" style={{ width: '280px', padding: 'var(--space-200)', backgroundColor: 'var(--color-bg-secondary)' }}>
-                {/* 가상의 네비게이션 아이템들 */}
-                <div className="pdf-nav-item" style={{ marginBottom: '4px', borderRadius: '4px', padding: '2px 0' }}>
-                  <div className="pdf-flex-row pdf-items-center pdf-gap-100">
-                    <span className="pdf-text-label-14-mono pdf-text-center pdf-font-bold" style={{ backgroundColor: 'var(--color-border-default)', color: 'var(--color-text-secondary)', padding: '2px 6px', borderRadius: '2px', fontSize: '11px' }}>01</span>
-                    <span className="pdf-text-label-16" style={{ fontSize: '14px' }}>프로젝트 개요</span>
-                  </div>
-                </div>
-                <div className="pdf-nav-item" style={{ marginBottom: '4px', borderRadius: '4px', padding: '2px 0' }}>
-                  <div className="pdf-flex-row pdf-items-center pdf-gap-100">
-                    <span className="pdf-text-label-14-mono pdf-text-center pdf-font-bold" style={{ backgroundColor: 'var(--color-border-default)', color: 'var(--color-text-secondary)', padding: '2px 6px', borderRadius: '2px', fontSize: '11px' }}>02</span>
-                    <span className="pdf-text-label-16" style={{ fontSize: '14px' }}>시뮬레이션 파이프라인</span>
-                  </div>
-                </div>
-                
-                {/* 출처 표시 미리보기 */}
-                <div className="pdf-mt-400 pdf-pt-200 pdf-border-top" style={{ marginTop: '32px', paddingTop: '16px' }}>
-                  <div className="pdf-text-label-14-mono pdf-text-muted pdf-mb-050">
-                    <a href="https://github.com/qpi-labels/PDF-DS" target="_blank" rel="noreferrer"
-                      style={{ color: 'var(--color-text-secondary)', textDecoration: 'none', transition: 'color 0.2s' }}
-                      onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-text-primary)'}
-                      onMouseLeave={(e) => e.currentTarget.style.color = 'var(--color-text-secondary)'}>
-                      View on GitHub ↗
-                    </a>
-                  </div>
-                  <div className="pdf-text-label-14-mono pdf-text-muted">
-                    Made with PDF-DS
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
